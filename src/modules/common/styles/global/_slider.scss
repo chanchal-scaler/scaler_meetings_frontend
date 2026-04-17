@@ -1,0 +1,121 @@
+$sr-slider-size: 1.6rem;
+$sr-slider-track-background: #999999;
+$sr-slider-tooltip-background: rgba(1, 1, 1, 0.7);
+
+.sr-slider {
+  position: relative;
+  justify-content: center;
+  cursor: pointer;
+
+  &__track {
+    position: relative;
+    background-color: $sr-slider-track-background;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__progress {
+    position: absolute;
+    background-color: $primary-color;
+  }
+
+  &__tooltip {
+    position: absolute;
+    background-color: $sr-slider-tooltip-background;
+    border-radius: $border-radius;
+    color: $light-font-color;
+    padding: 0.2rem 0.5rem;
+    display: none;
+  }
+
+  &__handle {
+    position: absolute;
+    width: $sr-slider-size;
+    height: $sr-slider-size;
+    border-radius: $sr-slider-size / 2;
+    background-color: $primary-color;
+  }
+
+  &--horizontal {
+    @include flex-col;
+
+    width: 100%;
+    height: $sr-slider-size;
+
+    .sr-slider {
+      &__track {
+        width: 100%;
+        height: 40%;
+      }
+
+      &__progress {
+        height: 100%;
+        left: 0;
+      }
+
+      &__handle {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__tooltip {
+        bottom: calc(100% + 0.5rem);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &--vertical {
+    @include flex-row;
+
+    height: 100%;
+    width: $sr-slider-size;
+
+    .sr-slider {
+      &__track {
+        height: 100%;
+        width: 40%;
+      }
+
+      &__progress {
+        width: 100%;
+        bottom: 0;
+      }
+
+      &__handle {
+        left: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      &__tooltip {
+        right: calc(100% + 0.5rem);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &--dragging {
+    .sr-slider {
+      &__tooltip {
+        display: block;
+      }
+    }
+  }
+
+  &--disabled-controls {
+    cursor: default;
+  }
+
+  /* stylelint-disable-next-line */
+  &__handle {
+    &:hover {
+      .sr-slider {
+        &__tooltip {
+          display: block;
+        }
+      }
+    }
+  }
+}

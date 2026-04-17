@@ -1,0 +1,8 @@
+.draggable-window {
+  position: fixed;
+  z-index: 1;
+
+  &__trigger {
+    cursor: move;
+  }
+}

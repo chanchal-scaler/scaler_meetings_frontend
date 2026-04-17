@@ -1,0 +1,15 @@
+$card-background: $white-color;
+$card-padding: 1rem;
+$card-padding-large: 2rem;
+
+.card {
+  @include box-shadow;
+
+  background-color: $card-background;
+  padding: $card-padding;
+  border-radius: $border-radius;
+
+  &--large {
+    padding: $card-padding-large;
+  }
+}

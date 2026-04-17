@@ -1,0 +1,50 @@
+$scratch_card_border_color: #afc0d5;
+$scratch_card_bg_color_highlight: #f2f3f3;
+$scratch-card-win-bg: #0f8cff;
+
+.scratch-card {
+  @include flex-col;
+
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    background-color: $white-color;
+    border: solid 0.1rem $scratch_card_border_color;
+    border-radius: 0.5rem;
+    height: 17rem;
+    width: 32rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__icontainer {
+    height: 6rem;
+    width: 6rem;
+    position: relative;
+    background-color: $scratch-card-win-bg;
+    border-radius: 50%;
+  }
+
+  &__img {
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    // offset of 5% to accomodate dangling borders
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+
+    &--highlight {
+      width: 100%;
+      background-color: $scratch_card_bg_color_highlight;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// stylelint-disable unit-whitelist
+$flex-grid-breakpoints: (
+  xs: 1px,
+  sm: $mobile-width,
+  md: $tablet-width,
+  lg: $desktop-width,
+  xl: $large-desktop-width
+);
+
+$flex-grid-sizes: (1, 2, 3);
+$flex-grid-class-prefix: 'flex-grid';
+
+.flex-grid {
+  @include flex-row;
+
+  flex-wrap: wrap;
+}
+
+// Creates the following classes
+// flex-grid-xs-1, flex-grid-xs-2, flex-grid-xs-3
+// flex-grid-sm-1, flex-grid-sm-2, flex-grid-sm-3
+// flex-grid-md-1, flex-grid-md-2, flex-grid-md-3
+// flex-grid-lg-1, flex-grid-lg-2, flex-grid-lg-3
+// flex-grid-xl-1, flex-grid-xl-2, flex-grid-xl-3
+@each $breakpoint-name, $breakpoint-width in $flex-grid-breakpoints {
+  @each $size in $flex-grid-sizes {
+    .#{$flex-grid-class-prefix}-#{$breakpoint-name}-#{$size} {
+      @media screen and (min-width: $breakpoint-width + 1) {
+        width: (100 / $size) * 1%;
+      }
+    }
+  }
+}

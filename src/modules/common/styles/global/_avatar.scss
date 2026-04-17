@@ -1,0 +1,41 @@
+.avatar {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &__fallback {
+    @include flex-row;
+    @include flex-c;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    color: $light-font-color;
+    line-height: 1;
+    border-radius: 50%;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &--hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}

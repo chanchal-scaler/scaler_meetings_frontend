@@ -1,0 +1,87 @@
+.chip {
+  display: inline-flex;
+  border-radius: 1.5rem;
+  color: $dark-font-color;
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+
+  &__icon {
+    &--left {
+      padding-right: 1rem;
+    }
+
+    &--right {
+      padding-left: 1rem;
+    }
+  }
+
+  &--default {
+    background-color: $light-blue-color;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+
+  &--warning {
+    background-color: $warning-color;
+    color: $white-color;
+  }
+
+  &--success {
+    background-color: $success-color;
+    color: $white-color;
+  }
+
+  &--attention {
+    background-color: $attention-color;
+    color: $white-color;
+  }
+
+  &--danger {
+    background-color: $danger-color;
+    color: $white-color;
+  }
+
+  &--hint {
+    background-color: $light-grey-color;
+    color: $hint-font-color;
+  }
+
+  &--outlined {
+    background-color: unset !important;
+    border-width: 0.1rem;
+    border-style: solid;
+
+    &.chip--default {
+      color: $hint-font-color;
+      border-color: $hint-font-color;
+    }
+
+    &.chip--primary {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    &.chip--warning {
+      color: $warning-color;
+      border-color: $warning-color;
+    }
+
+    &.chip--success {
+      color: $success-color;
+      border-color: $success-color;
+    }
+
+    &.chip--attention {
+      border-color: $attention-color;
+      color: $attention-color;
+    }
+
+    &.chip--danger {
+      border-color: $danger-color;
+      color: $danger-color;
+    }
+  }
+}

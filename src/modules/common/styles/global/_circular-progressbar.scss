@@ -1,0 +1,35 @@
+.c-progress {
+  &__parent-container {
+    display: inline-block;
+    border-radius: 100%;
+    position: relative;
+  }
+
+  &__child-container {
+    @include flex-col;
+    @include flex-c;
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  &__child-circle {
+    @include flex-col;
+    @include flex-c;
+
+    border-radius: 100%;
+  }
+
+  &__circle {
+    transform-origin: 50% 50%;
+    transition: 240ms;
+
+    &--percentage {
+      transform: rotate(-90deg);
+    }
+  }
+}

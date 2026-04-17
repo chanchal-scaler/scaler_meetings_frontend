@@ -1,0 +1,20 @@
+$m-asl-preview-slave-width: 24rem;
+
+.m-asl-preview {
+  &__videos {
+    @include flex-row;
+
+    align-items: flex-start;
+    background-color: $black-color;
+    height: 100%;
+  }
+
+  &__master {
+    flex: 1 0 0;
+  }
+
+  &__slave {
+    height: auto;
+    width: $m-asl-preview-slave-width;
+  }
+}

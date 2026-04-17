@@ -1,0 +1,45 @@
+$admin-header-height: 7.5rem;
+$admin-header-background: $primary-color;
+$admin-header-color: $light-font-color;
+$admin-header-input-background: $white-color;
+
+.admin-header {
+  padding: 2rem 1rem;
+  background-color: $admin-header-background;
+  color: $admin-header-color;
+  height: $admin-header-height;
+  align-items: center;
+
+  &__title {
+    flex: 1 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $h3-size;
+    font-weight: $bold-font-weight;
+  }
+
+  &__root {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: 2rem;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+
+    &--left {
+      margin-right: 0.5rem;
+    }
+
+    &--right {
+      margin-left: 0.5rem;
+    }
+
+    input, select {
+      background-color: $admin-header-input-background;
+    }
+  }
+}

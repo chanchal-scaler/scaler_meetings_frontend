@@ -1,0 +1,160 @@
+$m-login-card-width: 60rem;
+$m-login-card-small-width: 36rem;
+$m-login-main-background: $black-color;
+$m-role-max-width: 40rem;
+$m-segmented-control-option-max-width: calc(#{$m-role-max-width} / 2);
+$m-segmented-control-active-color: #0080ff;
+$m-login-companion-mode-color: #61738e;
+
+.m-login {
+  @include flex-col;
+  @include flex-c;
+
+  flex: 1 0 auto;
+  background-color: $m-login-main-background;
+
+  &__check-av {
+    @include flex-row;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  &__password {
+    width: 100%;
+  }
+
+  &__footer {
+    gap: 1rem;
+  }
+
+  &__submit {
+    flex: 1 0 0;
+    min-width: 10rem;
+  }
+
+  &__companion {
+    gap: 1rem;
+
+    &--dark {
+      background: unset;
+      color: $m-login-companion-mode-color;
+      border: 0.1rem solid $m-login-companion-mode-color;
+      border-radius: 0.4rem;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    max-width: $m-login-card-width;
+    color: $default-font-color;
+    padding: 0;
+
+    @include if-widget-small {
+      width: $m-login-card-small-width;
+    }
+
+    @include if-widget-portrait {
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__container {
+    @include flex-col;
+
+    justify-content: center;
+    padding: 2rem 4rem;
+
+    @include if-widget-portrait {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__welcome {
+    position: absolute;
+    display: none; // temp disable for now
+    top: 0;
+    left: 50%;
+    color: $light-font-color;
+    font-weight: $bold-font-weight;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 50%);
+
+    &--audience {
+      transform: translate(-50%, -150%);
+    }
+
+    &--host {
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  &__role {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $m-role-max-width;
+  }
+
+  &__role-segmented-control-option {
+    font-weight: $default-font-weight;
+    max-width: $m-segmented-control-option-max-width;
+    font-size: $h5-size;
+
+    &:hover {
+      color: $m-segmented-control-active-color;
+    }
+
+    &--active {
+      background-color: $m-segmented-control-active-color;
+      font-weight: $bold-font-weight;
+    }
+  }
+
+  &__role-segmented-control {
+    padding: 0;
+    border-radius: 0.8rem;
+  }
+
+  &__role-label {
+    font-weight: $bold-font-weight;
+    color: $dark-font-color;
+    font-size: $h5-size;
+    white-space: nowrap;
+    margin-right: 1rem;
+  }
+
+  &__checklist-container {
+    margin-bottom: 2rem;
+  }
+
+  &__recording {
+    @include flex-row;
+
+    font-size: $h5-size;
+  }
+
+  &__recording-icon {
+    font-size: $h4-size;
+    margin-top: 0.15rem;
+  }
+}

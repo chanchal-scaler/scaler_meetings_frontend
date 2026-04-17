@@ -1,0 +1,133 @@
+$mcq-form-timeline-header-size: 2.4rem;
+
+.mcq-form {
+  padding: 1rem 3rem;
+
+  &__content {
+    margin-top: 2rem;
+    margin-left: $mcq-form-timeline-header-size / 2;
+  }
+
+  &__description {
+    width: 100%;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: $border-radius;
+    border: 0.2rem solid $border-color;
+    padding: 1rem;
+    resize: none;
+    vertical-align: bottom;
+
+    &:focus {
+      border-color: $m-primary-color;
+    }
+  }
+
+  &__section {
+    padding-bottom: 1.5rem;
+  }
+
+  &__section-title {
+    font-weight: $bold-font-weight;
+    color: $dark-font-color;
+    margin-bottom: 1rem;
+  }
+
+  &__timeline {
+    position: relative;
+
+    .timeline {
+      &__header {
+        @include flex-row;
+        @include flex-c;
+
+        position: absolute;
+        width: $mcq-form-timeline-header-size;
+        height: $mcq-form-timeline-header-size;
+        font-size: $h5-size;
+        left: -$mcq-form-timeline-header-size / 2;
+        background-color: $m-primary-light-background;
+        color: $m-primary-color;
+        font-weight: $bold-font-weight;
+        margin-left: 0;
+        border-radius: 50%;
+      }
+
+      &__content {
+        padding: 0 2rem;
+      }
+
+      &__children {
+        &:before {
+          width: 0.3rem;
+          background-color: $m-primary-light-background;
+        }
+      }
+    }
+
+    &--action {
+      .timeline {
+        &__header {
+          top: 0.8rem;
+        }
+
+        &__children {
+          &:before {
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__field {
+    @include flex-row;
+
+    border-radius: $border-radius;
+    overflow: hidden;
+    border: 0.1rem solid $m-primary-light-color;
+  }
+
+  &__label {
+    flex: 0 0 auto;
+    color: $dark-font-color;
+    padding: 1rem 2rem;
+    background-color: $m-primary-light-background;
+    border-right: 0.1rem solid $m-primary-light-color;
+  }
+
+  &__value {
+    flex: 1 0 0;
+  }
+
+  &__select {
+    .m-select {
+      &__title {
+        border: none !important;
+      }
+    }
+  }
+
+  &__characters {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    color: $hint-font-color;
+    font-size: $h5-size;
+    background-color: $card-background-color;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+  }
+
+  &__choice {
+    margin-bottom: 1.5rem;
+  }
+
+  &__add {
+    display: inline-block;
+    font-weight: $bold-font-weight;
+    color: $m-primary-color;
+    margin-left: 5.4rem; // Trail and error
+    margin-bottom: 1rem;
+  }
+}

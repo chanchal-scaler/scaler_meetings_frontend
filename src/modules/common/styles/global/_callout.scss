@@ -1,0 +1,45 @@
+$callout-border-width: 0.4rem;
+
+$callout-states: (
+  primary: (
+    color: $primary-color,
+    background: #e7f3ff
+  ),
+  success: (
+    color: #2eb676,
+    background: #eaf7f1
+  ),
+  warning: (
+    color: #b99839,
+    background: #fcefc9
+  ),
+  danger: (
+    color: #e23f5b,
+    background: #fcebee
+  ),
+);
+
+.callout {
+  padding: 1.5rem;
+  font-weight: $bolder-font-weight;
+  border-radius: $border-radius;
+
+  &--border {
+    border: 0.1rem solid $border-color;
+  }
+
+  @each $state, $data in $callout-states {
+    &--background {
+      &.callout--#{$state} {
+        color: map-get($data, 'color');
+        background-color: map-get($data, 'background');
+      }
+    }
+
+    &--border {
+      &.callout--#{$state} {
+        border-left: $callout-border-width solid map-get($data, 'color');
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+$vp-bookmark-width: 0.7rem;
+$vp-bookmark-height: 0.5rem;
+$vp-bookmark-radius: 0.1rem;
+$vp-bookmark-input-color: $attention-color;
+$vp-bookmark-background: $light-blue-color;
+$vp-bookmark-popup-width: 36rem;
+$vp-bookmark-default-text-color: #1a2c47;
+
+.vp-bookmark {
+  position: absolute;
+  cursor: pointer;
+  display: inline-block;
+  width: $vp-bookmark-width;
+  height: $vp-bookmark-height;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $vp-bookmark-background;
+  transition: height 180ms;
+}
+
+.vp-bookmark-input {
+  &__header {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba($vp-bookmark-input-color, 0.4);
+  }
+
+  &__action {
+    margin-left: 1rem;
+  }
+
+  &__chip {
+    color: $light-font-color;
+    background-color: $vp-bookmark-input-color;
+  }
+
+  textarea {
+    background-color: transparent !important;
+    padding: 1rem;
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+    resize: none;
+    width: 100%;
+    color: $vp-bookmark-default-text-color;
+  }
+}
+
+.vp-bookmark-popup {
+  bottom: 7rem;
+  margin-left: -0.5rem;
+  width: 100%;
+  max-width: $vp-bookmark-popup-width;
+
+  &__footer {
+    @include flex-row;
+
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__hint {
+    flex: 1 0 0;
+    margin-right: 1rem;
+    font-size: $h6-size;
+    color: $hint-font-color;
+
+    @include tablet {
+      visibility: hidden;
+    }
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+  }
+}
+
+.vp-bookmarks-container {
+  @include not-touch {
+    &:hover {
+      .vp-bookmark {
+        height: 2 * $vp-bookmark-height;
+        border-radius: $vp-bookmark-radius;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+$snackbar-dark-background: $light-black-color;
+$snackbar-width: 36rem;
+$snackbar-corner-spacing: 2rem;
+
+.snackbar {
+  @include flex-row;
+  @include box-shadow;
+
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  color: $light-font-color;
+  width: calc(100% - 2rem);
+  max-width: $snackbar-width;
+  border-radius: $border-radius;
+  padding: 1rem;
+  z-index: $snackbar-z;
+
+  &__message {
+    margin: 0;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* State modifiers */
+
+  &--light {
+    background-color: $card-background-color;
+    color: $default-font-color;
+  }
+
+  &--dark {
+    background-color: $snackbar-dark-background;
+  }
+
+  &--success {
+    background-color: $success-color;
+  }
+
+  &--error {
+    background-color: $danger-color;
+  }
+
+  &--warning {
+    background-color: $warning-color;
+  }
+
+  &--info {
+    background-color: $info-color;
+  }
+
+  /* Position modifiers */
+
+  &--top-right {
+    top: $snackbar-corner-spacing;
+    right: $snackbar-corner-spacing;
+  }
+
+  &--bottom-right {
+    bottom: $snackbar-corner-spacing;
+    right: $snackbar-corner-spacing;
+  }
+
+  &--top-left {
+    top: $snackbar-corner-spacing;
+    left: $snackbar-corner-spacing;
+  }
+
+  &--bottom-left {
+    bottom: $snackbar-corner-spacing;
+    left: $snackbar-corner-spacing;
+  }
+}

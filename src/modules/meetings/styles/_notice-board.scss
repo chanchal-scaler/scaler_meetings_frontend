@@ -1,0 +1,120 @@
+$notice-board-spacing: 1rem;
+$pin-message-header-text-color: #d6d6d6;
+
+.notice-board {
+  background-color: $primary-color;
+  position: sticky;
+  top: 0;
+  left: $notice-board-spacing;
+  width: calc(100% - #{2 * $notice-board-spacing});
+  border-radius: $border-radius;
+  padding: 0.8rem 0;
+  color: $light-font-color;
+  max-height: 60%;
+  flex-wrap: nowrap;
+  z-index: 1;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    padding: 0 0.8rem;
+  }
+
+  &__input {
+    flex: 1 0 0;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    color: $light-font-color;
+    resize: none;
+    vertical-align: bottom;
+    width: 100%;
+    border: none;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+
+    &:focus {
+      border-color: $m-primary-color;
+    }
+
+    &::placeholder {
+      color: $light-font-color;
+    }
+  }
+
+  &__icon {
+    font-size: $h4-size !important;
+    align-self: center;
+  }
+
+  &__recent {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto 0;
+    flex: 1 0 0;
+
+    .pin-message-button {
+      padding: 0.5rem;
+    }
+
+    .md-renderer {
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      a {
+        color: $light-font-color !important;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__body {
+    overflow-y: auto;
+    margin-top: 0.3rem;
+  }
+
+  .pin-message {
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+
+    &__header {
+      color: $pin-message-header-text-color;
+      font-size: $h6-size;
+      margin-right: auto;
+    }
+
+    &__body {
+      display: flex;
+      position: relative;
+
+      &--empty {
+        display: block;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .unpin-icon {
+        color: $light-font-color;
+        position: absolute;
+        right: 0.5rem;
+        top: -1.2rem;
+        transform: translateY(-20%);
+        display: none;
+      }
+
+      .md-renderer a {
+        color: $light-font-color !important;
+        text-decoration: underline;
+      }
+    }
+
+    &:hover {
+      background-color: $primary-color-dark;
+
+      .unpin-icon {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.meeting-item {
+  @include flex-row;
+
+  align-items: center;
+  padding: 2rem;
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid $border-color;
+  }
+
+  &__info {
+    margin-right: 1rem;
+    flex: 1 0 0;
+  }
+
+  &__title {
+    color: $dark-font-color;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,223 @@
+$message-event-radius: 3rem;
+$message-event-icon-size: 2.8rem;
+$message-to-public-background: $m-primary-light-background;
+$message-to-private-background: $m-accent-light-background;
+$message-reaction-background: hsl(0, 0%, 97%);
+$message-text-availability-size: 0.7rem;
+$message-text-active-background: rgba(0, 0, 0, 0.03);
+$message-text-proxy-message: rgb(0, 0, 255);
+$message-text-pinned-background: #fff7ed;
+$message-text-pinned-active-background: #fff0dd;
+$message-text-pin-icon-color: #f0ad4e;
+
+.message-event {
+  @include flex-row;
+  @include flex-c;
+
+  align-self: center;
+  margin: -0.5rem 1rem;
+  border-radius: $message-event-radius;
+  border: 0.1rem solid $border-color;
+  padding: 0.3rem;
+  font-size: $h5-size;
+
+  &__icon {
+    @include flex-row;
+    @include flex-c;
+
+    width: $message-event-icon-size;
+    height: $message-event-icon-size;
+    border-radius: 50%;
+    background-color: $info-color;
+    color: $light-font-color;
+  }
+
+  &__body {
+    padding: 0 0.5rem;
+  }
+
+  @include mobile {
+    margin: 0 1rem;
+  }
+}
+
+.message-actions {
+  position: absolute;
+  right: 0.5rem;
+  top: 0;
+  transform: translateY(-40%);
+  display: none;
+
+  &__btn {
+    border: 0.1rem solid $border-color;
+    background-color: darken($card-background-color, 3);
+
+    &:hover, &:active {
+      background-color: darken($card-background-color, 5);
+    }
+  }
+}
+
+.message-text {
+  @include flex-col;
+
+  position: relative;
+  padding: 1rem;
+  margin: -1rem 0;
+
+  &__header {
+    @include flex-row;
+
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: $h5-size;
+
+    @include mobile {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__availability {
+    width: $message-text-availability-size;
+    height: $message-text-availability-size;
+    border-radius: 50%;
+    background-color: $hint-font-color;
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+
+    &--online {
+      background-color: $success-color;
+    }
+
+    &--proxy {
+      background-color: $message-text-proxy-message;
+    }
+  }
+
+  &__from, &__to {
+    @include ellipsis;
+  }
+
+  &__from {
+    @include flex-row;
+
+    align-items: center;
+    color: $dark-font-color;
+    font-weight: $bolder-font-weight;
+  }
+
+  &__to {
+    padding: 0.3rem 1rem;
+    border-radius: 1.5rem;
+    margin: 0 0.8rem;
+    font-size: $h6-size;
+    color: $hint-font-color;
+
+    &--public {
+      background-color: $message-to-public-background;
+    }
+
+    &--private {
+      background-color: $message-to-private-background;
+    }
+  }
+
+  &__date {
+    flex: 0 0 auto;
+    color: $hint-font-color;
+  }
+
+  &__pin {
+    font-size: $h6-size;
+
+    .message-pin-icon {
+      color: $message-text-pin-icon-color;
+    }
+  }
+
+  &--active {
+    background-color: $message-text-active-background;
+
+    .message-actions {
+      display: block;
+    }
+  }
+
+  &--mine {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &--others {
+    align-items: flex-start;
+    text-align: left;
+
+    &:hover {
+      .message-actions {
+        display: block;
+      }
+    }
+  }
+
+  &--pinned {
+    background-color: $message-text-pinned-background;
+
+    &:hover {
+      background-color: $message-text-pinned-active-background !important;
+    }
+  }
+
+  &:hover {
+    background-color: $message-text-active-background;
+  }
+}
+
+.message-poll {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid $border-color;
+  border-radius: $border-radius;
+}
+
+.message-reaction {
+  @include flex-row;
+
+  justify-content: space-evenly;
+  margin: 0 1.5rem;
+  border: 0.1rem solid $border-color;
+  border-radius: 0.7rem;
+  padding: 1.2rem 0 1rem;
+  background-color: $message-reaction-background;
+
+  &__item {
+    @include flex-row;
+
+    align-items: center;
+    box-shadow: none;
+  }
+
+  &__header {
+    justify-content: flex-end;
+    margin-right: 1rem;
+    position: relative;
+    font-size: $h5-size;
+  }
+
+  &__date {
+    color: $hint-font-color;
+    position: absolute;
+    padding: 0 0.5rem;
+    top: 50%;
+    right: 1rem;
+    background: linear-gradient(180deg, $white-color 57%, transparent 58%);
+    transform: translate(0, -50%);
+  }
+
+  &__tool-tip {
+    max-width: 20rem;
+  }
+}
+
+.message-question {
+  margin: 0 1rem;
+}

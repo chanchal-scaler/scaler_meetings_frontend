@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+.react-root {
+  @import 'styles/action-indicator';
+  @import 'styles/bookmarks';
+  @import 'styles/container';
+  @import 'styles/control-item';
+  @import 'styles/controls';
+  @import 'styles/dropdown';
+  @import 'styles/error';
+  @import 'styles/playback';
+  @import 'styles/playlist';
+  @import 'styles/seekbar';
+  @import 'styles/time-follower';
+  @import 'styles/video';
+  @import 'styles/volume';
+}

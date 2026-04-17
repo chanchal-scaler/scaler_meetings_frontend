@@ -1,0 +1,10 @@
+$charts-responsive-container-bgcolor: #ffffff;
+
+.generic-chart {
+  &__responsive-container {
+    background-color: $charts-responsive-container-bgcolor;
+    width: 50%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

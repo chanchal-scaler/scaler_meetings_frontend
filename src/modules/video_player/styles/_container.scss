@@ -1,0 +1,16 @@
+$vp-container-background: #000000;
+
+.vp-container {
+  @include flex-col;
+
+  justify-content: center;
+  position: relative;
+  color: $light-font-color;
+  width: 100%;
+  height: 100%;
+  background-color: $vp-container-background;
+  overflow: hidden;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

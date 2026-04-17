@@ -1,0 +1,14 @@
+$tooltip-bg-color: #1a2c47;
+
+.graph-tooltip {
+  @include flex-row;
+  @include align-c;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: $border-radius;
+  background-color: $tooltip-bg-color;
+}
+
+.graph-tooltip-text {
+  color: $card-background-color;
+}

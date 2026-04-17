@@ -1,0 +1,17 @@
+// Do not write any scss directly in this file
+
+// Only sass variable, mixins, functions etc. should be added to
+// this base.scss file. Do not add any scss code to this file which
+// leads to directly styling an element. If you need to add some
+// global styles add your code to `global` folder.
+
+//  Order matters
+@import 'base/anim';
+@import 'base/color';
+@import 'base/typography';
+@import 'base/shadow';
+@import 'base/flex';
+@import 'base/layout';
+@import 'base/mixins';
+@import 'base/responsive';
+@import 'base/transform';

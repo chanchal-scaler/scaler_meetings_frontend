@@ -1,0 +1,49 @@
+.moonshot {
+  .sr-modal {
+    max-width: 55rem;
+
+    &__title {
+      @include flex-row;
+      @include flex-c;
+
+      font-weight: $bold-font-weight;
+    }
+
+    &__body {
+      text-align: center;
+      min-height: 40rem;
+    }
+
+    .layout {
+      min-height: 40rem;
+    }
+  }
+
+  &__image-container {
+    img {
+      width: 44rem;
+
+      @include mobile {
+        width: 30rem;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 40rem;
+  }
+
+  &__footer {
+    @include flex-row;
+    @include flex-c;
+
+    margin: 1rem 0;
+  }
+
+  &__footer-img {
+    height: 3.2rem;
+    width: 3.2rem;
+    margin: 1rem;
+    cursor: pointer;
+  }
+}

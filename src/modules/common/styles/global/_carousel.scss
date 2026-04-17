@@ -1,0 +1,61 @@
+$carousel-indicator-color: #e3e8e8;
+$carousel-indicator-hover-color: #bbc6c5;
+
+.rolling-carousel-slides {
+  @include flex-row;
+
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  // Hiding the scrollbar
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar { /* Chrome, Safari and Opera */
+    display: none;
+  }
+
+  & > * {
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+}
+
+.rolling-carousel-indicator {
+  @include flex-row;
+  @include flex-c;
+
+  gap: 2rem;
+
+  &__progress {
+    height: 100%;
+    width: 0;
+    border-radius: 1rem;
+    transition: width 1s linear;
+  }
+
+  &__dot {
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: $carousel-indicator-color;
+    border-radius: 1rem;
+    transition: width 200ms linear;
+    display: block;
+
+    &:hover {
+      background-color: $carousel-indicator-hover-color;
+    }
+
+    &--active {
+      width: 3rem;
+
+      .rolling-carousel-indicator__progress {
+        background-color: $white-color;
+      }
+    }
+
+    &.disabled {
+      opacity: 1;
+    }
+  }
+}

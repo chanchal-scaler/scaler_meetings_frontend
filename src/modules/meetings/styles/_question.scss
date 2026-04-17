@@ -1,0 +1,479 @@
+$m-question-default-background: #f3f7fd;
+$m-question-completed-background: #ededed;
+$m-question-ongoing-background: #fff1f3;
+$m-question-pending-background: #ecf6e6;
+$m-question-ongoing-color: #ad4f4f;
+$m-question-proxy-asker-color: #0000ff;
+$m-ongoing-buttons: #ef5a5a;
+$m-ai-dark-text-color: #1a2c47;
+$m-ai-ligth-text-color: #61738e;
+$m-ai-question-seperator-color: #148eff;
+$m-question-success-blue-color: #006aff;
+$m-ai-question-answer-info-color: #0041ca;
+$m-ai-question-answer-neutral-color: #61738e;
+$m-ai-question-answer-success-color: #1d925b;
+$m-question-succes-action-color: #20a164;
+$m-question-with-ai-new-tag-color: #fed238;
+$m-question-ai-container-border-color: #0052ff;
+$m-question-ai-container-background-color: #ecf8ff;
+
+$m-question-success-color: #769c61;
+$m-font-size: 1.5rem;
+$m-font-size-mobile: 1.2rem;
+
+.m-question-actions {
+  display: inline;
+  visibility: hidden;
+}
+
+.m-question {
+  padding-bottom: 2rem;
+
+  &__card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background-color: $m-question-default-background;
+
+    &--active {
+      .m-question-actions {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__withdraw {
+    display: inline-flex;
+    align-items: center;
+    font-size: $h5-size;
+    font-weight: $bold-font-weight;
+    color: $m-question-success-blue-color;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: stretch;
+    margin-top: 1rem;
+    margin-left: -1rem;
+    width: calc(100% + 2rem);
+    padding: 0 0.5rem;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+    flex: 1 0 0;
+    font-weight: $bold-font-weight;
+
+    &--success {
+      color: $light-font-color;
+      background-color: $m-question-success-color;
+
+      &:hover {
+        background-color: lighten($m-question-success-color, 2);
+      }
+    }
+
+    &--success-outlined {
+      border-width: 0.2rem;
+      color: $m-question-success-color;
+      border-color: $m-question-success-color;
+    }
+
+    &--success-inverted {
+      color: $m-question-succes-action-color;
+    }
+  }
+
+  &__answering {
+    @include flex-row;
+    @include align-c;
+
+    font-size: $h5-size;
+    color: $m-question-ongoing-color;
+    margin: 0 0.5rem;
+  }
+
+  &__upvotes {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__asker {
+    color: $dark-font-color;
+    flex: 1 0 0;
+
+    &--proxy {
+      color: $m-question-proxy-asker-color;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  &__body {
+    margin-bottom: 0.75rem;
+    color: $dark-font-color;
+  }
+
+  &__footer {
+    @include flex-row;
+
+    padding-top: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__right {
+    text-align: right;
+    color: $danger-color;
+  }
+
+  &__vote {
+    cursor: pointer;
+    animation: 360ms normal ease-in-out both 1;
+
+    &--active {
+      color: $primary-color;
+
+      @include anon-keyframes {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+
+        50% {
+          transform: rotate(-30deg) scale(1.5);
+        }
+
+        100% {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+    }
+  }
+
+  &--ongoing {
+    .m-question {
+      &__card {
+        @include box-shadow;
+
+        background-color: $m-question-ongoing-background;
+      }
+    }
+  }
+
+  &--pending {
+    .m-question {
+      &__card {
+        background-color: $m-question-pending-background;
+      }
+    }
+  }
+
+  &--completed {
+    .m-question {
+      &__card {
+        background-color: $m-question-completed-background;
+      }
+    }
+  }
+
+  &:hover {
+    .m-question-actions {
+      visibility: visible;
+    }
+  }
+}
+
+.m-question-active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &--animate {
+    transition: 360ms;
+  }
+}
+
+.m-question-note {
+  padding: 1rem;
+  background-image: linear-gradient(275deg, #f6efff 99%, #e4ebff 2%);
+}
+
+.m-sidekick-layout {
+  @include flex-col;
+
+  padding: 1.6rem;
+
+  & > *:first-child {
+    margin-top: auto;
+  }
+}
+
+@keyframes aiBotFloater {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.m-sidekick-intro {
+  @include flex-col;
+
+  gap: 0.8rem;
+  padding: 0.4rem;
+  position: relative;
+  color: $m-ai-dark-text-color;
+  font-size: $h4-size;
+  border-radius: 1.2rem;
+  margin: 1rem;
+
+  @include mobile {
+    margin: 0.5rem;
+    gap: 0.4rem;
+    max-height: 12rem;
+    overflow-y: scroll;
+  }
+
+  &__new-tag {
+    color: $m-ai-dark-text-color;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding: 0 0.4rem;
+    border-radius: $border-radius;
+    background: $m-question-with-ai-new-tag-color;
+    width: fit-content;
+  }
+
+  &__title {
+    @include ellipsis;
+
+    @include mobile {
+      font-size: $h5-size;
+    }
+  }
+
+  &__body {
+    @include flex-col;
+
+    max-width: calc(100% - 9rem);
+    gap: 0.4rem;
+  }
+
+  &__point {
+    @include flex-row-y-c;
+
+    gap: 0.4rem;
+    font-size: $h5-size;
+
+    @include mobile {
+      font-size: $h6-size;
+    }
+  }
+
+  &--point-icon {
+    font-size: $h5-size;
+
+    @include mobile {
+      font-size: $h6-size;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.2rem;
+  }
+
+  &__anim {
+    position: absolute;
+    margin: 0 2rem;
+    right: 0;
+    bottom: 4rem;
+    width: 7rem;
+    height: 15rem;
+    animation: aiBotFloater 4s infinite;
+
+    @include mobile {
+      animation: none;
+      bottom: 0;
+    }
+
+    &--ack {
+      bottom: 1rem;
+    }
+  }
+
+  &__cta {
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0 1rem;
+    font-size: $h5-size;
+    font-weight: $bold-font-weight;
+    z-index: 1;
+    border-radius: $border-radius;
+
+    @include mobile {
+      font-size: $h6-size;
+    }
+  }
+}
+
+.m-question-with-ai-layout {
+  flex: 0;
+}
+
+.m-question-with-ai {
+  padding-bottom: 2rem;
+
+  &__container {
+    border-radius: $border-radius-l;
+    border: 0.1rem solid $m-question-ai-container-border-color;
+    background: $m-question-ai-container-background-color;
+    padding: 1.2rem;
+    margin-top: auto;
+  }
+
+  &__title {
+    @include flex-row-y-c;
+
+    justify-content: space-between;
+
+    &--text {
+      color: $m-ai-dark-text-color;
+      font-size: $h4-size;
+      font-weight: $bold-font-weight;
+    }
+
+    &--timer {
+      color: $m-ai-ligth-text-color;
+      font-size: $h5-size;
+    }
+  }
+
+  &__question {
+    color: $m-ai-dark-text-color;
+    font-size: $h5-size;
+    align-self: stretch;
+  }
+
+  &__card {
+    background: $m-question-ai-container-background-color;
+  }
+
+  &__separator {
+    @include flex-row-y-c;
+
+    gap: 1rem;
+
+    &--line {
+      opacity: 0.1;
+      background: $m-ai-question-seperator-color;
+      height: 0.1rem;
+      width: 100%;
+      margin: 1.2rem 0;
+    }
+
+    &--img {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  &__answering {
+    @include flex-row-y-c;
+
+    gap: 1rem;
+    font-size: $h5-size;
+    color: $m-question-success-blue-color;
+    font-style: italic;
+    margin-top: 1.2rem;
+
+    &--loader {
+      min-width: 2rem;
+      min-height: 2rem;
+    }
+  }
+
+  &__answerinfo {
+    @include flex-row-y-c;
+
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+
+    &--main {
+      @include flex-row-y-c;
+
+      gap: 0.5rem;
+    }
+
+    &--text {
+      color: $m-ai-question-answer-info-color;
+      font-size: $h4-size;
+      font-style: italic;
+      font-weight: $bold-font-weight;
+      margin-right: 0.5rem;
+    }
+
+    &--textby {
+      @include flex-row-y-c;
+
+      color: $m-ai-ligth-text-color;
+      font-size: $h5-size;
+      font-style: italic;
+      line-height: 1.6rem;
+
+      i {
+        color: $m-ai-question-answer-success-color;
+        font-size: $h6-size;
+      }
+    }
+
+    &--answertime {
+      color: $m-ai-question-answer-neutral-color;
+      font-size: $h5-size;
+    }
+  }
+
+  &__answer {
+    align-self: stretch;
+    color: $m-ai-question-answer-info-color;
+    font-size: $h5-size;
+    font-style: italic;
+  }
+
+  &__options {
+    &--head {
+      font-size: $h5-size;
+      margin: 1.2rem 0;
+    }
+
+    &--list {
+      @include flex-row-y-c;
+
+      gap: 1rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    &--option {
+      @include flex-row;
+
+      gap: 0.5rem;
+      padding: 1.2rem 1.8rem;
+      border-radius: $border-radius-l;
+    }
+  }
+}

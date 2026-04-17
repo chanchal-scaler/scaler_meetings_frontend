@@ -1,0 +1,60 @@
+$badge-size: 2.4rem;
+$badge-size-small: 2rem;
+
+@mixin badge-size-classes($size) {
+  min-width: $size;
+  min-height: $size;
+  border-radius: $size / 2;
+
+  &--top-left {
+    top: -$size / 2;
+    left: -$size / 2;
+  }
+
+  &--top-right {
+    top: -$size / 2;
+    right: -$size / 2;
+  }
+
+  &--bottom-left {
+    bottom: -$size / 2;
+    left: -$size / 2;
+  }
+
+  &--bottom-right {
+    bottom: -$size / 2;
+    right: -$size / 2;
+  }
+}
+
+.badge {
+  @include flex-row;
+  @include flex-c;
+  @include badge-size-classes($badge-size);
+
+  position: absolute;
+  color: $light-font-color;
+  font-size: $h6-size;
+  overflow: hidden;
+  padding: 0.2rem;
+
+  &--info {
+    background-color: $info-color;
+  }
+
+  &--alert {
+    background-color: $danger-color;
+  }
+
+  &--small {
+    &.badge {
+      font-size: 1rem;
+
+      @include badge-size-classes($badge-size-small);
+    }
+  }
+}
+
+.badge-container {
+  position: relative;
+}

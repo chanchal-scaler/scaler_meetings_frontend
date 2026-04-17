@@ -1,0 +1,29 @@
+$expandable-anchor-color: #0c7cff;
+$expandable-content-height: 10rem;
+
+.expandable {
+  @include flex-col;
+
+  &__content {
+    height: $expandable-content-height;
+    overflow: hidden;
+  }
+
+  &--expanded {
+    height: auto !important;
+  }
+
+  &__anchor {
+    color: $expandable-anchor-color;
+    background: none;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+    width: fit-content;
+    border: none;
+    padding: 0;
+  }
+
+  &__anchor:hover {
+    cursor: pointer;
+  }
+}

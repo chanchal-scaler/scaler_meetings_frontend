@@ -1,0 +1,43 @@
+$action-indicator-size: 9rem;
+$action-indicator-tablet-size: 6rem;
+$action-indicator-background: rgba(1, 1, 1, 0.3);
+
+@mixin action-indicator-dims($size) {
+  top: calc(50% - #{$size / 2});
+  left: calc(50% - #{$size / 2});
+  width: $size;
+  height: $size;
+  font-size: $size - 3rem;
+}
+
+.vp-action-indicator {
+  @include flex-row;
+  @include flex-c;
+  @include action-indicator-dims($action-indicator-size);
+
+  position: absolute;
+  border-radius: 50%;
+  background-color: $action-indicator-background;
+  color: $light-font-color;
+  animation: 360ms normal ease-in-out both 1;
+
+  @include tablet {
+    @include action-indicator-dims($action-indicator-tablet-size);
+  }
+
+  @include anon-keyframes {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+}

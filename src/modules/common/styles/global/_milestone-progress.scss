@@ -1,0 +1,36 @@
+$milestone-progress-default-background: #ffeded;
+
+.milestone-progress {
+  display: flex;
+  padding: 1rem;
+  flex-direction: row;
+  border: none;
+  background-color: $milestone-progress-default-background;
+  align-items: center;
+
+  &__icon {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 0.5rem 0;
+  }
+
+  &__content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content-header {
+    font-size: $h2-size;
+    font-weight: $bold-font-weight;
+  }
+
+  &__content-progress {
+    margin-top: 1rem;
+    border: none;
+
+    @include align-c;
+  }
+}

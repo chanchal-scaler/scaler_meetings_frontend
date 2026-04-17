@@ -1,0 +1,48 @@
+$pagination-btn-height: 4rem;
+$pagination-btn-width: 4rem;
+$pagination-boundary-pages-btn-width: 12rem;
+
+.pagination {
+  @include flex-row;
+  @include justify-c;
+
+  align-items: stretch;
+
+  &__btn {
+    padding: 0.5rem;
+    background-color: $light-grey-color;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    width: $pagination-btn-width;
+    height: $pagination-btn-height;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover, &--active {
+      background-color: $primary-color;
+      color: $light-font-color;
+    }
+
+    &--disabled {
+      background-color: $grey-color;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    &--prev, &--next, &--last-page, &--first-page {
+      color: $primary-color;
+      font-size: $h3-size;
+    }
+
+    &--last-page, &--first-page {
+      width: $pagination-boundary-pages-btn-width;
+    }
+  }
+
+  @include mobile {
+    justify-content: flex-start;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,51 @@
+.m-problem-responses {
+  min-width: $m-problem-choices-width;
+
+  &__list {
+    @include flex-col;
+
+    align-items: stretch;
+  }
+
+  &__item {
+    @include flex-row;
+
+    align-items: center;
+  }
+
+  &__indicator, &__percent {
+    @include flex-row;
+    @include flex-c;
+
+    width: $m-problem-indicator-size;
+    flex: 0 0 auto;
+  }
+
+  &__indicator {
+    i {
+      padding: 0.5rem;
+      border-radius: 50%;
+      color: $light-font-color;
+    }
+
+    &--correct {
+      i {
+        background-color: $success-color;
+      }
+    }
+
+    &--wrong {
+      i {
+        background-color: $danger-color;
+      }
+    }
+  }
+
+  &__choice {
+    flex: 1 0 0;
+  }
+
+  @include mobile {
+    min-width: $m-problem-choices-mobile-width;
+  }
+}

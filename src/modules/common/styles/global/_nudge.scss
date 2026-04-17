@@ -1,0 +1,17 @@
+$nudge-width: 36rem;
+
+.nudge {
+  max-width: $nudge-width;
+  padding-top: 1rem;
+
+  &__action {
+    position: absolute;
+    font-size: $h5-size;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+
+  &.popover {
+    @include even-box-shadow;
+  }
+}

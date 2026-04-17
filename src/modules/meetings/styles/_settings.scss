@@ -1,0 +1,146 @@
+$m-settings-width: 68rem;
+$m-settings-body-height: 50rem;
+$m-settings-header-height: 6rem;
+$m-settings-sidebar-background: $body-background-blue-color;
+$m-settings-sidebar-width: 20rem;
+$m-settings-panel-active-background: $body-background-color;
+$m-settings-panel-icon-background: #dddddd;
+$m-settings-panel-icon-size: 1.8rem;
+$m-settings-panel-icon-radius: 0.6rem;
+
+.m-settings {
+  height: calc(100% - 2rem);
+  max-width: $m-settings-width;
+  max-height: $m-settings-body-height;
+
+  .sr-modal {
+    &__body {
+      padding: 0;
+      flex: 1 0 0;
+    }
+  }
+
+  &__body {
+    @include flex-row;
+
+    height: 100%;
+  }
+
+  &__main, &__sidebar {
+    @include mobile {
+      width: 100% !important;
+      display: none;
+
+      &--active {
+        display: block;
+      }
+    }
+  }
+
+  &__sidebar {
+    width: $m-settings-sidebar-width;
+    background-color: $m-settings-sidebar-background;
+    flex: 0 0 auto;
+
+    @include mobile {
+      background-color: $body-background-color;
+    }
+  }
+
+  &__main {
+    flex: 1 0 0;
+    min-width: 0;
+    overflow-y: auto;
+  }
+
+  &__header {
+    position: relative;
+    height: $m-settings-header-height;
+  }
+
+  &__title {
+    position: relative;
+    padding: 2rem;
+    font-size: $h3-size;
+    font-weight: $bolder-font-weight;
+    color: $dark-font-color;
+
+    @include mobile {
+      font-size: $h4-size;
+      text-align: center;
+    }
+  }
+
+  &__back, &__close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__back {
+    left: 1rem;
+  }
+
+  &__close {
+    right: 1rem;
+  }
+
+  &__sections {
+    padding: 0 5rem;
+    padding-bottom: 2rem;
+
+    @include mobile {
+      padding: 0 2rem;
+    }
+  }
+}
+
+.m-setting-panels {
+  @include flex-col;
+
+  &__icon {
+    padding: 1rem;
+    border-radius: $m-settings-panel-icon-radius;
+    background-color: $m-settings-panel-icon-background;
+    color: $dark-font-color;
+    font-size: $m-settings-panel-icon-size;
+    margin-right: 1rem;
+  }
+
+  &__label {
+    color: $dark-font-color;
+    font-weight: $bold-font-weight;
+    flex: 1 0 0;
+  }
+
+  &__item {
+    @include flex-row;
+
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    &--active {
+      background-color: $m-settings-panel-active-background;
+
+      .m-setting-panels {
+        &__icon {
+          background-color: $m-primary-color;
+          color: $light-font-color;
+        }
+      }
+    }
+  }
+}
+
+.m-setting-c-notification {
+  &--compact {
+    .form-field-label {
+      font-size: $h4-size;
+    }
+
+    .m-select__title {
+      font-size: $h5-size;
+    }
+  }
+}

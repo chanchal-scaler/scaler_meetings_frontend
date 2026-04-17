@@ -1,0 +1,100 @@
+$m-sidebar-resizer-width: 0.5rem;
+$m-sidebar-close-size: 2.4rem;
+
+.m-sidebar {
+  @include flex-col;
+
+  display: none;
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  width: $m-sidebar-width;
+  box-shadow: -0.2rem 0 0.5rem 0.2rem rgba(1, 1, 1, 0.1);
+  background-color: $body-background-color;
+  color: $default-font-color;
+
+  &__header {
+    @include flex-row;
+    @include flex-c;
+
+    position: relative;
+    margin: 1rem;
+  }
+
+  &__options {
+    @include flex-row;
+    @include flex-c;
+
+    flex: 1 0 0;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $m-sidebar-close-size;
+    height: $m-sidebar-close-size;
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  &__resizer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: $m-sidebar-resizer-width;
+    height: 100%;
+    cursor: ew-resize;
+    z-index: 2;
+    transition: 180ms;
+
+    &:hover {
+      background-color: $link-color;
+      transition-delay: 180ms;
+    }
+  }
+
+  &--resizing {
+    user-select: none;
+
+    .m-sidebar {
+      &__resizer {
+        background-color: $info-color;
+      }
+    }
+  }
+
+  &--open {
+    display: flex;
+  }
+
+  &__icon {
+    font-size: $h5-size;
+  }
+
+  @include desktop {
+    position: fixed;
+    right: $m-right-dock-width;
+    top: 0;
+    z-index: 1;
+    animation: 180ms normal ease-in-out both 1;
+
+    &--open {
+      @include anon-keyframes {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

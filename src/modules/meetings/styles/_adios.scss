@@ -1,0 +1,64 @@
+$adios-feedback-width: 45rem;
+$adios-instructions-background-color: #ffebef;
+$adios-instructions-icon-color: #a42137;
+$adios-instructions-title-color: #851a2d;
+
+.adios {
+  @include flex-col;
+  @include flex-c;
+
+  height: 100%;
+  padding: 1rem;
+
+  &__message {
+    font-size: $h1-size;
+    font-weight: $bold-font-weight;
+    text-align: center;
+  }
+
+  &__feedback {
+    color: $default-font-color;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: $adios-feedback-width;
+  }
+
+  &__instructions {
+    color: $default-font-color;
+    margin-top: 4rem;
+    background-color: $card-background-color;
+    padding: 2rem;
+    border-radius: $border-radius;
+  }
+
+  &__bookmark {
+    @include flex-row-c;
+
+    background-position: center;
+    background-color: $adios-instructions-background-color;
+    padding: 0.5rem;
+    margin: 0 4rem;
+    border-radius: $border-radius;
+  }
+
+  &__bookmark-icon {
+    color: $adios-instructions-icon-color;
+    width: 2.5rem;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  &__bookmark-title {
+    color: $adios-instructions-title-color;
+    font-size: $h4-size;
+    text-align: center;
+  }
+
+  &__title {
+    color: $dark-font-color;
+    font-size: $h2-size;
+    font-weight: $bold-font-weight;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}

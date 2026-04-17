@@ -1,0 +1,23 @@
+.mq-list-controls {
+  @include flex-row;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+
+  &__filters, &__sort {
+    @include flex-row;
+
+    align-items: center;
+    font-size: $h6-size;
+  }
+
+  &__sort {
+    padding: 0.5rem;
+
+    &--selected {
+      border-radius: $border-radius;
+    }
+  }
+}

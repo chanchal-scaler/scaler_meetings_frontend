@@ -1,0 +1,55 @@
+$control-panel-side-width-left: 14rem;
+$control-panel-side-width-right: 30rem;
+$control-panel-side-offset: 2rem;
+
+.control-panel {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+
+  &__side {
+    @include flex-col;
+
+    top: 0;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+
+    &--left {
+      width: $control-panel-side-width-left;
+      align-items: flex-start;
+      left: $control-panel-side-offset;
+    }
+
+    &--right {
+      width: $control-panel-side-width-right;
+      right: $control-panel-side-offset;
+      align-items: flex-end;
+    }
+  }
+
+  &__actions {
+    @include flex-row;
+    @include flex-c;
+
+    flex: 1 0 0;
+    padding-top: 0 $control-panel-side-width-left + $control-panel-side-offset - 1rem;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+  }
+
+  &__action_group {
+    @include flex-row;
+    @include flex-c;
+
+    flex: 1 0 0;
+  }
+
+  &__message {
+    margin: 0 1rem;
+    color: $primary-color;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,73 @@
+$m-nudge-box-shadow-color: #08091878;
+
+.m-nudge {
+  position: fixed;
+  background-color: $card-background-color;
+  color: $dark-font-color;
+  z-index: $modal-z;
+  margin: 1rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 50%;
+  box-shadow: 1.1rem 1rem 5.6rem $m-nudge-box-shadow-color;
+
+  @include tablet {
+    max-width: 70%;
+  }
+
+  @include mobile {
+    max-width: 90%;
+    min-width: 75%;
+  }
+
+  &--top-left {
+    top: 2rem;
+    left: 1rem;
+  }
+
+  &--top-right {
+    top: 2rem;
+    right: 1rem;
+  }
+
+  &--bottom-left {
+    bottom: 6rem;
+    left: 1rem;
+  }
+
+  &--bottom-right {
+    bottom: 6rem;
+    right: 1rem;
+  }
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+
+  &__content-container {
+    font-size: $h5-size;
+    font-weight: $default-font-weight;
+    line-height: 2.5rem;
+
+    & > ul {
+      padding-left: 2rem;
+      list-style: disc;
+    }
+  }
+
+  &__action-container {
+    @include flex-row;
+    @include align-c;
+
+    justify-content: flex-end;
+  }
+
+  &__action-button-text {
+    font-size: $h5-size;
+    font-weight: $bold-font-weight;
+    margin-left: 0.5rem;
+  }
+}

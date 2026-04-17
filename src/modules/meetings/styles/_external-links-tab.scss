@@ -1,0 +1,22 @@
+$m-external-links-font-color: #1a2c47;
+$m-external-links-background-color: #f4f6f9;
+
+.m-external-links {
+  &__item {
+    display: block;
+    padding: 1rem 2rem;
+    margin: 0.1rem 0;
+    color: $m-external-links-font-color;
+    font-size: $h5-size;
+
+    &:hover {
+      background-color: $m-external-links-background-color;
+      color: $m-primary-color-hover;
+    }
+
+    &:active {
+      color: $m-primary-color-active;
+      background-color: darken($m-external-links-background-color, 5);
+    }
+  }
+}

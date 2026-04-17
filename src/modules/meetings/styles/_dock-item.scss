@@ -1,0 +1,40 @@
+.m-dock-item {
+  @include flex-col;
+  @include flex-c;
+
+  padding: 1rem;
+  color: $light-font-color;
+
+  &__icon {
+    font-size: $h3-size;
+    margin-bottom: 0.5rem;
+  }
+
+  &__label {
+    font-size: $h6-size;
+    text-align: center;
+  }
+
+  &__badge {
+    background-color: rgba($light-font-color, 0.3);
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &--active {
+    color: $warning-color;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    .m-dock-item {
+      &__badge {
+        background-color: rgba($warning-color, 0.3);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

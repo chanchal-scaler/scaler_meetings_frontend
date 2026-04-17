@@ -1,0 +1,131 @@
+$vp-controls-loader-size: 7rem;
+$vp-controls-end-size: 5rem;
+$vp-controls-background: rgba(0, 0, 0, 0.3);
+
+.vp-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+
+    &--rounded {
+      border-radius: 50%;
+    }
+
+    &--overlay {
+      background-color: $vp-controls-background;
+    }
+  }
+
+  &__loader {
+    width: $vp-controls-loader-size;
+    height: $vp-controls-loader-size;
+    border: 0.5rem solid transparent;
+    border-left-color: $light-font-color;
+    border-right-color: $light-font-color;
+    border-radius: 50%;
+    animation: 720ms linear infinite spin;
+  }
+
+  &__next {
+    @include flex-col;
+    @include flex-c;
+  }
+
+  &__end-action {
+    font-size: $vp-controls-end-size;
+    width: $vp-controls-loader-size;
+    height: $vp-controls-loader-size;
+  }
+
+  &__deck {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: 360ms;
+    background-image:
+      linear-gradient(
+        to top,
+        $vp-controls-background,
+        transparent
+      );
+
+    &--hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__row {
+    @include flex-row;
+
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    align-items: center;
+  }
+
+  &__group {
+    @include flex-row;
+
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  &__spacer {
+    margin: 0 0.5rem;
+    flex: 1 0 0;
+  }
+
+  &__duration {
+    margin: 0 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  &__control {
+    margin: 0 0.5rem;
+  }
+
+  &__seekbar {
+    margin: 0 1rem;
+    position: relative;
+    width: calc(100% - 2rem);
+  }
+
+  &--overlay {
+    background-color: $vp-controls-background;
+  }
+
+  &--fallback {
+    top: 1rem;
+    right: 1rem;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+
+    .vp-controls {
+      &__deck {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        background-image: none;
+
+        &--hidden {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}

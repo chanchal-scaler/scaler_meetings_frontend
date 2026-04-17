@@ -1,0 +1,53 @@
+.horizontal-scroll-view {
+  position: relative;
+  width: 100%;
+
+  &__items {
+    @include hide-scroll-bar;
+
+    overflow-x: auto;
+  }
+
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & [class^="icon-"] {
+      font-size: $h3-size;
+    }
+
+    &--left {
+      left: 1rem;
+    }
+
+    &--right {
+      right: 1rem;
+    }
+
+    &--floating {
+      @include box-shadow;
+
+      background-color: $card-background-color;
+      color: $default-font-color;
+
+      &:hover {
+        background-color: $card-background-color;
+        color: $default-font-color;
+      }
+
+      &:active {
+        background-color: darken($card-background-color, 10);
+        color: $default-font-color;
+      }
+    }
+
+    &--left-floating {
+      left: -1.5rem;
+    }
+
+    &--right-floating {
+      right: -1.5rem;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+$m-activity-top-aspect-ratio: 16 / 9;
+// stylelint-disable-next-line
+$m-activity-top-height: 100vw / $m-activity-top-aspect-ratio;
+
+.m-activity {
+  flex: 1 0 0;
+  position: relative;
+
+  &__top, &__bottom {
+    @include mobile {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__top {
+    height: 100%;
+    width: 100%;
+
+    @include mobile {
+      top: 0;
+      height: $m-activity-top-height;
+
+      &--expanded {
+        height: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    top: $m-activity-top-height;
+    bottom: 0;
+    z-index: 1;
+    transition: all 180ms ease-in-out;
+
+    &--expanded {
+      top: 1rem;
+      bottom: -$m-footer-mobile-height;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+$video-playback-background: rgba(1, 1, 1, 0.85);
+$video-playback-hq-warning-border-color: #fc9100;
+$video-playback-hq-warning-background-color: #663b00;
+$video-playback-hq-warning-text-color: #fffaf2;
+
+.video-channel {
+  position: relative;
+  flex: 1 0 0;
+  padding: 0.5rem;
+  height: 100%;
+
+  @include mobile {
+    padding: 0;
+  }
+
+  &--pinned {
+    padding: 0;
+  }
+}
+
+.video-playback {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: $video-playback-background;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  & > div {
+    &:last-child {
+      // For the div created by agora
+      background-color: transparent !important;
+    }
+  }
+
+  &__overlay {
+    @include flex-col;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 1rem;
+  }
+
+  &__info {
+    flex: 1 0 0;
+  }
+
+  &__header, &__footer {
+    @include flex-row;
+
+    flex: 0 0 auto;
+  }
+
+  &__header {
+    justify-content: flex-end;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+  }
+
+  &__footer {
+    align-items: center;
+    color: $light-font-color;
+  }
+
+  &__name {
+    flex: 1 0 0;
+    margin-left: 1rem;
+  }
+
+  &__fallback {
+    @include flex-col;
+    @include flex-c;
+
+    width: 100%;
+    height: 100%;
+
+    i {
+      font-size: $h2-size;
+    }
+  }
+
+  &__hq-warning {
+    @include flex-row;
+
+    max-width: 50rem;
+    align-items: flex-start;
+    border: 0.1rem solid $video-playback-hq-warning-border-color;
+    border-radius: $border-radius;
+    padding: 0.8rem;
+    margin: 1.2rem 0;
+    color: $video-playback-hq-warning-text-color;
+    background-color: $video-playback-hq-warning-background-color;
+  }
+
+  &--hidden {
+    video {
+      // To remove the black bars that appear when video is muted
+      opacity: 0;
+    }
+  }
+
+  &--recording {
+    border-radius: 0;
+  }
+
+  &--secondary {
+    border-radius: 0;
+    background-color: $black-color;
+    color: $light-font-color;
+
+    .video-playback {
+      &__header {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @include mobile {
+    border-radius: 0;
+  }
+}
+
+.vc-status {
+  @include flex-row;
+
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: $light-font-color;
+  border-radius: $border-radius;
+  z-index: 1;
+
+  &--danger {
+    background-color: $danger-color;
+  }
+
+  &--info {
+    background-color: $info-color;
+  }
+
+  &__message {
+    text-align: center;
+    flex: 1 0 0;
+    margin-right: 1rem;
+  }
+
+  &__action {
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,10 @@
+$popover-background: #ffffff;
+
+.popover {
+  position: absolute;
+  z-index: $popover-z;
+  background-color: $popover-background;
+  border-radius: $border-radius;
+
+  @include box-shadow;
+}

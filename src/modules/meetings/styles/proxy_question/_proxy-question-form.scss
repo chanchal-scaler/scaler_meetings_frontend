@@ -1,0 +1,76 @@
+$m-proxy-question-form-placeholder-font-color: #61738e;
+$m-proxy-question-form-input-border-color: #d6dee5;
+$m-proxy-question-form-cta-color: #0080ff;
+
+.m-proxy-question-form-title {
+  margin-right: 1rem;
+  scale: 1.2;
+}
+
+.m-proxy-question-form {
+  border-radius: $border-radius-l;
+  max-width: unset;
+  width: 60rem;
+  max-height: 80vh;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__header {
+    border: none;
+    padding: 1.6rem 2.4rem;
+    background-color: $white-color;
+  }
+
+  &__body {
+    padding: 1.6rem 1.2rem;
+  }
+
+  &__cta {
+    width: 100%;
+    background: $m-proxy-question-form-cta-color;
+    font-size: $h4-size;
+  }
+}
+
+.m-proxy-question-form-placeholder {
+  @include flex-row;
+  @include align-c;
+
+  color: $m-proxy-question-form-placeholder-font-color;
+  position: absolute;
+  margin-top: 1.2rem;
+  margin-left: 1.6rem;
+  cursor: text;
+
+  &--description {
+    margin-top: 3.2rem;
+  }
+
+  &__icon {
+    margin-right: 1.2rem;
+    font-size: $h6-size;
+  }
+}
+
+.m-proxy-question-form-input {
+  width: 100%;
+  flex: 1;
+  border: 0.1rem solid $m-proxy-question-form-input-border-color;
+  border-radius: $border-radius-l;
+  padding: 1.2rem 1.6rem;
+
+  &--description {
+    margin: 2.4rem 0;
+    max-width: 100%;
+  }
+}
+
+.m-proxy-question-form-template {
+  &__custom_message_cta {
+    color: $m-proxy-question-form-cta-color !important;
+    border-color: $m-proxy-question-form-cta-color !important;
+    width: 100%;
+  }
+}

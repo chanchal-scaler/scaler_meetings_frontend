@@ -1,0 +1,30 @@
+.form-group {
+  border: 0.1rem solid $grey-color;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  &__warning {
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background-color: #fcd04d;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+  }
+}
+
+.form-group-label {
+  position: relative;
+  top: -2rem;
+  left: 0.5rem;
+  background: $white-color;
+  display: inline-block;
+  padding: 0 0.5rem;
+  color: $dark-grey-color;
+}
+
+.form-group-content {
+  padding: 0 1rem;
+}

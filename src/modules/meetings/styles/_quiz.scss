@@ -1,0 +1,79 @@
+$m-quiz-timer-background-color: #e22d4c;
+
+.m-quiz {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1rem solid $m-background;
+  overflow: hidden;
+  background-color: $card-background-color;
+  color: $default-font-color;
+
+  &__main {
+    @include flex-col;
+
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    overflow: auto;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__main-inner {
+    @include flex-col;
+
+    margin: auto;
+    flex: 0 0 auto;
+    align-items: center;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__problem {
+    @include flex-col;
+
+    align-items: center;
+    padding: 4rem 0;
+  }
+
+  &__float {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  &__small-text {
+    text-align: center;
+    font-size: $h5-size;
+  }
+
+  @include mobile {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.m-quiz-timer {
+  @include flex-row;
+
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: $m-quiz-timer-background-color;
+  color: $light-font-color;
+  padding: 0.8rem 1.2rem;
+  font-size: $h4-size;
+  font-weight: $bold-font-weight;
+}

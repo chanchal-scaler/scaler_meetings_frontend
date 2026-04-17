@@ -1,0 +1,81 @@
+$choice-input-answer-size: 4rem;
+
+.choice-input {
+  @include flex-row;
+
+  align-items: center;
+
+  &__answer {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    width: $choice-input-answer-size;
+    height: $choice-input-answer-size;
+    border: 0.1rem solid $m-choice-default-color;
+    background-color: lighten($m-choice-default-color, 15);
+    padding: 0.5rem;
+    margin-right: 1.5rem;
+    font-size: $h3-size;
+  }
+
+  &__text {
+    @include flex-row;
+
+    flex: 1 0 0;
+    border-radius: $border-radius;
+    border: 0.1rem solid $m-choice-default-color;
+    overflow: hidden;
+    margin-right: 1rem;
+
+    textarea {
+      vertical-align: bottom;
+      width: 100%;
+      padding: 1rem;
+      line-height: 1.4;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      resize: none;
+      background-color: transparent;
+    }
+  }
+
+  &__value {
+    flex: 1 0 0;
+  }
+
+  &__name {
+    @include flex-row;
+    @include flex-c;
+
+    flex: 0 0 auto;
+    padding: 1rem 2rem;
+    color: $dark-font-color;
+    font-weight: $bold-font-weight;
+    border-right: 0.1rem solid $m-choice-default-color;
+    background-color: lighten($m-choice-default-color, 15);
+  }
+
+  &__delete {
+    flex: 0 0 auto;
+  }
+
+  &--correct {
+    .choice-input {
+      &__answer {
+        background-color: $success-color;
+        color: $light-font-color;
+        border-color: $success-color;
+      }
+
+      &__text {
+        border-color: $m-choice-correct-color;
+        background-color: lighten($m-choice-correct-color, 35);
+      }
+
+      &__name {
+        border-right-color: $success-color;
+        background-color: lighten($m-choice-correct-color, 20);
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+$mcq-preview-spacing: 3rem;
+
+.mcq-preview {
+  border-left: 0.2rem solid $border-color;
+
+  &__header {
+    margin-bottom: $mcq-preview-spacing;
+  }
+
+  &__content {
+    @include flex-col;
+
+    background-color: $body-alt-background-color;
+    padding: 4rem $mcq-preview-spacing;
+    border-bottom: 0.1rem solid $border-color;
+  }
+
+  &__toggle {
+    width: 100%;
+    padding: 1rem $mcq-preview-spacing;
+  }
+
+  &__hint {
+    @include flex-col;
+    @include flex-c;
+
+    flex: 1 0 0;
+    border-radius: $border-radius;
+    background-color: $card-background-color;
+    padding: $mcq-preview-spacing;
+  }
+}

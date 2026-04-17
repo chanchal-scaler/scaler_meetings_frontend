@@ -1,0 +1,48 @@
+$muliselected-option-color: #ded7f4;
+$muliselected-cross-color: #c0abdd;
+
+.multiselect-creatable {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 0.2rem solid #d6d6d6;
+
+  &__selected {
+    display: flex;
+    margin: 0 0.5rem 0 0;
+    cursor: pointer;
+  }
+
+  &__selected-option {
+    background: $muliselected-option-color;
+    padding: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  &__option-cross {
+    background: $muliselected-cross-color;
+    padding: 1rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  &__container {
+    flex: 1;
+    min-width: 20rem;
+
+    input {
+      border: none;
+    }
+  }
+
+  &__popover {
+    min-width: 40rem;
+    max-height: 20rem;
+
+    .select-option {
+      cursor: pointer;
+      overflow: unset !important;
+    }
+  }
+}

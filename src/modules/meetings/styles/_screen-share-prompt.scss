@@ -1,0 +1,25 @@
+$m-screen-share-prompt-warning-border-color: #fc9100;
+$m-screen-share-prompt-warning-text-color: #663b00;
+$m-screen-share-prompt-warning-bg-color: #fffaf2;
+
+.m-screen-share-prompt {
+  max-width: 60rem;
+
+  &__radio-text {
+    &:before {
+      top: 10% !important;
+    }
+  }
+}
+
+.m-screen-share-prompt__hq-warning {
+  @include flex-row;
+
+  align-items: flex-start;
+  border: 0.1rem solid $m-screen-share-prompt-warning-border-color;
+  border-radius: $border-radius;
+  padding: 0.8rem;
+  margin: 1.2rem 0;
+  color: $m-screen-share-prompt-warning-text-color;
+  background-color: $m-screen-share-prompt-warning-bg-color;
+}

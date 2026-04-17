@@ -1,0 +1,51 @@
+$l-logo-spinner-border-color: #f3f3f3;
+$l-logo-spinner-border-top-color: #3498db;
+$l-logo-spinner-background: transparent;
+$l-logo-spinner-diameter: 10rem;
+$l-logo-spinner-diameter-small: 5rem;
+$l-logo-spinner-logo-height: 4rem;
+$l-logo-spinner-logo-small-height: 2rem;
+
+.l-logo-spinner {
+  position: relative;
+
+  &__spinner {
+    border: 0.2rem solid $l-logo-spinner-border-color;
+    border-radius: 50%;
+    border-top: 0.2rem solid $l-logo-spinner-border-top-color;
+    background-color: $l-logo-spinner-background;
+    width: $l-logo-spinner-diameter;
+    height: $l-logo-spinner-diameter;
+    animation: spin 2s linear infinite;
+
+    @include mobile {
+      width: $l-logo-spinner-diameter-small;
+      height: $l-logo-spinner-diameter-small;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    height: $l-logo-spinner-logo-height;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include mobile {
+      height: $l-logo-spinner-logo-small-height;
+    }
+  }
+
+  &--small {
+    .l-logo-spinner {
+      &__spinner {
+        width: $l-logo-spinner-diameter-small;
+        height: $l-logo-spinner-diameter-small;
+      }
+
+      &__logo {
+        height: $l-logo-spinner-logo-small-height;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+$burger-menu-icon-line-height: 0.2rem;
+$burger-menu-icon-line-radius: 1rem;
+$burger-menu-icon-line-margin-v: 0.4rem;
+
+$transform-y: $burger-menu-icon-line-margin-v + $burger-menu-icon-line-height;
+
+.burger-menu-icon {
+  cursor: pointer;
+  display: block;
+
+  &__line {
+    position: relative;
+    margin: $burger-menu-icon-line-margin-v 0;
+    height: $burger-menu-icon-line-height;
+    border-radius: $burger-menu-icon-line-radius;
+    transition: 240ms;
+    will-change: transform;
+    perspective: 10rem;
+    background-color: $default-font-color;
+  }
+
+  &--primary {
+    .burger-menu-icon {
+      &__line {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &--open {
+    .burger-menu-icon {
+      &__line {
+        &:nth-child(2) {
+          transform: scale(0);
+        }
+
+        &:nth-child(1) {
+          transform: translateY($transform-y) rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-$transform-y) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

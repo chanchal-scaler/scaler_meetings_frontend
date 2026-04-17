@@ -1,0 +1,25 @@
+.right-dock {
+  @include flex-col;
+
+  justify-content: space-between;
+  min-width: 0;
+  height: 100%;
+  background-color: darken($m-background, 1);
+  width: $m-right-dock-width;
+  border-left: 0.1rem solid lighten($m-background, 5);
+
+  &__tabs {
+    @include flex-col;
+
+    align-items: stretch;
+  }
+
+  &__tab {
+    margin: 0.5rem;
+    border-radius: $border-radius;
+  }
+
+  @include desktop {
+    z-index: 1;
+  }
+}

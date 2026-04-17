@@ -1,0 +1,36 @@
+<svg id="Coin" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fec601;
+        stroke: #cb9e00;
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        fill: #654f00;
+      }
+
+      .cls-3 {
+        fill: #fef9e5;
+        opacity: 0.495;
+        mix-blend-mode: overlay;
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Ellipse_16" data-name="Ellipse 16" class="cls-1">
+    <circle class="cls-4" cx="30" cy="30" r="30"/>
+    <circle class="cls-5" cx="29" cy="29" r="26"/>
+  </g>
+  <path id="Path_7834" data-name="Path 7834" class="cls-2" d="M304.907-396.713v5.616h-5.615v-5.616Zm-11.231,11.232h16.846v-16.847H293.676v16.847" transform="translate(-272.857 421.538)"/>
+  <path id="Path_7835" data-name="Path 7835" class="cls-3" d="M28.529,0V57.059A28.529,28.529,0,0,1,28.529,0Z" transform="translate(0.471 0.469)"/>
+</svg>

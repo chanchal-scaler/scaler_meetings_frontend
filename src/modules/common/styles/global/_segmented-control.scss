@@ -1,0 +1,35 @@
+$segmented-control-radius: 1.2rem;
+
+.segmented-control {
+  display: inline-flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0.1rem;
+  border: 0.1rem solid $border-color;
+  border-radius: $segmented-control-radius;
+}
+
+.segmented-control-option {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 1rem 2rem;
+  border-radius: $segmented-control-radius;
+  font-size: $body-font-size;
+  flex: 1 0 auto;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  &--active {
+    background-color: $primary-color;
+    color: $light-font-color;
+
+    &:hover {
+      color: $light-font-color !important;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+$m-tabbar-badge-size: 2rem;
+
+.meeting {
+  @include flex-row;
+
+  align-items: stretch;
+
+  @include if-widget-small {
+    height: 100%;
+  }
+
+  @include if-widget-portrait {
+    height: 100%;
+  }
+
+  &--fullscreen {
+    @include box-shadow;
+
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: $border-radius;
+    background-color: $m-background;
+    color: $light-font-color;
+    z-index: $backdrop-z;
+
+    @include if-widget-small {
+      height: auto;
+    }
+
+    @include if-widget-portrait {
+      height: auto;
+    }
+  }
+}
+
+.meeting-main {
+  @include flex-col;
+
+  position: relative;
+  flex: 1 0 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.meeting-sidebar {
+  @include flex-row;
+
+  align-items: stretch;
+}
+
+.meeting-tabbar {
+  &__title {
+    @include flex-row;
+    @include flex-c;
+
+    @include mobile {
+      padding: 0.8rem 2rem;
+    }
+  }
+
+  &__icon {
+    font-size: $h4-size;
+  }
+
+  &__label {
+    font-size: $h5-size;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &--expanded {
+      // max-width: 10rem;
+      // opacity: 1;
+    }
+  }
+
+  &__badge {
+    background-color: rgba($dark-font-color, 0.3);
+  }
+}

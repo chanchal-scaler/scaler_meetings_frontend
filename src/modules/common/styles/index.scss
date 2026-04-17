@@ -1,0 +1,104 @@
+// No css should be written directly in this file or any index.scss file
+// Base styling, order matters
+@import 'global/fonts';
+@import 'global/normalize';
+@import 'global/base';
+@import 'global/anim';
+
+.react-root {
+  // Reusable classes, Order does not matter
+  @import 'global/button';
+  @import 'global/card';
+  @import 'global/flex';
+  @import 'global/flex-grid';
+  @import 'global/form';
+  @import 'global/layout';
+  @import 'global/scroll';
+  @import 'global/spacing';
+  @import 'global/typography';
+  @import 'global/utils';
+
+  // Components styling, Order does not matter
+  @import 'global/academy-layout';
+  @import 'global/accordion';
+  @import 'global/alert';
+  @import 'global/aspect-ratio';
+  @import 'global/avatar';
+  @import 'global/backdrop';
+  @import 'global/badge';
+  @import 'global/banner';
+  @import 'global/box';
+  @import 'global/bottom-sheet-modal';
+  @import 'global/burger-menu-icon';
+  @import 'global/callout';
+  @import 'global/carousel';
+  @import 'global/checkbox';
+  @import 'global/chip';
+  @import 'global/circular-loader';
+  @import 'global/circular-progressbar';
+  @import 'global/dashboard-header';
+  @import 'global/data-table';
+  @import 'global/dialog';
+  @import 'global/divider';
+  @import 'global/draggable-window';
+  @import 'global/dropdown';
+  @import 'global/expandable';
+  @import 'global/file-uploader';
+  @import 'global/header';
+  @import 'global/hmr';
+  @import 'global/horizontal-scroll-view';
+  @import 'global/html-content';
+  @import 'global/image-modal';
+  @import 'global/infinite-scroll';
+  @import 'global/markdown';
+  @import 'global/mascot-toast';
+  @import 'global/mascot';
+  @import 'global/milestone-progress';
+  @import 'global/modal';
+  @import 'global/moonshot';
+  @import 'global/multiselect-creatable';
+  @import 'global/navigation-tabs';
+  @import 'global/nudge';
+  @import 'global/pagination';
+  @import 'global/popover';
+  @import 'global/progressbar';
+  @import 'global/quick-select';
+  @import 'global/radio';
+  @import 'global/rating';
+  @import 'global/nps-rating';
+  @import 'global/onboarding-carousel';
+  @import 'global/horizontal-resizeable';
+  @import 'global/horizontal-slider';
+  @import 'global/hv-resizable';
+  @import 'global/scratch-card';
+  @import 'global/segmented-control';
+  @import 'global/select';
+  @import 'global/share';
+  @import 'global/slider';
+  @import 'global/sidebar';
+  @import 'global/skeleton';
+  @import 'global/snackbar';
+  @import 'global/status-tag';
+  @import 'global/stat-icon';
+  @import 'global/stepper';
+  @import 'global/suggestion';
+  @import 'global/svg-mask';
+  @import 'global/switch';
+  @import 'global/table';
+  @import 'global/tabs';
+  @import 'global/tag-select';
+  @import 'global/timeline';
+  @import 'global/toast';
+  @import 'global/tooltip';
+  @import 'global/tour-guide';
+  @import 'global/triangle';
+  @import 'global/v-icons';
+  @import 'global/icons';
+  @import 'global/loaders';
+  @import 'global/tile';
+  @import 'global/form_group';
+  @import 'global/ribbon';
+  @import 'global/custom-tooltip';
+  // country flags
+  @import 'global/flags';
+}

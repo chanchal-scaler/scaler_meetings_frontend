@@ -1,0 +1,13 @@
+$vp-error-width: 50rem;
+
+.vp-error {
+  color: $default-font-color;
+  max-width: $vp-error-width;
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

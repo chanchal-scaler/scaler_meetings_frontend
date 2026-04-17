@@ -1,0 +1,42 @@
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin touch {
+  html.can-touch & {
+    @content;
+  }
+}
+
+@mixin not-touch {
+  html.cannot-touch & {
+    @content;
+  }
+}
+
+@mixin hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin square-dimensions($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin aspect-ratio($width, $ratio) {
+  width: $width;
+  height: calc((1/#{$ratio}) * #{$width});
+}
+
+@mixin if-html-has($attr) {
+  html[data-#{$attr}="true"] & {
+    @content;
+  }
+}

@@ -1,0 +1,19 @@
+.mm-poor-upload-tips {
+  max-width: 54rem;
+}
+
+.m-dropdown {
+  padding: 0.25rem;
+
+  .dropdown-item {
+    @include flex-c;
+
+    margin: 0.25rem;
+  }
+}
+
+.m-actions-dropdown {
+  a {
+    justify-content: flex-start;
+  }
+}

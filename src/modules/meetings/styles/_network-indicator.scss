@@ -1,0 +1,42 @@
+$m-network-indicator-size: 4.5rem;
+$m-network-indicator-size-small: 3.6rem;
+$m-network-indicator-radius: 1.2rem;
+$m-network-indicator-background: rgba(1, 1, 1, 0.6);
+
+.m-network-indicator {
+  @include flex-row;
+  @include flex-c;
+
+  padding: 0.5rem;
+  border-radius: $m-network-indicator-radius;
+  width: $m-network-indicator-size;
+  height: $m-network-indicator-size;
+  background-color: $m-network-indicator-background;
+  color: $warning-color;
+
+  &__icon {
+    font-size: $h3-size;
+  }
+
+  &__links {
+    @include flex-col;
+    @include flex-c;
+
+    font-size: $h6-size;
+  }
+
+  &--danger {
+    color: $danger-color;
+  }
+
+  &--small {
+    width: $m-network-indicator-size-small;
+    height: $m-network-indicator-size-small;
+
+    .m-network-indicator {
+      &__icon {
+        font-size: $h4-size;
+      }
+    }
+  }
+}

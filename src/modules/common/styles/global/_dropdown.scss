@@ -1,0 +1,21 @@
+.dropdown {
+  &__title {
+    overflow: hidden;
+  }
+
+  &__popover {
+    @include flex-col;
+
+    border: 0.1rem solid $border-color;
+    background-color: $card-background-color;
+    padding: 0.5rem 0;
+  }
+}
+
+.dropdown-item {
+  @include flex-row;
+
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}

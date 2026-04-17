@@ -1,0 +1,69 @@
+$av-preview-background: #f2f2f2;
+$av-preview-message-background: rgba(1, 1, 1, 0.7);
+$av-preview-video-background: #000000;
+
+.av-preview {
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: $av-preview-background;
+  position: relative;
+  height: 100%;
+
+  &__video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: $av-preview-video-background;
+    transform: scaleX(-1);
+
+    &--hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__message {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: $av-preview-message-background;
+    padding: 1rem;
+    border-radius: $border-radius;
+    color: $light-font-color;
+    text-align: center;
+  }
+
+  &__controls {
+    @include flex-row;
+    @include flex-c;
+
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    width: 100%;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+    position: absolute;
+    bottom: 0;
+
+    &--audio {
+      left: 50%;
+      transform: translateX(-150%);
+    }
+
+    &--video {
+      right: 50%;
+      transform: translateX(150%);
+    }
+
+    &--settings {
+      right: 1rem;
+    }
+  }
+}

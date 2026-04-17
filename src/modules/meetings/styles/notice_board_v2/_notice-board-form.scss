@@ -1,0 +1,138 @@
+$notice-board-form-border-color: #d6dee5;
+$notice-board-form-placeholder-font-color: #61738e;
+$notice-board-form-primary-color: #1a2c47;
+$notice-board-form-preview-bg-color: #fafbfc;
+
+.m-notice-board-form {
+  border-radius: $border-radius-l;
+  max-width: unset;
+  width: 60rem;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__header {
+    border: none;
+    padding: 1.6rem 2.4rem;
+    background-color: $white-color;
+  }
+
+  &__body {
+    padding: 0 1.2rem 1.6rem;
+  }
+}
+
+.m-notice-board-form-footer {
+  @include flex-row;
+  @include align-c;
+
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.m-notice-board-form-placeholder {
+  @include flex-row;
+  @include align-c;
+
+  color: $notice-board-form-placeholder-font-color;
+  position: absolute;
+  margin-top: 1.2rem;
+  margin-left: 1.6rem;
+
+  &--description {
+    margin-top: 3.2rem;
+  }
+
+  &__icon {
+    margin-right: 1.2rem;
+    font-size: $h6-size;
+  }
+}
+
+.m-notice-board-form-input {
+  width: 100%;
+  flex: 1;
+  border: 0.1rem solid $notice-board-form-border-color;
+  border-radius: $border-radius-l;
+  padding: 1.2rem 1.6rem;
+
+  &--description {
+    margin: 2.4rem 0;
+  }
+}
+
+.m-notice-board-form-templates {
+  &__container {
+    display: flex;
+
+    &--left {
+      flex: 1;
+    }
+
+    &--right {
+      flex: 1;
+    }
+  }
+
+  &__radio {
+    font-weight: normal;
+    color: $notice-board-form-primary-color;
+  }
+
+  &__label {
+    font-size: $h4-size;
+    font-weight: normal;
+    color: $notice-board-form-primary-color;
+  }
+
+  &__preview {
+    max-height: 24rem;
+    overflow: scroll;
+    padding: 1rem 2rem 0;
+    background-color: $notice-board-form-preview-bg-color;
+    border-radius: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__custom-url {
+    width: 100%;
+    border: 0.1rem solid $notice-board-form-border-color;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__custom-text {
+    width: 100%;
+    border: 0.1rem solid $notice-board-form-border-color;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+  }
+
+  &__placeholder {
+    @include flex-row-c;
+
+    color: $notice-board-form-placeholder-font-color;
+    border: 0.1rem dashed $notice-board-form-border-color;
+    border-radius: 0.8rem;
+    background-color: $notice-board-form-preview-bg-color;
+    min-height: 16rem;
+  }
+}
+
+.m-notice-board-tabs-bar {
+  @include flex-row;
+
+  margin: 0 0 1rem;
+
+  &__title {
+    flex: 1 0 0;
+    padding: 1rem;
+  }
+
+  &--active {
+    background-color: $notice-board-form-primary-color;
+  }
+}

@@ -1,0 +1,42 @@
+.mascot-emoji {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    top: -35%;
+    left: -15%;
+    object-fit: contain;
+    height: 120%;
+    width: 130%;
+  }
+
+  &__mascot {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  &--x-small {
+    @include square-dimensions(4rem);
+  }
+
+  &--small {
+    @include square-dimensions(5rem);
+  }
+
+  &--medium {
+    @include square-dimensions(7rem);
+  }
+
+  &--large {
+    @include square-dimensions(10rem);
+  }
+
+  &--x-large {
+    @include square-dimensions(15rem);
+  }
+}

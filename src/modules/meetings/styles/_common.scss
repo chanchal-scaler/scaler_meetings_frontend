@@ -1,0 +1,107 @@
+$m-btn-radius: 1.2rem;
+$m-btn-icon-widget-size: 1.4rem;
+$m-btn-icon-widget-large-size: 1.6rem;
+$m-btn-default-background: rgba(1, 1, 1, 0.6);
+$m-btn-default-background-hover: rgba(1, 1, 1, 0.8);
+$m-btn-cta-width: 24rem;
+
+$m-list-bullet-size: 1rem;
+
+.m-btn {
+  border-radius: $m-btn-radius;
+
+  &--default {
+    background-color: $m-btn-default-background;
+
+    &:hover {
+      background-color: $m-btn-default-background-hover;
+    }
+  }
+
+  &.btn-icon {
+    @include if-widget-small {
+      [class^="icon-"], [class*=" icon-"] {
+        font-size: $m-btn-icon-widget-size;
+      }
+
+      &.btn-large {
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: $m-btn-icon-widget-large-size;
+        }
+      }
+    }
+
+    @include if-widget-portrait {
+      [class^="icon-"], [class*=" icon-"] {
+        font-size: $m-btn-icon-widget-size;
+      }
+
+      &.btn-large {
+        [class^="icon-"], [class*=" icon-"] {
+          font-size: $m-btn-icon-widget-large-size;
+        }
+      }
+    }
+  }
+}
+
+.m-layout {
+  &__content {
+    background-color: $m-background;
+    color: $light-font-color;
+  }
+}
+
+.m-landscape-blocker {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: $m-background;
+  color: $light-font-color;
+
+  // Disabling this blocker as it causes trouble on mobile devices when
+  // keyboard is open
+  @include landscape-mobile {
+    // display: flex;
+  }
+}
+
+.m-primary {
+  color: $m-primary-color;
+}
+
+.m-btn-cta {
+  font-weight: $bold-font-weight;
+  min-width: $m-btn-cta-width;
+}
+
+.m-list {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 2rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: calc(50% - #{$m-list-bullet-size / 2});
+      width: $m-list-bullet-size;
+      height: $m-list-bullet-size;
+      border-radius: 50%;
+      background-color: $danger-color;
+    }
+  }
+}
+
+.m-camera-blocked {
+  width: 1.5rem;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}

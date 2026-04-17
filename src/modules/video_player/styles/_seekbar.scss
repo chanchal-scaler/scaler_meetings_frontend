@@ -1,0 +1,119 @@
+$vp-seekbar-height: 2rem;
+$vp-seekbar-rail-background: rgba(255, 255, 255, 0.2);
+$vp-seekbar-progress-background: $primary-color;
+$vp-seekbar-buffered-background: rgba(255, 255, 255, 0.4);
+$vp-seekbar-handle-size: 1.8rem;
+$vp-seekbar-tooltip-message-width: 7rem;
+$vp-seekbar-tooltip-message-background: rgba(20, 20, 20, 0.8);
+$vp-seekbar-tooltip-message-border-color: #444444;
+$vp-seekbar-tooltip-pointer-background: $warning-color;
+
+.vp-seekbar {
+  @include flex-col;
+
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: $vp-seekbar-height;
+  cursor: pointer;
+
+  &__tracks {
+    position: relative;
+    height: 25%;
+    transition: 180ms;
+    width: 100%;
+  }
+
+  &--active {
+    @include not-touch {
+      .vp-seekbar {
+        &__tracks {
+          height: 50%;
+        }
+      }
+    }
+  }
+}
+
+.vp-seekbar-rail, .vp-seekbar-buffered, .vp-seekbar-progress {
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.vp-seekbar-rail {
+  width: 100%;
+  background-color: $vp-seekbar-rail-background;
+}
+
+.vp-seekbar-progress {
+  background-color: $vp-seekbar-progress-background;
+}
+
+.vp-seekbar-buffered {
+  width: 100%;
+
+  &__interval {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background-color: $vp-seekbar-buffered-background;
+  }
+}
+
+.vp-seekbar-handle {
+  position: absolute;
+  height: $vp-seekbar-handle-size;
+  width: $vp-seekbar-handle-size;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  &__thumb {
+    background-color: $vp-seekbar-progress-background;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 180ms;
+  }
+
+  &:hover {
+    @include not-touch {
+      .vp-seekbar-handle {
+        &__thumb {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.vp-seekbar-tooltip {
+  &__message {
+    @include box-shadow;
+
+    text-align: center;
+    position: absolute;
+    bottom: calc(100% + 0.8rem);
+    padding: 0.2rem 0.5rem;
+    background-color: $vp-seekbar-tooltip-message-background;
+    font-size: $h5-size;
+    color: $light-font-color;
+    border-radius: $border-radius;
+    border: 0.1rem solid $vp-seekbar-tooltip-message-border-color;
+    transform: translateX(-50%);
+    min-width: $vp-seekbar-tooltip-message-width;
+  }
+
+  &__mark {
+    position: absolute;
+    height: 100%;
+    width: 0.2rem;
+    transform: translateX(-50%);
+    background-color: $vp-seekbar-tooltip-pointer-background;
+  }
+
+  @include touch {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+.btn-primary {
+  background: $m-primary-color;
+
+  &:hover {
+    background: $m-primary-color-hover;
+  }
+
+  &:active {
+    background: $m-primary-color-active;
+  }
+}
+
+.btn-inverted {
+  &.btn-primary {
+    color: $m-primary-color;
+
+    &:hover {
+      color: $m-primary-color;
+    }
+
+    &:active {
+      color: $m-primary-color-active;
+    }
+  }
+}
+
+.btn-outlined {
+  &.btn-primary {
+    color: $m-primary-color;
+    border-color: $m-primary-color;
+    background-color: transparent;
+
+    &:hover {
+      border-color: $m-primary-color-hover;
+    }
+
+    &:active {
+      border-color: $m-primary-color-active;
+    }
+  }
+}
+
+html.can-touch {
+  .btn:hover {
+    background: $m-primary-color;
+    color: $light-font-color;
+  }
+
+  .btn-primary:hover {
+    background: $m-primary-color;
+  }
+
+  .btn-inverted:hover {
+    background: none !important;
+    color: $m-primary-color;
+  }
+}

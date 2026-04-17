@@ -1,0 +1,54 @@
+$m-proxy-chat-popover-title-color: #1a2c47;
+$m-proxy-chat-popover-sub-title-color: #61738e;
+$m-proxy-chat-popover-btn-color: #0080ff;
+
+.m-proxy-chat-popover {
+  border-radius: $border-radius-l;
+
+  @include mobile {
+    width: 100%;
+    left: 0 !important;
+  }
+
+  &__content {
+    @include flex-row-c;
+
+    justify-content: space-between;
+    width: 50rem;
+    padding: 2rem 1.6rem;
+    gap: 2rem;
+  }
+
+  &__title {
+    color: $m-proxy-chat-popover-title-color;
+    font-size: $h4-size;
+    font-weight: $bold-font-weight;
+    line-height: 2.6rem;
+  }
+
+  &__sub-title {
+    color: $m-proxy-chat-popover-sub-title-color;
+    font-size: $h5-size;
+    line-height: 2.6rem;
+  }
+
+  &__action {
+    @include flex-row-c;
+
+    gap: 1rem;
+  }
+
+  &__btn {
+    background-color: $m-proxy-chat-popover-btn-color;
+  }
+
+  &__close-btn {
+    font-size: $h3-size;
+    margin-left: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $m-proxy-chat-popover-btn-color;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.vp-dropdown {
+  &__item {
+    @include flex-row;
+
+    padding: 1rem;
+    padding-right: 2rem;
+    color: $light-font-color;
+
+    i {
+      opacity: 0;
+    }
+
+    &--selected {
+      i {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background-color: $vp-highlight-background;
+    }
+  }
+
+  &__popover {
+    border: none;
+    background-color: $vp-popover-background;
+    max-height: calc(100% - 5rem);
+    overflow: auto;
+  }
+}

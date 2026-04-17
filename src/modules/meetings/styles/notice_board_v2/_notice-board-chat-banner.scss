@@ -1,0 +1,115 @@
+$chat-banner-recent-font-color: #d6dee5;
+$chat-banner-background-color: #1a2c47;
+$chat-banner-hover-background-color: #324766;
+$chat-banner-active-background-color: #005ab3;
+
+.m-notice-board-chat-banner {
+  display: block;
+  margin: 1rem;
+
+  &--active {
+    background-color: $white-color;
+  }
+}
+
+.notice-board-icon {
+  margin-right: 0.5rem;
+  font-size: $h6-size;
+}
+
+.m-notice-board-chat-banner-bottom {
+  display: none;
+  transform-origin: top center;
+
+  &--active {
+    @include flex-row;
+
+    position: relative;
+    animation: slidein 800ms ease forwards, slideout 800ms ease forwards 2500ms;
+    padding: 2.2rem 1.2rem 0;
+    border: 0.1rem solid $chat-banner-active-background-color;
+    border-radius: $border-radius-l;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+    height: 100%;
+  }
+
+  100% {
+    transform: scaleY(0);
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.m-notice-board-chat-banner-top {
+  background-color: $chat-banner-background-color;
+  border-radius: $border-radius-l;
+  padding: 1.2rem;
+  width: 100%;
+
+  &--active {
+    background-color: $chat-banner-active-background-color;
+  }
+
+  &:hover {
+    background-color: $chat-banner-hover-background-color;
+
+    &--active {
+      background-color: $chat-banner-active-background-color;
+    }
+  }
+
+  &__header {
+    @include flex-row;
+    @include align-c;
+
+    font-size: $h4-size;
+    justify-content: space-between;
+    color: $light-font-color;
+    margin-bottom: 0.4rem;
+  }
+
+  &__recent {
+    height: 1.8rem;
+    overflow-y: hidden;
+    font-size: $h5-size;
+    color: $chat-banner-recent-font-color;
+  }
+}
+
+.m-notice-board-chat-banner-buttons {
+  color: $light-font-color;
+  padding: 0;
+}
+
+.m-notice-board-chat-banner-unread {
+  padding: 0.1rem 0.7rem;
+  background-color: $chat-banner-active-background-color;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  font-size: $h6-size;
+
+  &--active {
+    background-color: $chat-banner-hover-background-color;
+  }
+}

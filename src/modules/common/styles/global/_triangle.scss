@@ -1,0 +1,44 @@
+.triangle {
+  @include box-shadow;
+
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: $card-background-color;
+  transform: rotate(45deg);
+  transform-origin: center;
+
+  &--center {
+    &.triangle {
+      &--left, &--right {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &--top, &--bottom {
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+      }
+    }
+  }
+
+  &--bottom {
+    @include box-shadow($x: 0.2rem, $y: 0.2rem, $blur: 0.3rem, $spread: 0);
+  }
+
+  &--top {
+    @include box-shadow($x: -0.2rem, $y: -0.2rem, $blur: 0.3rem, $spread: 0);
+  }
+
+  &--left {
+    @include box-shadow($x: -0.2rem, $y: 0.2rem, $blur: 0.3rem, $spread: 0);
+  }
+
+  &--right {
+    @include box-shadow($x: 0.2rem, $y: -0.2rem, $blur: 0.3rem, $spread: 0);
+  }
+}
+
+.triangle-container {
+  position: relative;
+}

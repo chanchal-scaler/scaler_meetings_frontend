@@ -1,0 +1,32 @@
+$create-button-border-color: #d6dee5;
+$create-button-background-color: #fafbfc;
+$empty-font-color: #515151;
+
+.m-notice-board {
+  @include flex-col;
+  @include align-c;
+
+  padding: 1.6rem;
+}
+
+.m-notice-board-empty {
+  @include flex-col-c;
+
+  height: 100%;
+  text-align: center;
+  color: $empty-font-color;
+}
+
+.m-notice-board-card-container {
+  width: 100%;
+}
+
+.m-notice-board-create-button {
+  width: 100%;
+  border-radius: $border-radius-l;
+  border: 0.1rem dashed $create-button-border-color;
+  background-color: $create-button-background-color;
+  padding: 2rem 0;
+  color: $primary-color;
+  margin-bottom: 1.6rem;
+}

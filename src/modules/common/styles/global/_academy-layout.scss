@@ -1,0 +1,24 @@
+.dashboard {
+  // height: 100%;
+  // background: white;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__content {
+    // float: left;
+    // width: calc(100% - 8rem);
+    // margin-left: 8rem;
+    flex: 1 0 0;
+    min-width: 0;
+
+    // @include mobile {
+    //   width: 100%;
+    //   margin-left: 0;
+    // }
+  }
+}

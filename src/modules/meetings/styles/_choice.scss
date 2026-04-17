@@ -1,0 +1,100 @@
+$m-choice-correct-border-color: $success-color;
+$m-choice-wrong-border-color: $danger-color;
+
+@mixin choice-color($color) {
+  border-color: $color;
+
+  .choice {
+    &__name {
+      border-right-color: $color;
+      background-color: lighten($color, 10);
+    }
+
+    &__text {
+      background-color: lighten($color, 30);
+    }
+
+    &__response {
+      background-color: lighten($color, 17);
+    }
+  }
+}
+
+.choice {
+  align-items: stretch;
+  border-radius: $border-radius;
+  border: 0.1rem solid;
+  overflow: hidden;
+  width: 100%;
+  color: $dark-font-color;
+  font-weight: $bold-font-weight;
+
+  &__text {
+    position: relative;
+    flex: 1 0 0;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  &__response {
+    transition: 360ms;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    height: 100%;
+    transform: none;
+    opacity: 0;
+
+    &--skew {
+      opacity: 1;
+      transform: skewX(-15deg);
+    }
+  }
+
+  &__name {
+    @include flex-row;
+    @include flex-c;
+
+    flex: 0 0 auto;
+    padding: 1rem 2rem;
+    border-right: 0.1rem solid;
+  }
+
+  &--default {
+    @include choice-color($m-choice-default-color);
+  }
+
+  &--selected {
+    border: 0.2rem solid $m-primary-color;
+  }
+
+  &--correct {
+    @include choice-color($m-choice-correct-color);
+  }
+
+  &--wrong {
+    @include choice-color($m-choice-wrong-color);
+  }
+
+  &--highlighted {
+    @include choice-color($m-choice-highlight-color);
+  }
+
+  &--small {
+    font-size: $h5-size;
+
+    .choice {
+      &__text {
+        padding: 0.5rem;
+      }
+
+      &__name {
+        padding: 0.5rem 1rem;
+      }
+
+      &__response {
+        left: -0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+$mw-upcoming-checklist-background: rgba(0, 0, 0, 0.63);
+
+.mw-upcoming {
+  @include flex-col;
+
+  height: 100%;
+  overflow: auto;
+
+  &__checklist-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
+
+  &--blurred {
+    filter: blur(0.4rem);
+  }
+}
+
+.mw-upcoming-checklist {
+  @include flex-col;
+  @include flex-c;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 1;
+  overflow: auto;
+  background-color: $mw-upcoming-checklist-background;
+
+  &__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}

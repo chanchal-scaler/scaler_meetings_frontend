@@ -1,0 +1,156 @@
+$form-attention-font-size: $h4-size;
+
+$form-field-margin: 1.5rem;
+
+$form-helper-font-size: $h6-size;
+
+$form-input-padding: 1rem;
+$form-input-border-width: 0.2rem;
+$form-input-focus-border-color: $primary-color;
+$form-input-compact-padding: 0.8rem;
+$form-input-compact-background: #f5faff;
+
+$form-label-color: $dark-font-color;
+$form-label-font-size: $h3-size;
+$form-label-compact-font-size: $h4-size;
+$form-label-font-weight: $bold-font-weight;
+
+.form {
+  select {
+    appearance: none;
+    background-color: unset;
+  }
+
+  .textarea {
+    display: block;
+    resize: none;
+  }
+
+  input, .input, textarea, .textarea, select {
+    padding: $form-input-padding;
+    border-radius: $border-radius;
+    border: $form-input-border-width solid $border-color;
+    width: 100%;
+    line-height: 1.4;
+
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: $border-color;
+      color: $hint-font-color;
+    }
+
+    &:focus {
+      border-color: $form-input-focus-border-color;
+      outline: none !important;
+    }
+
+    &::placeholder {
+      color: $hint-font-color;
+    }
+  }
+
+  button {
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &--compact {
+    // stylelint-disable-next-line
+    input, select, textarea, .textarea {
+      background-color: $form-input-compact-background;
+      border: none;
+      padding: $form-input-compact-padding;
+
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &--inline {
+    @include flex-row;
+
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    .form-field {
+      margin-right: $form-field-margin;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// stylelint-disable-next-line
+.form-field {
+  margin-bottom: $form-field-margin;
+
+  &__header {
+    &--present {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &--inline {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    .form-field {
+      &__header {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--compact {
+    .form-field {
+      &__header {
+        @include flex-row;
+
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.form-field-label {
+  color: $form-label-color;
+  display: inline-flex;
+  align-items: center;
+  font-size: $form-label-font-size;
+  font-weight: $form-label-font-weight;
+
+  &__required {
+    margin-left: 0.2rem;
+  }
+
+  &--compact {
+    font-size: $form-label-compact-font-size;
+  }
+}
+
+// IBHelperText
+.form-helper-text {
+  font-size: $form-helper-font-size;
+  color: $hint-font-color;
+  margin: 0.2rem 0;
+
+  &--success, &.success {
+    color: $success-color;
+  }
+
+  &--error, &.error {
+    color: $danger-color;
+  }
+}
+
+// IBAttentionMark
+.form-attention-mark {
+  font-size: $form-attention-font-size;
+  color: $danger-color;
+}

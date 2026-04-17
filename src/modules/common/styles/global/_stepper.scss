@@ -1,0 +1,43 @@
+$stepper-divider-padding: 2rem;
+$stepper-item-active-color: $primary-color;
+$stepper-item-hover-color: $primary-color-hover;
+
+.stepper {
+  @include flex-row;
+
+  align-items: center;
+
+  &__divider {
+    padding: 0 $stepper-divider-padding;
+
+    i {
+      font-size: $h3-size;
+    }
+  }
+}
+
+.stepper-item {
+  @include flex-row;
+
+  color: $dark-font-color;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $stepper-item-hover-color;
+  }
+
+  &--locked {
+    color: $hint-font-color;
+    cursor: default;
+
+    &:hover {
+      color: $hint-font-color;
+    }
+  }
+
+  &--active {
+    font-weight: $bold-font-weight;
+    color: $stepper-item-active-color;
+  }
+}

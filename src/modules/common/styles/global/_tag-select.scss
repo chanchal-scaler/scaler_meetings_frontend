@@ -1,0 +1,19 @@
+.tags-select {
+  @include flex-row;
+
+  flex-wrap: wrap;
+}
+
+.tag-select {
+  border-radius: $border-radius-l;
+  border: 0.1rem solid $border-color;
+  padding: 0.8rem 1.6rem;
+  max-width: 100%;
+  transition: 180ms;
+
+  &--selected {
+    color: $primary-color;
+    border-color: $primary-color;
+    font-weight: $bold-font-weight;
+  }
+}

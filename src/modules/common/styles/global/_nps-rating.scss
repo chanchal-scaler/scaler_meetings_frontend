@@ -1,0 +1,111 @@
+$nps-rating-not-selected-bg-color: #f4f6f9;
+$nps-rating-not-selected-color:#d6dee5;
+$nps-rating-light-red: #ffebff;
+$nps-rating-red: #e22d4c;
+$nps-rating-light-yellow: #fefbf0;
+$nps-rating-yellow: #fec601;
+$nps-rating-light-green: #e6f7ed;
+$nps-rating-green: #20a164;
+$nps-rating-white: #ffffff;
+$nps-rating-option-size: 3.5rem;
+$nps-rating-option-size-mobile: 2.5rem;
+$nps-rating-option-size-small: 2.4rem;
+
+.nps-rating {
+  @include flex-row;
+  @include flex-c;
+}
+
+.nps-rating__option {
+  width: $nps-rating-option-size;
+  height: $nps-rating-option-size;
+  border: 0.1rem solid;
+
+  @include mobile {
+    width: $nps-rating-option-size-mobile;
+    height: $nps-rating-option-size-mobile;
+    margin: 0.5rem;
+  }
+
+  &--promoter {
+    background-color: $nps-rating-light-green;
+    color: $nps-rating-green;
+    border-color: $nps-rating-green;
+
+    &:hover {
+      background-color: $nps-rating-light-green;
+      color: $nps-rating-green;
+    }
+  }
+
+  &--promoter-selected {
+    background-color: $nps-rating-green;
+    color: $nps-rating-white;
+    border-color: $nps-rating-green;
+
+    &:hover {
+      background-color: $nps-rating-light-green;
+      color: $nps-rating-green;
+    }
+  }
+
+  &--neutral {
+    background-color: $nps-rating-light-yellow;
+    color: $nps-rating-yellow;
+    border-color: $nps-rating-yellow;
+
+    &:hover {
+      background-color: $nps-rating-light-yellow;
+      color: $nps-rating-yellow;
+    }
+  }
+
+  &--neutral-selected {
+    background-color: $nps-rating-yellow;
+    color: $nps-rating-white;
+    border-color: $nps-rating-yellow;
+
+    &:hover {
+      background-color: $nps-rating-light-yellow;
+      color: $nps-rating-yellow;
+    }
+  }
+
+  &--detractor {
+    background-color: $nps-rating-light-red;
+    color: $nps-rating-red;
+    border-color: $nps-rating-red;
+
+    &:hover {
+      background-color: $nps-rating-light-red;
+      color: $nps-rating-red;
+    }
+  }
+
+  &--detractor-selected {
+    background-color: $nps-rating-red;
+    color: $nps-rating-white;
+    border-color: $nps-rating-red;
+
+    &:hover {
+      background-color: $nps-rating-light-red;
+      color: $nps-rating-red;
+    }
+  }
+
+  &--not-selected {
+    background-color: $nps-rating-not-selected-bg-color;
+    color: $nps-rating-not-selected-color;
+    border-color: $nps-rating-not-selected-color;
+
+    &:hover {
+      background-color: $nps-rating-not-selected-bg-color;
+    }
+  }
+
+  &--small {
+    width: $nps-rating-option-size-small;
+    height: $nps-rating-option-size-small;
+    font-size: $h5-size;
+  }
+}

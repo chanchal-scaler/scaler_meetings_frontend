@@ -1,0 +1,51 @@
+.m-quiz {
+  &__list {
+    @include flex-row;
+
+    overflow-x: auto;
+    align-items: center;
+    font-size: $h5-size;
+    padding: 1rem 0;
+    margin-bottom: -1rem;
+  }
+
+  &__list-title {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+  }
+
+  &__pill {
+    padding: 0.5rem 1rem;
+    background: black;
+    border-radius: 0.5rem;
+    border: solid 0.1rem $m-background;
+    margin: 0 0.5rem;
+
+    &--active, &--active:hover {
+      background: $m-primary-color !important;
+      border: solid 0.1rem white;
+    }
+  }
+
+  &__popover {
+    @include flex-col;
+
+    padding: 1rem;
+    margin-top: 0.5rem;
+    width: 30rem;
+
+    &-btn {
+      flex: 1 0 0;
+    }
+  }
+
+  &__popover-header {
+    font-weight: $bold-font-weight;
+  }
+
+  &__popover-footer {
+    @include flex-row;
+
+    margin-top: 1rem;
+  }
+}

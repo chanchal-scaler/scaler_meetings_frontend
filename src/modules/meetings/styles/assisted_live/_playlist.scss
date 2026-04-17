@@ -1,0 +1,178 @@
+$m-asl-content-spacing: 1rem;
+$m-asl-content-default-background: #eeeeee;
+$m-asl-current-btn: #fdaa39;
+$m-asl-current-time: #757474;
+$m-asl-content-primary-background: $m-primary-light-background;
+$m-asl-content-active-background: $m-accent-light-background;
+$m-asl-controls-background: darken($m-asl-content-active-background, 4);
+$m-asl-controls-highlight-background: darken($m-asl-controls-background, 4);
+$m-asl-seekbar-progress-background: #573b1f;
+
+.m-asl {
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.m-asl-content {
+  display: flex;
+  align-items: center;
+  padding: $m-asl-content-spacing;
+  background-color: $m-asl-content-default-background;
+  position: relative;
+  overflow: hidden;
+
+  &__left {
+    flex: 0 0 auto;
+  }
+
+  &__center {
+    flex: 1 0 0;
+    margin: 0 $m-asl-content-spacing;
+  }
+
+  &__right {
+    @include flex-col;
+
+    flex: 0 0 auto;
+    align-self: stretch;
+    justify-content: flex-end;
+
+    i {
+      margin-right: 0.3rem;
+    }
+  }
+
+  &__time {
+    font-size: $h4-size;
+    font-weight: $bold-font-weight;
+  }
+
+  &--self {
+    border-left: 0.1rem solid $border-color;
+    padding: $m-asl-content-spacing * 1.5;
+    margin-left: $m-asl-content-spacing;
+    background-color: transparent;
+  }
+
+  &--primary {
+    background-color: $m-asl-content-primary-background;
+  }
+
+  &--active {
+    background-color: $m-asl-content-active-background;
+  }
+
+  &--border {
+    border-radius: $border-radius;
+    border: 0.1rem solid $danger-color;
+  }
+
+  &__hint {
+    position: absolute;
+    transition: 240ms;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: $h6-size;
+    transform: translateY(110%);
+    padding: 0.2rem 0.5rem;
+    background: $card-background-color;
+    background:
+      radial-gradient(
+        circle,
+        $card-background-color 0%,
+        rgba($card-background-color, 0) 100%
+      );
+    color: $dark-font-color;
+  }
+
+  &:hover {
+    .m-asl-content {
+      &__hint {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.m-asl-modal {
+  @include flex-col;
+  @include flex-c;
+
+  padding: 2rem 4rem;
+
+  &__title {
+    font-weight: $bolder-font-weight;
+    font-size: $h2-size;
+    text-align: center;
+    color: $dark-font-color;
+    margin-bottom: 3rem;
+  }
+
+  &__action {
+    font-size: $h3-size;
+    font-weight: $bold-font-weight;
+    padding: 1.5rem 3rem;
+  }
+}
+
+.m-asl-controls {
+  @include align-c;
+
+  width: inherit;
+  min-height: 5rem;
+  padding: 0.5rem;
+}
+
+.m-asl-seekbar {
+  margin: 0 0.5rem;
+
+  &__slider {
+    flex: 1 0 0;
+    margin-right: 0.5rem;
+  }
+
+  &__time {
+    @include flex-row;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sr-slider {
+    &__progress, &__handle {
+      background-color: $m-asl-current-btn;
+    }
+
+    &__track {
+      background-color: $m-asl-seekbar-progress-background;
+    }
+  }
+}
+
+.m-asl-playback-rate {
+  margin-right: 0.5rem;
+  padding: 0.5rem 0;
+
+  .m-select {
+    &__title {
+      border-radius: $border-radius;
+      border: none;
+    }
+  }
+}
+
+.m-asl-current-btn {
+  color: $m-asl-current-btn;
+
+  &__options {
+    color: inherit !important;
+  }
+
+  &__time {
+    color: $m-asl-current-time;
+  }
+}

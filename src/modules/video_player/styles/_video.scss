@@ -1,0 +1,16 @@
+.vp-video {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  max-height: 100%;
+  vertical-align: bottom;
+  z-index: 0;
+
+  &::-webkit-media-controls {
+    visibility: hidden;
+  }
+
+  &::-webkit-media-controls-enclosure {
+    visibility: visible;
+  }
+}

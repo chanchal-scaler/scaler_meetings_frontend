@@ -1,0 +1,20 @@
+/* stylelint-disable */
+.iti__flag {
+  display: block;
+  height: $flag-height;
+  box-shadow: 0px 0px 1px 0px #888;
+  background-image: url("#{$flags-image-path}/#{$flags-image-name}.#{$flags-image-extension}");
+  background-repeat: no-repeat;
+  // empty state
+  background-color: #DBDBDB;
+  background-position: $flag-width 0;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url("#{$flags-image-path}/#{$flags-image-name}@2x.#{$flags-image-extension}");
+  }
+}
+
+// hack for Nepal which is the only flag that is not square/rectangle, so it has transparency, so you can see the default grey behind it
+.iti__flag.iti__np {
+  background-color: transparent;
+}

@@ -1,0 +1,39 @@
+$bsm-default-bg-color: rgba($black-color, 0.7);
+
+.bottom-sheet-modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: $card-background-color;
+  position: fixed;
+  z-index: $popover-z;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  &__header {
+    @include flex-row;
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: $bsm-default-bg-color;
+    padding: 1rem;
+    width: 100vw;
+    color: $light-font-color;
+    transition: all 0.2s linear;
+    transform: translateY(0);
+    z-index: $popover-z;
+    cursor: pointer;
+
+    i {
+      z-index: $popover-z;
+      margin-right: 1rem;
+    }
+
+    &--collapsed {
+      transform: translateY(-100%);
+    }
+  }
+}

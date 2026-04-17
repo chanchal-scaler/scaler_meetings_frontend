@@ -1,0 +1,29 @@
+.stat-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__icon {
+    height: 4.5rem;
+    margin: 1rem;
+    margin-left: 0;
+  }
+
+  &__title {
+    font-size: $h3-size;
+    font-weight: $default-font-weight;
+    color: $hint-font-color;
+  }
+
+  &__body {
+    color: $hint-font-color;
+    font-size: $h3-size;
+    font-weight: $default-font-weight;
+  }
+
+  &__value {
+    font-size: $h2-size;
+    color: $dark-font-color;
+    font-weight: $bold-font-weight;
+  }
+}

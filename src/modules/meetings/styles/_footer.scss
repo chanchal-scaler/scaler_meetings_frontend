@@ -1,0 +1,42 @@
+$m-footer-collapsed-background: rgba($card-background-color, 0.3);
+
+.m-footer {
+  position: relative;
+  flex: 0 0 auto;
+  transition: 180ms;
+
+  &__side {
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  @include above-mobile {
+    &--can-collapse {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background-color: $m-footer-collapsed-background;
+      transform: translateY(0);
+    }
+
+    &--collapsed {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  @include mobile {
+    height: $m-footer-mobile-height;
+  }
+}

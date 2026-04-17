@@ -1,0 +1,5 @@
+.m-widget {
+  @include flex-col;
+
+  overflow: auto;
+}

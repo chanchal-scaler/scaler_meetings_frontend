@@ -1,0 +1,21 @@
+$l-cricket-ball-size: 15rem;
+$l-cricket-ball-small-size: 8rem;
+
+.l-cricket-ball {
+  padding: 1rem;
+
+  &__img {
+    @include square-dimensions($l-cricket-ball-size);
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &--small {
+    .l-cricket-ball {
+      &__img {
+        @include square-dimensions($l-cricket-ball-small-size);
+      }
+    }
+  }
+}

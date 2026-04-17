@@ -1,0 +1,54 @@
+$ribbon-close-btn: #c9e4ff;
+$ribbon-bg-default: #57abff;
+$ribbon-bg-danger-color: #e22d4c;
+$ribbon-bg-danger-inverted-color: #ffebef;
+$ribbon-bg-primary-countdown-color: #0080ff;
+
+.m-ribbon {
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+
+  @include tablet {
+    padding: 1rem 5rem 1rem 1rem;
+  }
+
+  @include mobile {
+    padding: 1rem 4rem 1rem 1rem;
+  }
+
+  &__close {
+    color: $ribbon-close-btn;
+    font-size: $h4-size;
+    position: absolute;
+    right: 2rem;
+    display: inline-block;
+    cursor: pointer;
+
+    @include mobile {
+      right: 1rem;
+    }
+  }
+
+  &--default {
+    background-color: $ribbon-bg-default;
+  }
+
+  &--danger {
+    background-color: $ribbon-bg-danger-color;
+    color: $light-font-color;
+  }
+
+  &--danger-inverted {
+    background-color: $ribbon-bg-danger-inverted-color;
+    color: $ribbon-bg-danger-color;
+  }
+
+  &--primary-countdown-color {
+    background-color: $ribbon-bg-primary-countdown-color;
+  }
+}

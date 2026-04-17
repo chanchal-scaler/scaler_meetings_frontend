@@ -1,0 +1,69 @@
+$html-content-code-padding: 0 0.5rem;
+$html-content-code-background: $light-grey-color;
+
+.html-content {
+  flex: 1 0 0;
+
+  &__container {
+    width: 100%;
+    flex: 1 0 0;
+    word-break: break-word;
+    white-space: normal;
+    font-family: 'Source Sans Pro', 'Roboto', 'Arial', sans-serif !important;
+
+    p, span {
+      word-break: break-word;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    // overwrite styles from backend
+    div, p, span, a, h1, h2, h3, h4, h5, h6 {
+      font-family: 'Source Sans Pro', 'Roboto', 'Arial', sans-serif !important;
+    }
+
+    a {
+      cursor: pointer;
+      color: $link-color !important;
+
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+
+    pre {
+      background-color: $html-content-code-background;
+      border: 0.1rem solid $border-color;
+      border-radius: $border-radius;
+      padding: $html-content-code-padding;
+      margin: 1rem 0;
+      white-space: break-spaces;
+
+      code {
+        background-color: none;
+        border: none;
+        border-radius: none;
+        color: $default-font-color;
+        padding: 0;
+      }
+
+      // stylelint-disable-next-line
+      div, p, span, a, h1, h2, h3, h4, h5, h6 {
+        font-family: monospace !important;
+      }
+    }
+
+    // Quote
+    blockquote {
+      margin: 0.5rem 0;
+      // Below 2 styles are to override default css styles coming from
+      // application.css when embeded
+      quotes: none;
+      padding: 0;
+      padding-left: 1rem;
+      border-left: 0.5rem solid $border-color;
+    }
+  }
+}

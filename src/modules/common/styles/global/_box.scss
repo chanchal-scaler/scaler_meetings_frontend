@@ -1,0 +1,41 @@
+$box-background: $white-color;
+$box-padding: 1rem;
+$box-padding-large: 2rem;
+$box-header-background: $body-alt-background-color;
+
+.box {
+  @include box-shadow;
+
+  background-color: $box-background;
+  border-radius: $border-radius;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: $box-padding;
+    background-color: $box-header-background;
+    border-bottom: 0.1rem solid $border-color;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__body {
+    padding: $box-padding;
+  }
+
+  &--flat {
+    box-shadow: none;
+  }
+
+  &--bordered {
+    border: 0.1rem solid $border-color;
+  }
+
+  &--large {
+    .box {
+      &__header, &__body {
+        padding: $box-padding $box-padding-large;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &__header, &__footer {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  &__header {
+    background-color: $body-background-color;
+  }
+
+  &__content {
+    @extend .scroll;
+
+    background-color: $body-background-color;
+    position: relative;
+    flex: 1 0 0;
+
+    &--centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    &--fit {
+      flex: 1 0 auto;
+      overflow-y: hidden !important;
+    }
+
+    &--transparent {
+      background-color: transparent;
+    }
+  }
+}

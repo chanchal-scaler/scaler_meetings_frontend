@@ -1,0 +1,15 @@
+.m-problem-choices {
+  min-width: $m-problem-choices-width;
+
+  &__list {
+    @include flex-col;
+
+    align-items: stretch;
+    padding-left: $m-problem-indicator-size;
+    padding-right: $m-problem-indicator-size;
+  }
+
+  @include mobile {
+    min-width: $m-problem-choices-mobile-width;
+  }
+}

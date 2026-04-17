@@ -1,0 +1,72 @@
+$progressbar-default-color: $green-color;
+$progressbar-padding-right: 0.7rem;
+$progressbar-border-radius: 0.8rem;
+$title-header-text-color: #61738e;
+
+.progressbar {
+  display: flex;
+  justify-content: space-between;
+  border: 0.1rem solid darken($light-grey-color, 5);
+  border-radius: $progressbar-border-radius;
+  background-color: $body-background-color;
+  height: 1.7rem;
+  position: relative;
+
+  &__checkpoint {
+    position: absolute;
+  }
+
+  &__checkpoint-wrapper {
+    @include flex-col;
+
+    font-size: $h6-size;
+
+    span {
+      margin-left: -0.5rem;
+    }
+  }
+
+  &__checkpoint-icon {
+    width: 3rem;
+    margin-top: -0.5rem;
+  }
+
+  &__checkpoint-text {
+    @include flex-col;
+
+    white-space: nowrap;
+    transform: translateX(-35%);
+  }
+
+  &__checkpoint-header {
+    color: $title-header-text-color;
+    font-size: 1rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    margin-bottom: 0.04rem;
+  }
+
+  &__checkpoint-mark {
+    width: 0.1rem;
+    height: 2.5rem;
+    background-color: $black-color;
+  }
+
+  &__color {
+    text-align: right;
+    border-radius: $progressbar-border-radius;
+    padding-right: $progressbar-padding-right;
+    background-color: $progressbar-default-color;
+    font-size: $h6-size;
+    color: $light-font-color;
+
+    &--blue {
+      background-color: $blue-color;
+    }
+  }
+
+  &__limit {
+    font-size: $h6-size;
+    padding-right: 0.5rem;
+  }
+}

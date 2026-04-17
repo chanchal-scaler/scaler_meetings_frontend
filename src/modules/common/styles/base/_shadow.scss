@@ -1,0 +1,25 @@
+$default-shadow-color: rgba($black-color, 0.1);
+$default-text-shadow-color: rgba($black-color, 0.4);
+
+@mixin box-shadow(
+  $color: $default-shadow-color,
+  $x: 0.1rem,
+  $y: 0.2rem,
+  $blur: 0.2rem,
+  $spread: 0.1rem
+) {
+  box-shadow: $color $x $y $blur $spread;
+}
+
+@mixin text-shadow(
+  $color: $default-text-shadow-color,
+  $x: 0.1rem,
+  $y: 0.1rem,
+  $blur: 0.4rem,
+) {
+  text-shadow: $color $x $y $blur;
+}
+
+@mixin even-box-shadow($blur: 0.3rem, $spread: 0.2rem) {
+  @include box-shadow($x: 0, $y: 0, $blur: $blur, $spread: $spread);
+}

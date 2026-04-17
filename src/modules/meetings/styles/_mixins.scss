@@ -1,0 +1,11 @@
+@mixin if-widget-small {
+  html.meeting-widget-small & {
+    @content;
+  }
+}
+
+@mixin if-widget-portrait {
+  html.meeting-widget-portrait & {
+    @content;
+  }
+}

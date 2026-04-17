@@ -1,0 +1,9 @@
+$circular-loader-thickness: 0.4rem;
+
+.circular-loader {
+  border-radius: 50%;
+  animation: 360ms linear 0s infinite running spin;
+  border: $circular-loader-thickness solid $border-color;
+  border-top-color: $primary-color;
+  border-right-color: $primary-color;
+}

@@ -1,0 +1,89 @@
+$m-checklist-item-width: 13rem;
+$m-checklist-arrow-background: #0080ff;
+
+.m-checklist {
+  max-width: 100%;
+
+  &__items {
+    @include flex-row;
+
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    &--mobile {
+      justify-content: space-around;
+    }
+  }
+
+  &__message {
+    padding-left: 1rem;
+    column-width: auto;
+  }
+
+  &__start {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-size: $h5-size;
+    font-weight: $bold-font-weight;
+    color: $hint-font-color;
+  }
+
+  &__arrow {
+    background-color: $m-checklist-arrow-background;
+  }
+
+  &--light {
+    .m-checklist {
+      &__message {
+        b {
+          color: $dark-font-color;
+          font-style: normal;
+        }
+      }
+
+      &__start {
+        color: $hint-font-color;
+      }
+    }
+  }
+
+  &--dark {
+    .m-checklist {
+      color: $light-font-color;
+
+      &__message {
+        b {
+          color: $light-font-color;
+          font-style: normal;
+        }
+      }
+
+      &__start {
+        color: $light-font-color;
+      }
+    }
+  }
+}
+
+.m-checklist-item {
+  @include flex-col;
+
+  align-items: center;
+  font-size: $h5-size;
+  text-align: center;
+  min-width: $m-checklist-item-width;
+
+  &__icon {
+    margin: 0.5rem 0;
+    font-size: $bold-font-weight;
+
+    &--success {
+      color: $success-color;
+    }
+
+    &--warning {
+      color: $warning-color;
+    }
+  }
+}

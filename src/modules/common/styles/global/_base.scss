@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,800&display=swap');
+
+html {
+  box-sizing: border-box;
+  // Makes 1rem = 10px;
+  font-size: 62.5%;
+
+  * {
+    box-sizing: inherit;
+  }
+
+  &[data-hide-scroll="true"] {
+    overflow: hidden;
+  }
+}
+
+html, body, #root, .react-root {
+  height: 100%;
+}
+
+.react-root {
+  &--auto {
+    height: auto;
+  }
+}
+
+body {
+  color: $default-font-color;
+  font-family: 'Nunito', 'Roboto', 'Arial', sans-serif;
+  font-size: $body-font-size;
+  font-weight: $default-font-weight;
+  letter-spacing: 0.01rem;
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:visited, &:hover, &:active {
+    text-decoration: none;
+  }
+}
+
+button {
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  &:hover, &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}

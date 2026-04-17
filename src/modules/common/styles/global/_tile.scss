@@ -1,0 +1,70 @@
+$admin-tile-width: 30rem;
+$admin-tile-color: $light-font-color;
+
+$admin-tile-background-1: #c3422a;
+$admin-tile-background-2: #a5cc70;
+$admin-tile-background-3: #2b7264;
+$admin-tile-background-4: #ccbc70;
+$admin-tile-background-5: #2a4bc3;
+$admin-tile-background-6: #ff9671;
+
+.admin-tile {
+  @include flex-col;
+
+  align-items: stretch;
+  cursor: pointer;
+  padding: 2rem;
+  border-radius: $border-radius;
+  color: $admin-tile-color;
+  width: $admin-tile-width;
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 1rem;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__body {
+    font-size: $h1-size;
+    font-weight: $bold-font-weight;
+  }
+
+  &:nth-child(1n) {
+    background-color: $admin-tile-background-1;
+  }
+
+  &:nth-child(2n) {
+    background-color: $admin-tile-background-2;
+  }
+
+  &:nth-child(3n) {
+    background-color: $admin-tile-background-3;
+  }
+
+  &:nth-child(4n) {
+    background-color: $admin-tile-background-4;
+  }
+
+  &:nth-child(5n) {
+    background-color: $admin-tile-background-5;
+  }
+
+  &:nth-child(6n) {
+    background-color: $admin-tile-background-6;
+  }
+}
+
+.admin-tile-row {
+  @include flex-row;
+
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+
+  .admin-tile {
+    margin: 0.5rem;
+  }
+}

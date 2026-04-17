@@ -1,0 +1,35 @@
+$resizable-thumb-width: 0.3rem;
+$resizable-handle-background: #f4f4f4;
+$resizable-thumb-background: $border-color;
+
+.resizable {
+  overflow: auto;
+
+  &__handle {
+    position: relative;
+    background-color: $resizable-handle-background;
+    width: 100%;
+    cursor: col-resize;
+    margin: 0 0.5rem;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: $resizable-thumb-width;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 1rem;
+      background-color: $resizable-thumb-background;
+      height: 5rem;
+      top: 50%;
+    }
+  }
+
+  &__sections {
+    overflow: auto;
+  }
+
+  &--resizing {
+    user-select: none;
+  }
+}

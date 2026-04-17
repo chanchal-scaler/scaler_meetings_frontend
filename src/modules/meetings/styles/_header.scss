@@ -1,0 +1,92 @@
+$m-header-logo-size: 3.2rem;
+
+.m-header {
+  @include flex-row;
+
+  flex: 0 0 auto;
+  align-items: center;
+  height: $m-header-height;
+  padding: 1rem;
+
+  &__brand {
+    margin-right: 2rem;
+
+    img {
+      width: $m-header-logo-size;
+      height: $m-header-logo-size;
+      vertical-align: bottom;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__main {
+    @include flex-col;
+  }
+
+  &__title {
+    font-size: $h3-size;
+    font-weight: $bold-font-weight;
+    margin-right: 1rem;
+
+    @include mobile {
+      @include ellipsis;
+
+      max-width: 25rem;
+      font-size: $h4-size;
+    }
+
+    &--live {
+      flex: 1 0 0;
+    }
+  }
+
+  &__type, &__name {
+    @include mobile {
+      @include ellipsis;
+    }
+  }
+
+  &__type {
+    @include mobile {
+      font-weight: $default-font-weight;
+      font-size: $h5-size;
+    }
+  }
+
+  &__actions, &__notifications {
+    @include flex-row;
+
+    align-items: center;
+    margin: 0 0.5rem;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--small {
+    height: unset;
+
+    .m-header__title {
+      font-size: $h4-size;
+      flex: none;
+    }
+
+    .m-header__main {
+      min-width: 0;
+    }
+  }
+
+  &--collapsed {
+    display: none;
+  }
+}

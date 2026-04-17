@@ -1,0 +1,76 @@
+$m-archive-panel-height: 30rem;
+
+.archive {
+  @include flex-row;
+
+  height: 100%;
+  overflow: hidden;
+}
+
+.archive-sidebar {
+  @include flex-row;
+
+  align-items: stretch;
+}
+
+.archive-main {
+  @include flex-col;
+
+  flex: 1 1 0;
+  width: 0;
+  height: 100%;
+  position: relative;
+
+  .m-header__actions {
+    margin-left: auto;
+
+    &--left {
+      margin-left: 0;
+    }
+  }
+}
+
+.archive-error {
+  height: 100%;
+}
+
+.archive-layout {
+  @include flex-col;
+
+  &__header {
+    @include flex-row;
+
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 1.5rem 1rem;
+    background-color: $m-primary-light-background;
+    font-weight: $bold-font-weight;
+    font-size: $h3-size;
+    color: $dark-font-color;
+  }
+
+  &__body {
+    flex: 1 0 0;
+  }
+}
+
+.archive-panel {
+  background-color: $body-background-color;
+  color: $default-font-color;
+  // stylelint-disable-next-line
+  height: calc(100% - #{(900 / 16) * 1vw} - #{$m-header-height});
+  min-height: $m-archive-panel-height;
+
+  &__header {
+    @include flex-row;
+    @include flex-c;
+
+    padding: 1rem;
+  }
+}
+
+.m-quiz, .m-leaderboard {
+  @include mobile {
+    position: fixed !important;
+  }
+}

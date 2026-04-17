@@ -1,0 +1,14 @@
+$m-notes-input-background: #f2f2f2;
+
+.m-notes {
+  padding: 1rem;
+
+  &__textarea {
+    resize: none;
+    padding: 1rem;
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    background-color: $m-notes-input-background;
+    width: 100%;
+  }
+}

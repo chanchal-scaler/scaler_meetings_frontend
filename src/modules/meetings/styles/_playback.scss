@@ -1,0 +1,96 @@
+$m-playback-control-width: 60rem;
+$m-playback-control-header-background: #f2f2f2;
+$m-playback-control-header-height: 4rem;
+
+.m-playback-control {
+  @include box-shadow;
+
+  width: calc(100% - 2rem);
+  max-width: $m-playback-control-width;
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: $card-background-color;
+  z-index: 2; // So that it is visible above quiz as well
+
+  &__header {
+    @include flex-row;
+
+    min-height: $m-playback-control-header-height;
+    align-items: center;
+  }
+
+  &__title {
+    @include flex-row;
+
+    align-items: center;
+    flex: 1 0 0;
+    color: $dark-font-color;
+    font-weight: $bold-font-weight;
+    padding: 0 1rem;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+    padding: 0 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  &__action {
+    margin: 0 0.5rem;
+  }
+
+  &__switch {
+    .form-field-label {
+      font-size: $h5-size;
+    }
+
+    .switch-row {
+      &__control {
+        display: inline-flex;
+      }
+    }
+  }
+}
+
+.m-playback-view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.m-playback-box {
+  position: absolute;
+  z-index: 0;
+
+  &__stream {
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  &--active {
+    z-index: 1;
+  }
+
+  &__footer {
+    @include flex-row;
+
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    color: $light-font-color;
+  }
+
+  &__name {
+    flex: 1 0 0;
+    margin-left: 1rem;
+  }
+}

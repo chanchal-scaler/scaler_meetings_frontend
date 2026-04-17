@@ -1,0 +1,17 @@
+$m-segmented-control-radius: 0.6rem;
+
+.segmented-control {
+  border-radius: $m-segmented-control-radius;
+}
+
+.segmented-control-option {
+  border-radius: $m-segmented-control-radius;
+
+  &:hover {
+    color: $m-primary-color;
+  }
+
+  &--active {
+    background-color: $m-primary-color;
+  }
+}

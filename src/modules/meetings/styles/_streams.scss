@@ -1,0 +1,47 @@
+$m-companion-mode-hint-color: #979797;
+
+.stream-tile {
+  position: absolute;
+  width: 100%;
+  padding: 0.5rem;
+  overflow: hidden;
+  user-select: none;
+  z-index: 1;
+
+  &--recording {
+    padding: 0;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.streams-layout {
+  @include flex-row;
+
+  position: relative;
+  height: 100%;
+
+  &--recording {
+    overflow: hidden;
+
+    /* Hide scrollbar for Chrome */
+    &:-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.m-companion-mode-hint {
+  img {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+
+  p {
+    max-width: 55.7rem;
+    font-size: 1.8rem;
+    color: $m-companion-mode-hint-color;
+  }
+}

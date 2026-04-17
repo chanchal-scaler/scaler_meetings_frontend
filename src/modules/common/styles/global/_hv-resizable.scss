@@ -1,0 +1,71 @@
+$reziable-divider-background-color: #e7f3ff;
+
+.hv-resizable {
+  @include flex-row;
+
+  flex: 0 0 auto;
+  height: 100%;
+  width: 100%;
+
+  @include tablet {
+    touch-action: none;
+  }
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &__section {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    overflow: hidden;
+
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+
+  &__divider {
+    @include flex-c;
+
+    transition: all 200ms ease-in-out;
+    overflow: hidden;
+    font-size: 0.8rem;
+
+    &--is-absolute {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &--vertical {
+      @include flex-row;
+
+      cursor: ns-resize;
+      width: 100%;
+      height: 0.5rem;
+      bottom: 0;
+
+      &:hover, &:focus, &:active {
+        background-color: $reziable-divider-background-color;
+        height: 1rem;
+        opacity: 1;
+      }
+    }
+
+    &--horizontal {
+      @include flex-col;
+
+      cursor: ew-resize;
+      height: 100%;
+      right: 0;
+      width: 0.5rem;
+
+      &:hover, &:focus, &:active {
+        background-color: $reziable-divider-background-color;
+        width: 1rem;
+        opacity: 1;
+      }
+    }
+  }
+}

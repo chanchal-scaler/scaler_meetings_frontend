@@ -1,0 +1,21 @@
+$m-audio-level-height: 1rem;
+
+.m-audio-level {
+  @include flex-row;
+
+  align-items: stretch;
+  width: calc(100% + 0.5rem);
+  margin-left: -0.25rem;
+
+  &__brick {
+    margin: 0 0.25rem;
+    flex: 1 0 0;
+    border-radius: $border-radius;
+    background-color: $border-color;
+    height: $m-audio-level-height;
+
+    &--active {
+      background-color: $success-color;
+    }
+  }
+}

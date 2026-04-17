@@ -1,0 +1,25 @@
+$vp-volume-slider-height: 12rem;
+
+.vp-volume {
+  position: relative;
+
+  &__slider {
+    display: none;
+    position: absolute;
+    bottom: calc(100%);
+    left: 50%;
+    transform: translateX(-50%);
+    height: $vp-volume-slider-height;
+    padding: 1.5rem 0.5rem;
+    border-radius: $border-radius;
+    background-color: $vp-popover-background;
+  }
+
+  &--active, &:hover {
+    .vp-volume {
+      &__slider {
+        display: block;
+      }
+    }
+  }
+}

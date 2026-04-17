@@ -1,0 +1,40 @@
+$m-home-main-width: 48rem;
+$m-home-hint-height: 16rem;
+
+.m-home {
+  &__content {
+    @include flex-col;
+    @include flex-c;
+
+    background-color: inherit;
+  }
+
+  &__main {
+    @include flex-col;
+    @include flex-c;
+    @include box-shadow;
+
+    position: relative;
+    background-color: $white-color;
+    color: $default-font-color;
+    width: 100%;
+    max-width: $m-home-main-width;
+    border-radius: $border-radius;
+    margin: 1rem;
+  }
+
+  &__hint {
+    height: $m-home-hint-height;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__action {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}

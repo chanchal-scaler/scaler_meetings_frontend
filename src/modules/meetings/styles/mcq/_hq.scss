@@ -1,0 +1,165 @@
+$mcq-hq-background: $body-background-color;
+$mcq-hq-width: 90rem;
+$mcq-hq-spacing: 2.5rem;
+$mcq-hq-badge-size: 2.5rem;
+$mcq-hq-sidebar-width: 32rem;
+
+.mcq-hq {
+  @include box-shadow;
+  @include flex-row;
+
+  display: none;
+  position: absolute;
+  z-index: $modal-z;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  max-width: $mcq-hq-width;
+  background-color: $mcq-hq-background;
+  color: $default-font-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &__main {
+    flex: 1 0 0;
+    min-width: 0;
+  }
+
+  &__sidebar {
+    flex: 0 0 auto;
+    width: $mcq-hq-sidebar-width;
+  }
+
+  &__title {
+    flex: 1 0 0;
+    padding: 1rem $mcq-hq-spacing;
+  }
+
+  &__hint {
+    @include flex-row;
+
+    align-items: center;
+  }
+
+  &__tabs-header {
+    padding: 0 $mcq-hq-spacing;
+    border-bottom: 0.2rem solid $border-color;
+  }
+
+  &__tab {
+    cursor: pointer;
+    position: relative;
+    color: $hint-font-color;
+    box-shadow: none !important;
+    padding: 1rem 0.5rem;
+    margin-right: $mcq-hq-spacing;
+    font-weight: $bold-font-weight;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 0;
+      bottom: 0;
+      height: 0.4rem;
+      border-radius: $border-radius;
+      background-color: $m-primary-color;
+      transition: 180ms;
+    }
+
+    &:hover {
+      color: $dark-font-color;
+    }
+
+    &--active {
+      color: $dark-font-color;
+
+      &:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &__listcontrol {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__badge {
+    @include flex-row;
+    @include flex-c;
+
+    min-width: $mcq-hq-badge-size;
+    min-height: $mcq-hq-badge-size;
+    border-radius: 3rem;
+    padding: 0.2rem;
+    font-size: $h5-size;
+    color: $m-primary-color;
+    background-color: $m-primary-light-background;
+  }
+
+  &--open {
+    display: flex;
+  }
+}
+
+.mcq-hq-list {
+  padding: 1rem $mcq-hq-spacing;
+  min-height: 12.5rem;
+  height: 100%;
+  padding-top: 0;
+  overflow-y: auto;
+
+  &__editing {
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background-color: $body-alt-background-color;
+  }
+}
+
+.mcq-hq-search {
+  padding: 2rem $mcq-hq-spacing;
+  padding-bottom: 1rem;
+
+  &__query {
+    width: 100%;
+    box-shadow: none !important;
+    outline: none !important;
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    padding: 1rem;
+    resize: none;
+    vertical-align: bottom;
+
+    &:focus {
+      border-color: $m-primary-color;
+    }
+  }
+}
+
+.mcq-hq-filter {
+  @include flex-row;
+
+  padding: 0 $mcq-hq-spacing;
+  padding-bottom: 1rem;
+
+  &__container {
+    flex: 1;
+
+    &:nth-child(1) {
+      margin-right: 0.5rem;
+    }
+
+    &:nth-child(2) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__filter-item {
+    flex-grow: 1;
+  }
+}

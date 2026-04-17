@@ -1,0 +1,60 @@
+$notice-board-card-title-font-color: #1a2c47;
+$notice-board-card-border-color: #eaeff4;
+$notice-board-card-description-font-color: #61738e;
+
+.m-notice-board-card-header {
+  @include flex-row;
+  @include align-c;
+
+  justify-content: space-between;
+
+  &__title {
+    font-size: $h4-size;
+    font-weight: $bold-font-weight;
+    color: $notice-board-card-title-font-color;
+  }
+}
+
+.m-notice-board-card {
+  width: 100%;
+  padding: 1.2rem;
+  border: 0.1rem solid $notice-board-card-border-color;
+  border-radius: $border-radius-l;
+  margin-bottom: 1.6rem;
+  display: block;
+  cursor: default;
+
+  &--with-link {
+    cursor: pointer;
+  }
+}
+
+.m-notice-board-card-description {
+  margin-top: 0.4rem;
+  font-size: $h5-size;
+  color: $notice-board-card-description-font-color;
+}
+
+.m-notice-board-card-footer {
+  @include flex-row;
+  @include align-c;
+
+  margin-top: 1.2rem;
+  justify-content: flex-end;
+}
+
+.m-notice-board-card-timestamp {
+  font-size: $h6-size;
+  color: $notice-board-card-description-font-color;
+}
+
+.m-notice-board-card-link {
+  @include flex-row;
+  @include align-c;
+
+  font-size: $h5-size;
+  font-weight: $bold-font-weight;
+  color: $primary-color;
+  text-decoration: none;
+  margin-right: auto;
+}

@@ -1,0 +1,40 @@
+$m-modal-mobile-radius: 1.5rem;
+$m-modal-large-max-width: 55rem;
+
+.m-modal {
+  &--large {
+    width: 100%;
+    max-width: $m-modal-large-max-width;
+  }
+
+  &.sr-modal {
+    @include mobile {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-height: calc(100% - #{$m-header-height + 1rem});
+      border-radius: 0;
+      border-top-left-radius: $m-modal-mobile-radius;
+      border-top-right-radius: $m-modal-mobile-radius;
+      max-width: none;
+
+      &--open {
+        transform: translateY(0);
+        animation: 180ms normal ease-in-out both 1;
+
+        @include anon-keyframes {
+          0% {
+            opacity: 0;
+            transform: translateY(100%);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}

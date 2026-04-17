@@ -1,0 +1,73 @@
+$md-code-padding: 0 0.5rem;
+$md-code-background: $light-grey-color;
+
+.md-renderer {
+  // Remove bottom padding from `p` tag
+  p {
+    display: inline;
+    word-break: break-word;
+  }
+
+  // Links
+  a {
+    cursor: pointer;
+    color: $link-color;
+    text-decoration: none;
+
+    &:focus, &:active {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Inline code
+  code {
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    background-color: $md-code-background;
+    color: $danger-color;
+    padding: $md-code-padding;
+    font-family: monospace;
+  }
+
+  // Code block / Snippet
+  pre {
+    background-color: $md-code-background;
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    padding: $md-code-padding;
+    margin: 0;
+    white-space: normal;
+    word-break: break-word;
+    // For the case where this is sent as a part of chat message and the
+    // message is right aligned because it is users self message
+    text-align: left;
+
+    code {
+      background-color: none;
+      border: none;
+      border-radius: none;
+      color: $default-font-color;
+      padding: 0;
+    }
+  }
+
+  // Quote
+  blockquote {
+    margin: 0.5rem 0;
+    // Below 2 styles are to override default css styles coming from
+    // application.css when embeded
+    quotes: none;
+    padding: 0;
+    padding-left: 1rem;
+    border-left: 0.5rem solid $border-color;
+  }
+
+  // Emoji's
+  .emoji-mart-emoji {
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,143 @@
+$m-poll-height: 28rem;
+$m-poll-timer-background-color: #e22d4c;
+
+.m-poll {
+  position: absolute;
+  z-index: 1;
+  left: 1rem;
+  top: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  overflow: hidden;
+  background-color: $card-background-color;
+  color: $default-font-color;
+
+  &__main {
+    @include flex-col;
+
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    overflow: auto;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__main-inner {
+    @include flex-col;
+
+    margin: auto;
+    flex: 0 0 auto;
+    align-items: center;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__content {
+    @include flex-col;
+
+    align-items: center;
+    padding: 4rem 2rem;
+    gap: 1rem;
+  }
+
+  &__description-wrapper {
+    font-size: $h3-size;
+  }
+
+  &__submission {
+    @include flex-col;
+    @include flex-c;
+
+    margin: 0.5rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    text-align: center;
+    background-color: lighten($success-color, 40);
+    border-radius: $border-radius;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  @include mobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.m-poll-mini {
+  position: relative;
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid $border-color;
+  border-radius: $border-radius;
+  overflow: auto;
+  max-height: $m-poll-height;
+
+  &__main {
+    position: relative;
+  }
+
+  &__submission {
+    @include flex-col;
+    @include flex-c;
+
+    margin: 0.5rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    text-align: center;
+    background-color: lighten($success-color, 40);
+    border-radius: $border-radius;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.m-poll-timer {
+  @include flex-row;
+
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: $m-poll-timer-background-color;
+  color: $light-font-color;
+  padding: 0.8rem 1.2rem;
+  font-size: $h4-size;
+  font-weight: $bold-font-weight;
+}
+
+.m-poll-choices {
+  min-width: 46rem;
+
+  &--small {
+    min-width: unset;
+  }
+
+  @include mobile {
+    min-width: unset;
+  }
+}

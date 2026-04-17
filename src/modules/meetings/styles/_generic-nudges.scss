@@ -1,0 +1,31 @@
+$m-engagement-nudge-heading-color: #1a2c47;
+$m-engagement-nudge-description-color: #61738e;
+
+.m-engagement-container {
+  padding: 1.6rem;
+  border-radius: $border-radius-l;
+  width: 32rem;
+}
+
+.m-engagement-nudge-heading {
+  @include flex-row;
+  @include align-c;
+
+  justify-content: space-between;
+  color: $m-engagement-nudge-heading-color;
+  font-size: $h4-size;
+  font-weight: $bold-font-weight;
+}
+
+.m-engagement-nudge-description {
+  margin-top: 0.4rem;
+  color: $m-engagement-nudge-description-color;
+  font-size: $h5-size;
+}
+
+.m-engagement-nudge-cta {
+  margin-top: 1.2rem;
+  color: $primary-color;
+  font-size: $h5-size;
+  font-weight: $bold-font-weight;
+}

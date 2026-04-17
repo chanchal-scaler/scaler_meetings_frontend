@@ -1,0 +1,8 @@
+.sr-radio-button {
+  &__text {
+    &:before {
+      background-color: $m-primary-color;
+      border: 0.1rem solid $m-primary-color;
+    }
+  }
+}

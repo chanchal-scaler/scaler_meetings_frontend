@@ -1,0 +1,29 @@
+.file-uploader {
+  position: relative;
+  overflow: hidden;
+
+  &--progress {
+    &:after {
+      background-image:
+        linear-gradient(
+          to right,
+          violet,
+          blue,
+          green,
+          orange,
+          red,
+          orange,
+          green,
+          blue,
+          violet,
+        );
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 200%;
+      height: 0.4rem;
+      animation: indeterminate 720ms linear infinite;
+    }
+  }
+}

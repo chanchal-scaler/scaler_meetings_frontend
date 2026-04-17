@@ -1,0 +1,93 @@
+// App specific mixins
+@import 'styles/mixins';
+
+// Base style overrides
+@import 'styles/app-base';
+
+.react-root.meeting-app {
+  /* Shared variables across this app */
+  @import 'styles/variables';
+
+  /* Common styles for this app */
+  @import 'styles/common';
+
+  /* Common components overriding styles */
+  @import 'styles/overrides';
+
+  /* Component specfic css (Internal order does not matter) */
+  @import 'styles/activity';
+  @import 'styles/adios-banner';
+  @import 'styles/quick-view-popover';
+  @import 'styles/choice';
+  @import 'styles/mcq';
+  @import 'styles/problem-preview';
+  @import 'styles/adios';
+  @import 'styles/archive';
+  @import 'styles/assisted-live';
+  @import 'styles/audio-indicator';
+  @import 'styles/audio-level';
+  @import 'styles/av-preview';
+  @import 'styles/bookmarks';
+  @import 'styles/cdn-video';
+  @import 'styles/chat';
+  @import 'styles/checklist';
+  @import 'styles/choice-input';
+  @import 'styles/connection';
+  @import 'styles/control-panel';
+  @import 'styles/dock-item';
+  @import 'styles/footer';
+  @import 'styles/field';
+  @import 'styles/header';
+  @import 'styles/home';
+  @import 'styles/leaderboard';
+  @import 'styles/platform-feedback';
+  @import 'styles/lecture-notes';
+  @import 'styles/login';
+  @import 'styles/meeting-item';
+  @import 'styles/meeting';
+  @import 'styles/message';
+  @import 'styles/misc';
+  @import 'styles/meeting-endcall-dialog';
+  @import 'styles/mobile-panel';
+  @import 'styles/nerd-stats';
+  @import 'styles/network-indicator';
+  @import 'styles/notes';
+  @import 'styles/notice-board';
+  @import 'styles/notice-board-v2';
+  @import 'styles/participants';
+  @import 'styles/playback';
+  @import 'styles/playlist';
+  @import 'styles/plugins';
+  @import 'styles/poll';
+  @import 'styles/polls';
+  @import 'styles/problem';
+  @import 'styles/proxy-chat';
+  @import 'styles/proxy-question';
+  @import 'styles/question';
+  @import 'styles/questions';
+  @import 'styles/quiz-list';
+  @import 'styles/quiz';
+  @import 'styles/raise-chr';
+  @import 'styles/reactions';
+  @import 'styles/recording-page';
+  @import 'styles/recording';
+  @import 'styles/resizable';
+  @import 'styles/right-dock';
+  @import 'styles/screen-share-prompt';
+  @import 'styles/select';
+  @import 'styles/settings';
+  @import 'styles/sidebar';
+  @import 'styles/speaker-test';
+  @import 'styles/streams';
+  @import 'styles/time-elapsed';
+  @import 'styles/typeform-feedback';
+  @import 'styles/upcoming';
+  @import 'styles/video-input';
+  @import 'styles/video';
+  @import 'styles/widget';
+  @import 'styles/nudge';
+  @import 'styles/survey';
+  @import 'styles/cue-card';
+  @import 'styles/external-links-tab';
+  @import 'styles/generic-nudges';
+}

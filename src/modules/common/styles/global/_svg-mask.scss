@@ -1,0 +1,15 @@
+$svg-mask-z: $popover-z;
+$svg-mask-background: rgba(1, 1, 1, 0.7);
+
+.svg-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $svg-mask-z;
+
+  &--empty {
+    background-color: $svg-mask-background;
+  }
+}

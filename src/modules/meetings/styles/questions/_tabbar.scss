@@ -1,0 +1,10 @@
+.mq-tabbar {
+  @include flex-row;
+
+  margin: 1rem;
+
+  &__title {
+    flex: 1 0 0;
+    padding: 1rem;
+  }
+}

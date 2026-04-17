@@ -1,0 +1,34 @@
+$m-poll-responses-width: 3.6rem;
+
+.m-poll-responses {
+  min-width: 46rem;
+
+  &__list {
+    @include flex-col;
+  }
+
+  &__item {
+    @include flex-row;
+
+    align-items: center;
+  }
+
+  &__choice {
+    flex: 1 0 0;
+  }
+
+  &__percent {
+    flex: 0 0 auto;
+    font-size: $h5-size;
+    min-width: $m-poll-responses-width;
+    text-align: center;
+  }
+
+  &--small {
+    min-width: unset;
+  }
+
+  @include mobile {
+    min-width: unset;
+  }
+}

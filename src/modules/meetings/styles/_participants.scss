@@ -1,0 +1,114 @@
+$participants-header-background: #f2f2f2;
+
+$participant-item-primary-background: $m-primary-light-background;
+$participant-item-action-size: 2rem;
+$participant-item-action-small-size: 1.6rem;
+
+.participants {
+  @include flex-col;
+
+  &__header {
+    padding: 1.5rem 1rem;
+    background-color: $participants-header-background;
+  }
+
+  &__title {
+    text-align: center;
+    color: $dark-font-color;
+  }
+
+  &__refresh {
+    position: absolute;
+    right: 1rem;
+    // stylelint-disable-next-line
+    top: calc(50% - 10px);
+    border-top-color: $m-primary-color;
+    border-right-color: $m-primary-color;
+
+    &--loading {
+      animation: 360ms linear 0s infinite running spin;
+    }
+  }
+}
+
+.participant-action {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  font-size: $participant-item-action-size;
+
+  &--main {
+    display: inline-flex;
+  }
+
+  &--primary {
+    background-color: $participant-item-primary-background;
+    color: $m-primary-color;
+
+    &:hover {
+      background-color: $participant-item-primary-background;
+    }
+  }
+
+  &--danger {
+    color: $danger-color;
+  }
+
+  &--small {
+    font-size: $participant-item-action-small-size;
+  }
+}
+
+.participant-item {
+  @include flex-row;
+
+  align-items: center;
+  padding: 1rem;
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid $border-color;
+  }
+
+  &__avatar {
+    margin-right: 1rem;
+    flex: 0 0 auto;
+  }
+
+  &__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__status {
+    @include flex-row;
+
+    align-items: center;
+    flex: 0 0 auto;
+    margin-left: 1rem;
+    font-size: $h6-size;
+    background-color: $participant-item-primary-background;
+    color: $m-primary-color;
+    padding: 0.2rem 0.5rem;
+    padding-right: 0.7rem;
+    border-radius: 1rem;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 0 0;
+  }
+
+  .participant-action {
+    display: none;
+  }
+
+  &:hover {
+    .participant-action {
+      display: inline-flex;
+    }
+  }
+}

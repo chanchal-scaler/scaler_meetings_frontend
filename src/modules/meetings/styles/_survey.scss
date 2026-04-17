@@ -1,0 +1,129 @@
+$result-input-background-color: #d399ff;
+$result-input-border-color: #0041ca;
+$m-survey-height: 28rem;
+$m-survey-responses-width: 3.6rem;
+
+.m-survey-description {
+  color: $dark-font-color;
+  font-weight: $bold-font-weight;
+}
+
+.m-survey-responses {
+  &__list {
+    @include flex-col;
+  }
+
+  &__item {
+    @include flex-row;
+    @include align-c;
+  }
+
+  &__choice {
+    flex: 1 0 0;
+  }
+
+  &__percent {
+    flex: 0 0 auto;
+    font-size: $h5-size;
+    min-width: $m-survey-responses-width;
+    text-align: center;
+  }
+}
+
+.m-sticky {
+  position: sticky;
+  bottom: 0;
+}
+
+.m-survey {
+  position: relative;
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid $border-color;
+  border-radius: $border-radius;
+  overflow: auto;
+  max-height: $m-survey-height;
+
+  &__main {
+    position: relative;
+  }
+
+  &__submission {
+    @include flex-col;
+    @include flex-c;
+
+    margin: 0.5rem 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    text-align: center;
+    background-color: lighten($success-color, 40);
+    border-radius: $border-radius;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.survey {
+  &__input {
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  &__async {
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+  }
+
+  &__result-list {
+    padding: 1.5rem;
+    border: 0.1rem solid $grey-color;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  &__result-input {
+    width: 100%;
+    background: $result-input-background-color;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $result-input-border-color;
+    padding-left: 1.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  &__result-title {
+    font-weight: 700;
+    font-size: $h4-size;
+  }
+
+  &__result-desc {
+    font-weight: $bold-font-weight;
+    font-size: $h4-size;
+    color: black;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__number-input::placeholder {
+    text-align: right;
+  }
+}

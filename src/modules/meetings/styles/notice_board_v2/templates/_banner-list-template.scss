@@ -1,0 +1,83 @@
+$notice-board-v2-link-color: #0080ff;
+$notice-board-v2-background-color: #fafbfc;
+$notice-board-v2-border-color: #eaeff4;
+$notice-board-v2-description-font-color: #61738e;
+
+.m-nb-banner-list-temp {
+  padding: 1.2rem;
+  margin-bottom: 1.6rem;
+  border: 0.1rem solid $notice-board-v2-border-color;
+  border-radius: 1.2rem;
+  font-size: $h5-size;
+  background: $white-color;
+
+  &__header {
+    @include flex-row-y-c;
+
+    color: $dark-text-color;
+    font-size: $h4-size;
+    font-weight: $bold-font-weight;
+    line-height: 150%;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-weight: $bold-font-weight;
+  }
+
+  &__banner {
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+  }
+
+  &__list {
+    padding: 1.6rem 0;
+  }
+
+  &__list-item {
+    @include flex-row-y-c;
+
+    margin-bottom: 1.2rem;
+  }
+
+  &__list-item-icon {
+    margin-right: 0.8rem;
+    background: $notice-board-v2-background-color;
+    padding: 0.7rem 0.6rem;
+    border-radius: 0.4rem;
+  }
+
+  &__footer {
+    @include flex-row;
+    @include align-c;
+
+    margin-top: 1.2rem;
+    justify-content: flex-end;
+  }
+
+  &__timestamp {
+    font-size: $h6-size;
+    color: $notice-board-v2-description-font-color;
+  }
+
+  &__cta {
+    margin-right: auto;
+    color: $notice-board-v2-link-color;
+    font-weight: $bold-font-weight;
+  }
+
+  &__cta-link {
+    display: inline-flex;
+    align-items: center;
+    color: $notice-board-v2-link-color;
+    background-color: $white-color;
+    cursor: pointer;
+  }
+
+  &__cta-icon {
+    margin-left: 0.4rem;
+    cursor: pointer;
+  }
+}

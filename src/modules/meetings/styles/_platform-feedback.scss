@@ -1,0 +1,52 @@
+$textarea-border: 0.1rem solid #d6dee5;
+
+.m-platform-feedback-popover {
+  border-radius: $border-radius-l;
+
+  @include mobile {
+    width: 100%;
+    left: 0 !important;
+  }
+}
+
+.m-platform-feedback {
+  padding: 1.6rem;
+
+  &__heading {
+    @include flex-row;
+    @include align-c;
+
+    justify-content: space-between;
+  }
+}
+
+.m-platform-feedback-details {
+  width: 60rem;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.m-platform-feedback-rating-input {
+  height: 3.5rem;
+  width: 3.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.m-platform-feedback-text-input {
+  width: 100%;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  border-radius: $border-radius-l;
+  border: $textarea-border;
+  resize: none;
+}
+
+.m-platform-feedback-details-submit {
+  @include flex-row;
+
+  width: 100%;
+  justify-content: flex-end;
+}

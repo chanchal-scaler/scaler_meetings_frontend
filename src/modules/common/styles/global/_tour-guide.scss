@@ -1,0 +1,49 @@
+$tour-guide-z: $popover-z;
+$tour-guide-overlay: rgba(1, 1, 1, 0.7);
+
+$tour-guide-slide-background: #fff7e0;
+
+.tour-guide-slide {
+  @include box-shadow;
+  @include flex-col;
+
+  position: fixed;
+  z-index: $tour-guide-z + 1;
+  left: 0;
+  top: 0;
+  max-width: 32rem;
+  border-radius: $border-radius-l;
+  background-color: $tour-guide-slide-background;
+  color: $default-font-color;
+  padding: 1rem;
+
+  &__content {
+    padding: 0 1rem;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  &__control {
+    flex: 0 0 auto;
+    font-weight: $bold-font-weight;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+
+    &--disabled {
+      opacity: 0;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  &--animated {
+    transition: 180ms;
+  }
+}

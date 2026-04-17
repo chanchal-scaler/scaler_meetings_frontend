@@ -1,0 +1,43 @@
+$vp-control-item-size: 3.6rem;
+$vp-control-item-icon-size: 2.8rem;
+$vp-control-item-large-size: 12rem;
+$vp-control-item-icon-large-size: 6rem;
+$vp-control-item-tablet-size: 3rem;
+$vp-control-item-icon-tablet-size: 2.4rem;
+$vp-control-item-background: $vp-highlight-background;
+
+@mixin vp-control-item-dims($size, $icon-size) {
+  width: $size;
+  height: $size;
+  font-size: $icon-size;
+}
+
+.vp-control-item {
+  @include vp-control-item-dims(
+    $vp-control-item-size,
+    $vp-control-item-icon-size
+  );
+
+  border-radius: 50%;
+  padding: 0.5rem;
+  overflow: visible;
+  background-color: transparent;
+
+  &:hover, &:active {
+    background-color: $vp-control-item-background;
+  }
+
+  @include tablet {
+    @include vp-control-item-dims(
+      $vp-control-item-tablet-size,
+      $vp-control-item-icon-tablet-size
+    );
+  }
+
+  &--large {
+    @include vp-control-item-dims(
+      $vp-control-item-large-size,
+      $vp-control-item-icon-large-size
+    );
+  }
+}

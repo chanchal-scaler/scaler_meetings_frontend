@@ -1,0 +1,27 @@
+$quick-select-spacing: 0.3rem;
+
+.quick-select {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1 * $quick-select-spacing;
+
+  &--block {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__option {
+    margin: $quick-select-spacing;
+    border: 0.1rem solid $border-color;
+    border-radius: $border-radius;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+
+    &--selected {
+      color: $light-font-color;
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+  }
+}

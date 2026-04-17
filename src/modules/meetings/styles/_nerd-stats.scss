@@ -1,0 +1,69 @@
+$nerd-stats-background: rgba(1, 1, 1, 0.7);
+
+.nerd-stats {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  max-height: calc(100% - 4rem);
+  border-radius: $border-radius;
+  background-color: $nerd-stats-background;
+  padding: 1rem;
+  font-size: $h5-size;
+  overflow: hidden;
+  border: 0.1rem solid $border-color;
+  z-index: 1;
+
+  &__summary, &__detailed {
+    @include flex-col;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+
+    i {
+      font-size: $h5-size;
+    }
+  }
+
+  &__row {
+    @include flex-row;
+
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+
+  &__col {
+    flex: 1 0 0;
+
+    &--value {
+      font-weight: $bolder-font-weight;
+    }
+  }
+
+  &__expand {
+    width: 100%;
+    border-radius: $border-radius;
+    text-align: center;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  &__item {
+    padding: 1rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $border-color;
+    }
+  }
+
+  &__header {
+    font-size: $h4-size;
+    font-weight: $bolder-font-weight;
+    margin-bottom: 1rem;
+  }
+}

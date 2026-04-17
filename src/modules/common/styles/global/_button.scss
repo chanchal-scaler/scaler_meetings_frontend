@@ -1,0 +1,361 @@
+$btn-round-size: 3rem;
+$btn-default-background: #dcdcdc;
+$btn-default-background-hover: rgba(1, 1, 1, 0.1);
+$btn-default-background-active: rgba(1, 1, 1, 0.2);
+$btn-long-spacing-factor: 3;
+
+.tappable {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    background: $btn-default-background-hover;
+  }
+
+  &:active {
+    background: $btn-default-background-active;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    filter: grayscale(0.5);
+
+    &.btn-tooltip {
+      pointer-events: unset;
+    }
+  }
+
+  &.no-highlight {
+    &:hover, &:active {
+      background: transparent;
+    }
+  }
+}
+
+.btn {
+  padding: 1rem;
+  line-height: normal;
+  border-radius: $border-radius;
+  background-color: $btn-default-background;
+}
+
+.btn-default {
+  color: $default-font-color;
+
+  &:hover, &:active {
+    background-color: $btn-default-background;
+  }
+}
+
+.btn-rounded {
+  border-radius: $border-radius-l;
+}
+
+.btn-light {
+  background-color: transparent;
+  color: $light-font-color;
+}
+
+.btn-dark {
+  background-color: transparent;
+  color: $dark-font-color;
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: $light-font-color;
+
+  &:hover {
+    background: $primary-color-hover;
+    color: $light-font-color;
+  }
+
+  &:active {
+    background: $primary-color-active;
+  }
+}
+
+.btn-secondary {
+  background: $secondary-color;
+  color: $light-font-color;
+
+  &:hover {
+    background: $secondary-color-hover;
+    color: $light-font-color;
+  }
+
+  &:active {
+    background: $secondary-color-active;
+  }
+}
+
+.btn-success {
+  background: $success-color;
+  color: $light-font-color;
+
+  &:hover {
+    background: $success-color-hover;
+  }
+
+  &:active {
+    background: $success-color-active;
+  }
+}
+
+.btn-danger {
+  background: $danger-color;
+  color: $light-font-color;
+
+  &:hover {
+    background: $danger-color-hover;
+  }
+
+  &:active {
+    background: $danger-color-active;
+  }
+}
+
+.btn-warning {
+  background: $warning-color;
+  color: $light-font-color;
+
+  &:hover {
+    background: $warning-color-hover;
+  }
+
+  &:active {
+    background: $warning-color-active;
+  }
+}
+
+.btn-inverted {
+  background: none !important;
+  color: $default-font-color;
+
+  &:hover {
+    background: rgba(1, 1, 1, 0.1) !important;
+    color: $default-font-color;
+  }
+
+  &:active {
+    color: $default-font-color;
+  }
+
+  &.btn-primary {
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &:active {
+      color: $primary-color-active;
+    }
+  }
+
+  &.btn-secondary {
+    color: $secondary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+
+    &:active {
+      color: $secondary-color-active;
+    }
+  }
+
+  &.btn-success {
+    color: $success-color;
+
+    &:hover {
+      color: $success-color-hover;
+    }
+
+    &:active {
+      color: $success-color-active;
+    }
+  }
+
+  &.btn-danger {
+    color: $danger-color;
+
+    &:hover {
+      color: $danger-color-hover;
+    }
+
+    &:active {
+      color: $danger-color-active;
+    }
+  }
+}
+
+.btn-outlined {
+  background-color: transparent;
+  border: 0.1rem solid $default-font-color;
+  color: $default-font-color;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  &:active {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  &.btn-primary {
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      border-color: $primary-color-hover;
+    }
+
+    &:active {
+      border-color: $primary-color-active;
+    }
+  }
+
+  &.btn-secondary {
+    color: $secondary-color;
+    border-color: $secondary-color;
+
+    &:hover {
+      border-color: $secondary-color-hover;
+    }
+
+    &:active {
+      border-color: $secondary-color-active;
+    }
+  }
+
+  &.btn-success {
+    color: $success-color;
+    border-color: $success-color;
+
+    &:hover {
+      border-color: $success-color-hover;
+    }
+
+    &:active {
+      border-color: $success-color-active;
+    }
+  }
+
+  &.btn-danger {
+    color: $danger-color;
+    border-color: $danger-color;
+
+    &:hover {
+      border-color: $danger-color-hover;
+    }
+
+    &:active {
+      border-color: $danger-color-active;
+    }
+  }
+}
+
+.btn-round {
+  width: $btn-round-size;
+  height: $btn-round-size;
+  border-radius: 50%;
+
+  &.btn-large {
+    width: $btn-round-size * 1.5;
+    height: $btn-round-size * 1.5;
+  }
+
+  &.btn-small {
+    width: $btn-round-size / 1.5;
+    height: $btn-round-size / 1.5;
+  }
+}
+
+.btn-long {
+  padding: 1rem 1rem * $btn-long-spacing-factor;
+}
+
+.btn-small {
+  font-size: $h6-size;
+  padding: 0.8rem;
+  text-transform: capitalize;
+
+  &.btn-long {
+    padding: 0.8rem 0.8rem * $btn-long-spacing-factor;
+  }
+}
+
+.btn-large {
+  font-size: $h3-size;
+  padding: 1.2rem;
+  text-transform: capitalize;
+
+  &.btn-long {
+    padding: 1.2rem 1.2rem * $btn-long-spacing-factor;
+  }
+}
+
+.btn-icon {
+  [class^="icon-"], [class*=" icon-"] {
+    font-size: 1.6rem;
+  }
+
+  &.btn-large {
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: $h3-size;
+    }
+  }
+
+  &.btn-small {
+    [class^="icon-"], [class*=" icon-"] {
+      font-size: $h5-size;
+    }
+  }
+}
+
+.btn-sharp {
+  border-radius: 0;
+}
+
+.btn-disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+html.can-touch {
+  .tappable:hover {
+    background: none;
+    color: $default-font-color;
+  }
+
+  .btn:hover {
+    background: $primary-color;
+    color: $light-font-color;
+  }
+
+  .btn-primary:hover {
+    background: $primary-color;
+  }
+
+  .btn-secondary:hover {
+    background: $secondary-color;
+  }
+
+  .btn-success:hover {
+    background: $success-color;
+  }
+
+  .btn-danger:hover {
+    background: $danger-color;
+  }
+
+  .btn-inverted:hover {
+    background: none !important;
+    color: $primary-color;
+  }
+}

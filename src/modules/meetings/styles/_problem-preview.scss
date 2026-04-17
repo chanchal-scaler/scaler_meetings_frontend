@@ -1,0 +1,20 @@
+.problem-preview {
+  &__description {
+    color: $dark-font-color;
+    font-weight: $bolder-font-weight;
+    font-size: $h3-size;
+    margin-bottom: 2rem;
+  }
+
+  &__choices {
+    padding: 0.5rem 0;
+  }
+
+  &__markdown {
+    pre {
+      white-space: pre;
+      overflow: auto;
+      font-size: $h5-size;
+    }
+  }
+}

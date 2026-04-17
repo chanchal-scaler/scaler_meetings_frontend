@@ -1,0 +1,24 @@
+$timeline-header-color: #f5a623;
+$timeline-header-margin: -1rem;
+$timeline-border-line-width: 0.2rem;
+
+.timeline {
+  &__header {
+    color: $timeline-header-color;
+    margin-left: $timeline-header-margin;
+  }
+
+  &__children {
+    @include flex-row;
+
+    &:before {
+      content: '';
+      background-color: $border-color;
+      width: $timeline-border-line-width;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,34 @@
+$m-resizable-thumb-width: 5rem;
+$m-resizable-handle-background: #f2f2f2;
+$m-resizable-thumb-background: $border-color;
+
+.m-resizable {
+  overflow: auto;
+
+  &__handle {
+    position: relative;
+    background-color: $m-resizable-handle-background;
+    width: 100%;
+    cursor: row-resize;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: $m-resizable-thumb-width;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 1rem;
+      background-color: $m-resizable-thumb-background;
+      height: calc(100% - 1rem);
+      top: 0.5rem;
+    }
+  }
+
+  &__sections {
+    overflow: auto;
+  }
+
+  &--resizing {
+    user-select: none;
+  }
+}

@@ -1,0 +1,68 @@
+.reschedule {
+  &__instructions {
+    padding: 1rem;
+    font-size: $h4-size;
+    border-bottom: 0.1rem solid $border-color;
+  }
+
+  &__person-details {
+    padding-inline-start: 3rem;
+    margin-block-end: 0;
+  }
+
+  &__header {
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: $white-color;
+  }
+
+  &__container {
+    padding: 1rem;
+  }
+
+  .resc-timeslots {
+    &__slots-container {
+      padding: 1rem 1rem 4rem 1rem;
+    }
+
+    &__slot {
+      width: 9rem;
+    }
+
+    &__footer {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: $white-color;
+    }
+
+    &__date-container, &__time-container {
+      padding: 1rem;
+    }
+
+    &__date-picker {
+      width: 100%;
+      height: 3.8rem;
+      border: 0.1rem solid $border-color;
+      padding: 0 1rem;
+      border-radius: 0.4rem;
+    }
+
+    &__select {
+      &__placeholder {
+        color: $black-color;
+      }
+
+      &__dropdown-indicator {
+        color: $black-color;
+      }
+    }
+
+    &__button-container {
+      padding: 1rem;
+    }
+  }
+}

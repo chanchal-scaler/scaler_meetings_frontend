@@ -1,0 +1,33 @@
+.mobile-panel {
+  @include flex-col;
+
+  height: 100%;
+  background-color: $body-background-color;
+  color: $default-font-color;
+  transition: 360ms;
+
+  &__header {
+    @include flex-row;
+    @include flex-c;
+
+    position: relative;
+    margin: 1rem;
+  }
+
+  &__expand {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 180ms;
+
+    &--active {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &--expanded {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+}

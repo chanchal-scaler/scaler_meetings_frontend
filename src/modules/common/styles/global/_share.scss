@@ -1,0 +1,95 @@
+$share-medium-icon-size: 2.5rem;
+$share-medium-label-size: $h5-size;
+$share-popover-link-border-color: #7c97aa;
+$share-font-color: #4e5f72;
+$share-tick-green-bg-color: #d6edde;
+$share-green-color: #49ad6e;
+
+.share-medium {
+  @include flex-col;
+
+  padding: 0.5rem;
+  align-items: center;
+  margin: 0.3rem;
+
+  &__icon {
+    img {
+      width: $share-medium-icon-size;
+      vertical-align: bottom;
+    }
+  }
+
+  &__icon-Whatsapp {
+    width: 3rem !important;
+  }
+}
+
+.share-popover {
+  width: 35rem;
+
+  &__share-via {
+    @include flex-row;
+    @include align-c;
+
+    margin: 0.5rem;
+    color: $share-font-color;
+  }
+
+  &__copied-container {
+    @include flex-row;
+    @include align-c;
+
+    margin: 0 0.5rem;
+  }
+
+  &__copied-icon {
+    background-color: $share-tick-green-bg-color;
+    border-radius: 3rem;
+    padding: 0.3rem;
+    color: $share-green-color;
+  }
+
+  &__copied-text {
+    margin-left: 0.5rem;
+    font-style: italic;
+    font-size: $h5-size;
+    color: $share-green-color;
+  }
+
+  &__link-container {
+    @include flex-row;
+    @include align-c;
+
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: solid 0.1rem $share-popover-link-border-color;
+  }
+
+  &__link {
+    margin-right: 1.5rem;
+    font-size: $h5-size;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+  }
+
+  &__copy-icon-btn {
+    margin-left: auto;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  &__copy-icon {
+    color: $blue-color;
+    font-size: $h4-size;
+  }
+
+  &__media-map {
+    margin-left: auto;
+
+    @include flex-row;
+    @include flex-c;
+  }
+}

@@ -1,0 +1,23 @@
+.m-select-field {
+  position: relative;
+
+  &__field-header {
+    @include flex-row;
+
+    align-items: center;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background-color: $card-background-color;
+    z-index: 1;
+    padding: 0 0.5rem;
+    margin-bottom: 0;
+  }
+
+  &__field-label {
+    font-weight: $bold-font-weight;
+    font-size: $h5-size;
+    color: $hint-font-color;
+    margin-right: 0.5rem;
+  }
+}

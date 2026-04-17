@@ -1,0 +1,69 @@
+$scrollbar-background: #f5f5f5;
+$scrollbar-thumb-background: #c8c8c8;
+
+.scroll-base {
+  // For smooth scrolling on iOS devices
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    background: $scrollbar-background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-background;
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-background;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: $scrollbar-thumb-background;
+  }
+
+  // stylelint-disable-next-line
+  &::-webkit-scrollbar-track {
+    border: 0.1rem gray $border-color;
+    border-radius: $border-radius;
+  }
+}
+
+.scroll {
+  @extend .scroll-base;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    // stylelint-disable-next-line
+    &:vertical {
+      width: 0.5rem;
+    }
+
+    // stylelint-disable-next-line
+    &:horizontal {
+      height: 0.6rem;
+    }
+  }
+}
+
+.scroll-h {
+  @extend .scroll;
+
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 0.6rem;
+  }
+}
+
+.scroll-bar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Add overflow hidden property with react-root to disable scroll
+&.hide-overflow {
+  overflow: hidden;
+}

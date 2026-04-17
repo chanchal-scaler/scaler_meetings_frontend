@@ -1,0 +1,90 @@
+$just-created-background : #fae6c8;
+$just-created-color: $black-color;
+
+.mcq-trailer {
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &__header {
+    @include flex-row;
+
+    color: $hint-font-color;
+    align-items: center;
+    border: 0.1rem solid $border-color;
+    border-bottom: none;
+    background-color: $m-primary-light-background;
+    padding: 0.8rem 1.8rem;
+  }
+
+  &__control {
+    @include flex-row;
+
+    border: 0.1rem solid $border-color;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-top: none;
+    align-items: center;
+    padding: 1.5rem;
+    padding-top: 0;
+
+    &--right {
+      @include flex-row;
+
+      margin-left: 2rem;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &__badge {
+    margin: 0 1rem 1rem 0;
+    padding: 0.1rem 1rem;
+    background-color: $m-primary-light-background;
+    color: $m-primary-color;
+    font-weight: $bold-font-weight;
+
+    &--just-created {
+      background-color: $just-created-background;
+      color: $just-created-color;
+    }
+  }
+
+  &__body {
+    padding: 1.5rem;
+    border: 0.1rem solid $border-color;
+    border-top: none;
+    border-bottom: none;
+
+    &--with-controls {
+      border-bottom: 0.1rem solid $border-color;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
+  &__title {
+    flex: 1 0 0;
+    font-weight: $bold-font-weight;
+  }
+
+  &__hint {
+    font-size: $h5-size;
+    font-style: italic;
+  }
+
+  &__preview {
+    @include flex-row;
+
+    font-weight: $default-font-weight;
+    font-size: $h5-size;
+    margin-left: 1rem;
+    color: $m-primary-color;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &--disabled {
+    opacity: 0.8;
+    filter: grayscale(1);
+  }
+}

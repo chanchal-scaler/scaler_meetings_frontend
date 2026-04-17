@@ -1,0 +1,113 @@
+$switch-height: 3rem;
+$switch-padding: 0.4rem;
+$switch-height-small: 2.2rem;
+$switch-padding-small: 0.3rem;
+
+$switch-track-background: #e2e2e2;
+$switch-track-checked-background: $primary-color;
+$switch-thumb-background: $white-color;
+$switch-thumb-disabled-background: #f8f8f8;
+
+@mixin switch-dimensions($height, $padding) {
+  $thumb-size: $height - (2 * $padding);
+  $width: 2 * ($thumb-size + $padding);
+
+  width: $width;
+  height: $height;
+  border-radius: $height / 2;
+
+  .switch {
+    &__track {
+      border-radius: $switch-height / 2;
+      padding: $padding;
+    }
+
+    &__thumb {
+      width: $thumb-size;
+      height: $thumb-size;
+      border-radius: $thumb-size / 2;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+
+  input {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    margin: 0;
+  }
+
+  &__track {
+    background-color: $switch-track-background;
+    width: 100%;
+    height: 100%;
+    transition: 180ms;
+  }
+
+  &__thumb {
+    background-color: $switch-thumb-background;
+    transition: 180ms;
+    transform: translateX(0);
+    will-change: transform;
+  }
+
+  &--checked {
+    .switch {
+      &__track {
+        background-color: $switch-track-checked-background;
+      }
+
+      &__thumb {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+
+    input {
+      cursor: unset;
+    }
+
+    .switch {
+      &__thumb {
+        background-color: $switch-thumb-disabled-background;
+      }
+    }
+  }
+
+  &--default {
+    @include switch-dimensions($switch-height, $switch-padding);
+  }
+
+  &--small {
+    @include switch-dimensions($switch-height-small, $switch-padding-small);
+  }
+}
+
+.switch-row {
+  @include flex-row;
+
+  align-items: center;
+  cursor: pointer;
+
+  &__content {
+    flex: 1 0 0;
+    margin-right: 1rem;
+  }
+
+  &__control {
+    flex: 0 0 auto;
+  }
+}

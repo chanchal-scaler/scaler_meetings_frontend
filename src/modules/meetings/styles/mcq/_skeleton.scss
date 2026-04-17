@@ -1,0 +1,49 @@
+$skeleton-launch-bgcolor: #ee6055;
+$skeleton-detail-bgcolor: $m-primary-light-background;
+
+.mcq-skeleton {
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &__header {
+    @include flex-row;
+
+    justify-content: flex-end;
+    align-items: center;
+    border: 0.1rem solid $border-color;
+    border-bottom: none;
+    background-color: $m-primary-light-background;
+    padding: 0.8rem 1.8rem;
+
+    .skeleton-divider {
+      opacity: 0.6;
+    }
+  }
+
+  &__body {
+    padding: 0.8rem 1.8rem;
+    border: 0.1rem solid $border-color;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &__detail {
+    background-color: darken($skeleton-detail-bgcolor, 2);
+  }
+
+  &__control {
+    @include flex-row;
+
+    justify-content: flex-start;
+    color: $hint-font-color;
+    align-items: center;
+    border: 0.1rem solid $border-color;
+    border-top: none;
+    padding: 0.8rem 1.8rem;
+
+    &.launch {
+      background-image: none;
+      background-color: darken($skeleton-launch-bgcolor, 2);
+    }
+  }
+}

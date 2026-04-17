@@ -1,0 +1,95 @@
+$m-select-popover-height: 20rem;
+$m-select-option-hover-background: rgba(1, 1, 1, 0.05);
+$m-select-option-active-background: rgba(1, 1, 1, 0.1);
+
+.m-select-option {
+  @include ellipsis;
+
+  padding: 1rem;
+
+  &:hover {
+    background-color: $m-select-option-hover-background;
+  }
+
+  &--selected {
+    background-color: $m-select-option-active-background;
+    color: $m-primary-color;
+  }
+
+  &--small {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.m-select {
+  &__arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 180ms;
+  }
+
+  &__title {
+    @include ellipsis;
+
+    padding: 1rem;
+    width: 100%;
+    padding-right: 3rem;
+    border-radius: $border-radius;
+    border: 0.2rem solid $border-color;
+    user-select: none;
+
+    &--open {
+      border-color: $m-primary-color;
+
+      .m-select {
+        &__arrow {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+
+    &--small {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__placeholder {
+    color: $hint-font-color;
+  }
+
+  &__input {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: bottom;
+
+    .m-select-option {
+      background-color: transparent !important;
+      padding: 0;
+      color: $dark-font-color;
+    }
+  }
+
+  &__popover {
+    @include flex-col;
+
+    align-items: stretch;
+    border-radius: $border-radius;
+    border: 0.1rem solid $border-color;
+    max-height: $m-select-popover-height;
+  }
+
+  &__empty {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  &__option {
+    width: 100%;
+    display: inline-block;
+    padding: 0;
+  }
+}

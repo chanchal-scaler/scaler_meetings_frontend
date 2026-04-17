@@ -1,0 +1,27 @@
+$skeleton-gradient-color: #f6f7f8;
+$skeleton-gradient-color-variant: darken($skeleton-gradient-color, 5);
+
+.skeleton {
+  background-image:
+    linear-gradient(
+      to right,
+      $skeleton-gradient-color 0%,
+      $skeleton-gradient-color-variant 20%,
+      $skeleton-gradient-color 40%,
+      $skeleton-gradient-color 100%
+    );
+  background-color: $skeleton-gradient-color;
+  background-repeat: no-repeat;
+  background-size: 90rem 100rem;
+  animation: shimmer 720ms linear infinite;
+  animation-fill-mode: forwards;
+  border-radius: $border-radius;
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--no-animation {
+    background-image: none;
+  }
+}

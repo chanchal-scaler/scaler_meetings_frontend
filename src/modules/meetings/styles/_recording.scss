@@ -1,0 +1,33 @@
+$m-recording-indicator-size: 1.6rem;
+
+.m-recording {
+  @include flex-row;
+
+  align-items: center;
+
+  &__indicator {
+    position: relative;
+    height: $m-recording-indicator-size;
+    width: $m-recording-indicator-size;
+    border-radius: 50%;
+    background-color: $m-background;
+    border: 0.1rem solid $card-background-color;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0.1rem;
+      left: 0.1rem;
+      width: calc(100% - 0.2rem);
+      height: calc(100% - 0.2rem);
+      border-radius: 50%;
+      background-color: $danger-color;
+    }
+  }
+
+  &__label {
+    margin-left: 1rem;
+    font-weight: $bold-font-weight;
+    color: $danger-color;
+  }
+}

@@ -1,0 +1,23 @@
+// Core colors
+$m-primary-color: #0041ca;
+$m-primary-color-hover: lighten($m-primary-color, 5);
+$m-primary-color-active: darken($m-primary-color, 5);
+
+// Others
+$m-primary-light-color: #a4baeb;
+$m-primary-light-background: #dfecff;
+$m-accent-light-background: #ffe0e4;
+$m-background: #272727;
+$m-header-height: 6rem;
+$m-footer-mobile-height: 6.4rem;
+$m-sidebar-width: 36rem;
+$m-disabled-quiz-card: #c1dce0;
+
+// Choices
+$m-choice-default-color: $m-primary-light-color;
+$m-choice-correct-color: #70b97a;
+$m-choice-wrong-color: #ee626f;
+$m-choice-highlight-color: #ad42ff;
+
+// Right dock
+$m-right-dock-width: 7.5rem;

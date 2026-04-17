@@ -1,0 +1,13 @@
+$vp-playback-title-background: #f7f8fa;
+$vp-playback-title-width: 5rem;
+
+.vp-playback-title {
+  background-color: $vp-playback-title-background;
+  border-radius: $border-radius;
+  min-width: $vp-playback-title-width;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: $h5-size;
+  font-weight: $bold-font-weight;
+  color: $default-font-color;
+}

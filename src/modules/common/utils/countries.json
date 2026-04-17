@@ -1,0 +1,472 @@
+{
+  "AE": {
+    "dialCode": "+971",
+    "locale": "ar-AE",
+    "name": "United Arab Emirates"
+  },
+  "BH": {
+    "dialCode": "+973",
+    "locale": "ar-BH",
+    "name": "Bahrain"
+  },
+  "DZ": {
+    "dialCode": "+213",
+    "locale": "ar-DZ",
+    "name": "Algeria"
+  },
+  "EG": {
+    "dialCode": "+20",
+    "locale": "ar-EG",
+    "name": "Egypt"
+  },
+  "IQ": {
+    "dialCode": "+964",
+    "locale": "ar-IQ",
+    "name": "Iraq"
+  },
+  "LB": {
+    "dialCode": "+961",
+    "locale": "ar-LB",
+    "name": "Lebanon"
+  },
+  "JO": {
+    "dialCode": "+962",
+    "locale": "ar-JO",
+    "name": "Jordan"
+  },
+  "KW": {
+    "dialCode": "+965",
+    "locale": "ar-KW",
+    "name": "Kuwait"
+  },
+  "SA": {
+    "dialCode": "+966",
+    "locale": "ar-SA",
+    "name": "Saudi Arabia"
+  },
+  "SY": {
+    "dialCode": "+963",
+    "locale": "ar-SY",
+    "name": "Syrian Arab Republic"
+  },
+  "TN": {
+    "dialCode": "+216",
+    "locale": "ar-TN",
+    "name": "Tunisia"
+  },
+  "BY": {
+    "dialCode": "+375",
+    "locale": "be-BY",
+    "name": "Belarus"
+  },
+  "BG": {
+    "dialCode": "+359",
+    "locale": "bg-BG",
+    "name": "Bulgaria"
+  },
+  "BD": {
+    "dialCode": "+880",
+    "locale": "bn-BD",
+    "name": "Bangladesh"
+  },
+  "CZ": {
+    "dialCode": "+420",
+    "locale": "cs-CZ",
+    "name": "Czech Republic"
+  },
+  "DK": {
+    "dialCode": "+45",
+    "locale": "da-DK",
+    "name": "Denmark"
+  },
+  "DE": {
+    "dialCode": "+49",
+    "locale": "de-DE",
+    "name": "Germany"
+  },
+  "AT": {
+    "dialCode": "+43",
+    "locale": "de-AT",
+    "name": "Austria"
+  },
+  "GR": {
+    "dialCode": "+30",
+    "locale": "el-GR",
+    "name": "Greece"
+  },
+  "AU": {
+    "dialCode": "+61",
+    "locale": "en-AU",
+    "name": "Australia"
+  },
+  "GB": {
+    "dialCode": "+44",
+    "locale": "en-GB",
+    "name": "United Kingdom"
+  },
+  "GG": {
+    "dialCode": "+44",
+    "locale": "en-GG",
+    "name": "Guernsey"
+  },
+  "GH": {
+    "dialCode": "+233",
+    "locale": "en-GH",
+    "name": "Ghana"
+  },
+  "HK": {
+    "dialCode": "+852",
+    "locale": "en-HK",
+    "name": "Hong Kong"
+  },
+  "IE": {
+    "dialCode": "+353",
+    "locale": "en-IE",
+    "name": "Ireland"
+  },
+  "IN": {
+    "dialCode": "+91",
+    "locale": "en-IN",
+    "name": "India"
+  },
+  "KE": {
+    "dialCode": "+254",
+    "locale": "en-KE",
+    "name": "Kenya"
+  },
+  "MT": {
+    "dialCode": "+356",
+    "locale": "en-MT",
+    "name": "Malta"
+  },
+  "MU": {
+    "dialCode": "+230",
+    "locale": "en-MU",
+    "name": "Mauritius"
+  },
+  "NG": {
+    "dialCode": "+234",
+    "locale": "en-NG",
+    "name": "Nigeria"
+  },
+  "NZ": {
+    "dialCode": "+64",
+    "locale": "en-NZ",
+    "name": "New Zealand"
+  },
+  "PK": {
+    "dialCode": "+92",
+    "locale": "en-PK",
+    "name": "Pakistan"
+  },
+  "RW": {
+    "dialCode": "+250",
+    "locale": "en-RW",
+    "name": "Rwanda"
+  },
+  "SG": {
+    "dialCode": "+65",
+    "locale": "en-SG",
+    "name": "Singapore"
+  },
+  "TZ": {
+    "dialCode": "+255",
+    "locale": "en-TZ",
+    "name": "Tanzania, United Republic of"
+  },
+  "UG": {
+    "dialCode": "+256",
+    "locale": "en-UG",
+    "name": "Uganda"
+  },
+  "US": {
+    "dialCode": "+1",
+    "locale": "en-US",
+    "name": "United States"
+  },
+  "ZA": {
+    "dialCode": "+27",
+    "locale": "en-ZA",
+    "name": "South Africa"
+  },
+  "ZM": {
+    "dialCode": "+260",
+    "locale": "en-ZM",
+    "name": "Zambia"
+  },
+  "CL": {
+    "dialCode": "+56",
+    "locale": "es-CL",
+    "name": "Chile"
+  },
+  "ES": {
+    "dialCode": "+34",
+    "locale": "es-ES",
+    "name": "Spain"
+  },
+  "PE": {
+    "dialCode": "+51",
+    "locale": "es-PE",
+    "name": "Peru"
+  },
+  "MX": {
+    "dialCode": "+52",
+    "locale": "es-MX",
+    "name": "Mexico"
+  },
+  "PY": {
+    "dialCode": "+595",
+    "locale": "es-PY",
+    "name": "Paraguay"
+  },
+  "UY": {
+    "dialCode": "+598",
+    "locale": "es-UY",
+    "name": "Uruguay"
+  },
+  "EE": {
+    "dialCode": "+372",
+    "locale": "et-EE",
+    "name": "Estonia"
+  },
+  "IR": {
+    "dialCode": "+98",
+    "locale": "fa-IR",
+    "name": "Iran, Islamic Republic of"
+  },
+  "FI": {
+    "dialCode": "+358",
+    "locale": "fi-FI",
+    "name": "Finland"
+  },
+  "FJ": {
+    "dialCode": "+679",
+    "locale": "fj-FJ",
+    "name": "Fiji"
+  },
+  "FO": {
+    "dialCode": "+298",
+    "locale": "fo-FO",
+    "name": "Faroe Islands"
+  },
+  "FR": {
+    "dialCode": "+33",
+    "locale": "fr-FR",
+    "name": "France"
+  },
+  "GF": {
+    "dialCode": "+594",
+    "locale": "fr-GF",
+    "name": "French Guiana"
+  },
+  "GP": {
+    "dialCode": "+590",
+    "locale": "fr-GP",
+    "name": "Guadeloupe"
+  },
+  "MQ": {
+    "dialCode": "+596",
+    "locale": "fr-MQ",
+    "name": "Martinique"
+  },
+  "RE": {
+    "dialCode": "+262",
+    "locale": "fr-RE",
+    "name": "Réunion"
+  },
+  "IL": {
+    "dialCode": "+972",
+    "locale": "he-IL",
+    "name": "Israel"
+  },
+  "HU": {
+    "dialCode": "+36",
+    "locale": "hu-HU",
+    "name": "Hungary"
+  },
+  "ID": {
+    "dialCode": "+62",
+    "locale": "id-ID",
+    "name": "Indonesia"
+  },
+  "IT": {
+    "dialCode": "+39",
+    "locale": "it-IT",
+    "name": "Italy"
+  },
+  "JP": {
+    "dialCode": "+81",
+    "locale": "ja-JP",
+    "name": "Japan"
+  },
+  "KZ": {
+    "dialCode": "+7",
+    "locale": "kk-KZ",
+    "name": "Kazakhstan"
+  },
+  "GL": {
+    "dialCode": "+299",
+    "locale": "kl-GL",
+    "name": "Greenland"
+  },
+  "KR": {
+    "dialCode": "+82",
+    "locale": "ko-KR",
+    "name": "Korea, Republic of"
+  },
+  "LT": {
+    "dialCode": "+370",
+    "locale": "lt-LT",
+    "name": "Lithuania"
+  },
+  "MY": {
+    "dialCode": "+60",
+    "locale": "ms-MY",
+    "name": "Malaysia"
+  },
+  "NO": {
+    "dialCode": "+47",
+    "locale": "nn-NO",
+    "name": "Norway"
+  },
+  "BE": {
+    "dialCode": "+32",
+    "locale": "nl-BE",
+    "name": "Belgium"
+  },
+  "NL": {
+    "dialCode": "+31",
+    "locale": "nl-NL",
+    "name": "Netherlands"
+  },
+  "PL": {
+    "dialCode": "+48",
+    "locale": "pl-PL",
+    "name": "Poland"
+  },
+  "BR": {
+    "dialCode": "+55",
+    "locale": "pt-BR",
+    "name": "Brazil"
+  },
+  "PT": {
+    "dialCode": "+351",
+    "locale": "pt-PT",
+    "name": "Portugal"
+  },
+  "RO": {
+    "dialCode": "+40",
+    "locale": "ro-RO",
+    "name": "Romania"
+  },
+  "RU": {
+    "dialCode": "+7",
+    "locale": "ru-RU",
+    "name": "Russia"
+  },
+  "SI": {
+    "dialCode": "+386",
+    "locale": "sl-SI",
+    "name": "Slovenia"
+  },
+  "SK": {
+    "dialCode": "+421",
+    "locale": "sk-SK",
+    "name": "Slovakia"
+  },
+  "RS": {
+    "dialCode": "+381",
+    "locale": "sr-RS",
+    "name": "Serbia"
+  },
+  "SE": {
+    "dialCode": "+46",
+    "locale": "sv-SE",
+    "name": "Sweden"
+  },
+  "TH": {
+    "dialCode": "+66",
+    "locale": "th-TH",
+    "name": "Thailand"
+  },
+  "TR": {
+    "dialCode": "+90",
+    "locale": "tr-TR",
+    "name": "Turkey"
+  },
+  "UA": {
+    "dialCode": "+380",
+    "locale": "uk-UA",
+    "name": "Ukraine"
+  },
+  "VN": {
+    "dialCode": "+84",
+    "locale": "vi-VN",
+    "name": "Viet Nam"
+  },
+  "CN": {
+    "dialCode": "+86",
+    "locale": "zh-CN",
+    "name": "China"
+  },
+  "TW": {
+    "dialCode": "+886",
+    "locale": "zh-TW",
+    "name": "Taiwan, Province of China"
+  },
+  "AM": {
+    "dialCode": "+374",
+    "locale": "am-AM",
+    "name": "Republic of Armenia"
+  },
+  "LK": {
+    "dialCode": "+94",
+    "locale": "en-SL",
+    "name": "Sri Lanka"
+  },
+  "MA": {
+    "dialCode": "+212",
+    "locale": "",
+    "name": "Morocco"
+  },
+  "VE": {
+    "dialCode": "+58",
+    "locale": "es-VE",
+    "name": "Venezuela"
+  },
+  "MW": {
+    "dialCode": "+265",
+    "locale": "es-MW",
+    "name": "Malawi"
+  },
+  "NP": {
+    "dialCode": "+977",
+    "locale": "es-NP",
+    "name": "Nepal"
+  },
+  "PH": {
+    "dialCode": "+63",
+    "locale": "es-PH",
+    "name": "Philippines"
+  },
+  "CO": {
+    "dialCode": "+57",
+    "locale": "es-CO",
+    "name": "Colombia"
+  },
+  "KH": {
+    "dialCode": "+855",
+    "locale": "es-KH",
+    "name": "Cambodia"
+  },
+  "BO": {
+    "dialCode": "+591",
+    "locale": "es-BO",
+    "name": "Bolivia"
+  },
+  "AR": {
+    "dialCode": "+54",
+    "locale": "es-AR",
+    "name": "Argentina"
+  }
+} 

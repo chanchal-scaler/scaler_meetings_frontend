@@ -1,0 +1,10 @@
+$m-time-elapsed-height: 0.5rem;
+
+.m-time-elapsed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: $m-time-elapsed-height;
+  background-color: $danger-color;
+}

@@ -1,0 +1,174 @@
+$m-proxy-char-form-placeholder-font-color: #61738e;
+$m-proxy-char-form-input-border-color: #d6dee5;
+$m-proxy-char-form-cta-color: #0080ff;
+$m-proxy-char-form-seperator-text-color: #91a1b7;
+$m-proxy-chat-form-primary-color: #1a2c47;
+$m-proxy-chat-form-seperator-color: #e7ebf1;
+$m-proxy-chat-form-active-dot-color: #e22d4c;
+
+.m-proxy-chat-form-title {
+  margin-right: 1rem;
+  scale: 1.2;
+}
+
+.m-proxy-chat-form {
+  border-radius: $border-radius-l;
+  max-width: unset;
+  width: 60rem;
+  min-height: 40vh;
+  max-height: 80vh;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__header {
+    border: none;
+    padding: 1.6rem 2.4rem;
+    background-color: $white-color;
+  }
+
+  &__body {
+    padding: 1.6rem 1.2rem;
+  }
+
+  &__cta {
+    width: 100%;
+    background: $m-proxy-char-form-cta-color;
+    font-size: $h4-size;
+  }
+}
+
+.m-proxy-chat-form-placeholder {
+  @include flex-row;
+  @include align-c;
+
+  color: $m-proxy-char-form-placeholder-font-color;
+  position: absolute;
+  margin-top: 1.2rem;
+  margin-left: 1.6rem;
+  cursor: text;
+
+  &--description {
+    margin-top: 3.2rem;
+  }
+
+  &__icon {
+    margin-right: 1.2rem;
+    font-size: $h6-size;
+  }
+}
+
+.m-proxy-chat-form-input {
+  width: 100%;
+  flex: 1;
+  border: 0.1rem solid $m-proxy-char-form-input-border-color;
+  border-radius: $border-radius-l;
+  padding: 1.2rem 1.6rem;
+
+  &--description {
+    margin: 2.4rem 0;
+    max-width: 100%;
+  }
+}
+
+.m-proxy-chat-form-template {
+  &__custom_message_cta {
+    color: $m-proxy-char-form-cta-color !important;
+    border-color: $m-proxy-char-form-cta-color !important;
+    width: 100%;
+  }
+
+  &__or_seperator {
+    @include flex-row-c;
+
+    gap: 0.5rem;
+    width: 100%;
+    color: $m-proxy-char-form-seperator-text-color;
+    margin: 1.2rem 0;
+
+    &--line {
+      flex: 1;
+      height: 0.1rem;
+      background-color: $m-proxy-char-form-input-border-color;
+      width: 100%;
+    }
+  }
+
+  &__tabs {
+    @include flex-row;
+
+    margin: 0 0 1rem;
+
+    &__title {
+      @include flex-row;
+
+      gap: 1rem;
+      justify-content: center;
+      flex: 1 0 0;
+      padding: 1rem;
+    }
+
+    &--active {
+      background-color: $m-proxy-chat-form-primary-color;
+    }
+  }
+
+  &--dot {
+    background-color: $m-proxy-chat-form-active-dot-color;
+    border-radius: 50%;
+    height: 0.4rem;
+    width: 0.4rem;
+    margin: auto 0;
+  }
+}
+
+.m-proxy-chat-form-accordian {
+  border-bottom: 0.1rem solid $m-proxy-chat-form-seperator-color;
+  padding-bottom: 1.4rem;
+
+  &__header {
+    @include flex-row-c;
+
+    gap: 1rem;
+    justify-content: space-between;
+    padding-top: 1.4rem;
+    background-color: $white-color;
+    color: $m-proxy-chat-form-primary-color;
+    font-size: $h4-size;
+    cursor: pointer;
+  }
+
+  &__body {
+    padding: 1.6rem 1.2rem;
+  }
+
+  &__icon {
+    font-size: $h3-size;
+    color: $m-proxy-chat-form-primary-color;
+  }
+
+  &__cta_group {
+    @include flex-row;
+
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  &__action_btn {
+    color: $m-proxy-char-form-cta-color !important;
+    font-size: $h4-size;
+    border-radius: $border-radius-l !important;
+    flex: 1;
+    height: fit-content;
+  }
+
+  &__btn {
+    background-color: $m-proxy-char-form-cta-color !important;
+    font-size: $h4-size;
+    border-radius: $border-radius-l !important;
+    height: fit-content;
+  }
+}

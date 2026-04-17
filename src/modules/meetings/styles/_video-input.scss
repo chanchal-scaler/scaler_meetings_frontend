@@ -1,0 +1,40 @@
+$video-input-preview-background: #f2f2f2;
+$video-input-stream-background: #000000;
+
+.video-input {
+  &__preview {
+    border-radius: $border-radius;
+    background-color: $video-input-preview-background;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  &__stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: $video-input-stream-background;
+    transform: scaleX(-1);
+
+    &--hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__hint {
+    @include flex-col;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+  }
+}

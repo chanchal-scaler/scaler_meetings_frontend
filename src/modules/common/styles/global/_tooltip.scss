@@ -1,0 +1,13 @@
+$tooltip-background: #1a2c47;
+$tooltip-color: #ffffff;
+$tooltip-padding: 0.5rem 1rem;
+$tooltip-font-size: $h5-size;
+
+.tooltip {
+  display: block;
+  background-color: $tooltip-background;
+  box-shadow: none;
+  color: $tooltip-color;
+  padding: $tooltip-padding;
+  font-size: $tooltip-font-size;
+}

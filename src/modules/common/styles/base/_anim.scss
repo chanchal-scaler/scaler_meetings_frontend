@@ -1,0 +1,19 @@
+@mixin keyframes ($animation_name) {
+  @at-root {
+    @keyframes #{$animation_name} {
+      @content;
+    }
+  }
+}
+
+@mixin anon-keyframes {
+  $animation-number: 0 !default !global;
+  $animation-number: $animation-number + 1 !global;
+  $name: unquote("#{$app-name}-anim-#{$animation-number}");
+
+  animation-name: $name;
+
+  @include keyframes($name) {
+    @content;
+  }
+}

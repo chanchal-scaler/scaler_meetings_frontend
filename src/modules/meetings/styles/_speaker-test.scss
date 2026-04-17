@@ -1,0 +1,114 @@
+$speaker-test-play-bg-color: $light-grey-color;
+$speaker-test-sound-bars-bg-color: $grey-color;
+$speaker-test-sound-bars-color: $dark-font-color;
+$speaker-test-text-color: $light-black-color;
+
+.speaker-test {
+  &__play-ringtone {
+    @include flex-row;
+
+    background-color: $speaker-test-play-bg-color;
+    border-radius: 0.5rem;
+    padding: 0.7rem 2.2rem 0.7rem 1rem;
+  }
+
+  &__play-ringtone-info {
+    @include flex-row;
+
+    i {
+      margin-right: 0.8rem;
+    }
+  }
+
+  &__audio-bar-single {
+    height: 0.3rem;
+    width: 0.3rem;
+    background-color: $speaker-test-sound-bars-color;
+    margin: 0 0.1rem;
+    border-radius: 50%;
+  }
+
+  &__audio-bars {
+    @include flex-row;
+
+    background-color: $speaker-test-sound-bars-bg-color;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+
+    &--playing {
+      .speaker-test__audio-bar-single {
+        animation-duration: 900ms;
+        animation-timing-function: steps(9, jump-none);
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+
+        @include anon-keyframes {
+          0% {
+            height: 0.3rem;
+          }
+
+          100% {
+            height: 0.8rem;
+          }
+        }
+
+        &:nth-child(2) {
+          border-radius: 30%;
+
+          @include anon-keyframes {
+            0% {
+              height: 0.3rem;
+            }
+
+            100% {
+              height: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__test-again {
+    @include flex-row;
+
+    margin-top: 1.2rem;
+    color: $speaker-test-text-color;
+  }
+
+  &__test-again-btn {
+    margin-left: 0.5rem;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    margin-top: 1.6rem;
+    color: $speaker-test-text-color;
+  }
+
+  &__action-y {
+    margin-left: 2.4rem;
+  }
+
+  &__action-n {
+    margin-left: 4rem;
+  }
+
+  &__working-fine {
+    margin-top: 1.6rem;
+    color: $speaker-test-text-color;
+  }
+
+  &__try-again {
+    margin-top: 1.6rem;
+    color: $speaker-test-text-color;
+  }
+
+  &__checklist {
+    padding-left: 1.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+}

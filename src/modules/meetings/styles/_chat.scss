@@ -1,0 +1,316 @@
+$chat-message-event-height: 0.1rem;
+$chat-notification-spacing: 1rem;
+$chat-input-option-width: 18rem;
+$chat-input-controls-mobile-width: 15rem;
+$chat-reaction-size: 2.6rem;
+$chat-reaction-padding: 0.5rem;
+
+.chat-input {
+  @include flex-col;
+
+  padding: 1rem;
+
+  &__disabled {
+    text-align: center;
+    color: $dark-font-color;
+  }
+
+  .textarea, select {
+    border: none;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    color: $default-font-color;
+  }
+
+  .textarea {
+    resize: none;
+    vertical-align: bottom;
+    width: 100%;
+  }
+
+  &__controls {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    transition: 180ms;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+
+    @include mobile {
+      max-width: $chat-input-controls-mobile-width;
+      margin-bottom: 0;
+    }
+  }
+
+  &__to {
+    @include flex-row;
+
+    font-weight: $bold-font-weight;
+    color: $dark-font-color;
+    align-items: center;
+    font-size: $h5-size;
+  }
+
+  &__select {
+    .m-select {
+      &__title {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0.5rem;
+        border: none;
+      }
+    }
+  }
+
+  &__select-option {
+    max-width: 18rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__divider {
+    height: 100%;
+    margin-right: 0.5rem;
+    width: 0.1rem;
+    background-color: $border-color;
+  }
+
+  &__field {
+    @include flex-row;
+
+    align-items: center;
+
+    @include mobile {
+      flex: 1 0 0;
+    }
+  }
+
+  &__textarea {
+    flex: 1 0 0;
+  }
+
+  &__emoji-popover {
+    padding: 0;
+    border: none;
+  }
+
+  &--focused {
+    .chat-input {
+      @include mobile {
+        &__controls {
+          max-width: 0;
+        }
+
+        &__divider {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.chat-window {
+  opacity: 0;
+
+  &__messages {
+    @include flex-col;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__messages-container {
+    overflow: auto;
+    position: relative;
+    height: 100%;
+    border-top: 0.1rem solid $border-color;
+  }
+
+  &--loaded {
+    opacity: 1;
+  }
+}
+
+.chat-message {
+  @include flex-col;
+
+  margin: 2rem 0;
+
+  &__event {
+    position: relative;
+    padding: 1rem 0;
+    text-align: left;
+    font-size: $h5-size;
+    color: $hint-font-color;
+
+    span {
+      position: relative;
+      padding: 0.5rem 1rem;
+      background-color: $body-background-color;
+      z-index: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: $chat-message-event-height;
+      top: calc(50% - #{$chat-message-event-height / 2});
+      left: 0;
+      right: 0;
+      background-color: $hint-font-color;
+    }
+
+    &--danger {
+      &:before {
+        background-color: $danger-color;
+      }
+
+      span {
+        color: $danger-color;
+      }
+    }
+  }
+
+  @include mobile {
+    margin: 1rem 0;
+
+    &--reactions {
+      margin: 2rem 0;
+    }
+  }
+}
+
+.chat-notification {
+  @include flex-c;
+
+  position: absolute;
+  right: $chat-notification-spacing;
+  bottom: $chat-notification-spacing;
+}
+
+.chat-loader {
+  @include box-shadow;
+
+  border-radius: 50%;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  background-color: $card-background-color;
+}
+
+.chat-reactions {
+  position: relative;
+
+  &__content {
+    @include flex-row;
+
+    align-items: center;
+    border-top: 0.1rem solid $border-color;
+    justify-content: space-between;
+    padding: 1rem 1rem 0.3rem;
+    overflow: auto;
+  }
+
+  &__list {
+    @include flex-row;
+
+    margin-right: -0.5rem;
+    flex: 1 0 0;
+    justify-content: flex-end;
+  }
+
+  &__question {
+    @include box-shadow;
+
+    border-radius: 1.4rem;
+    color: $link-color;
+    margin-right: 1rem;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: rgba(1, 1, 1, 0.1);
+    }
+  }
+
+  &__count {
+    animation: 360ms normal ease-in-out both 1;
+    font-size: 1rem;
+  }
+
+  &__item {
+    border-radius: $chat-reaction-size / 2 + $chat-reaction-padding;
+    box-shadow: 0 0.1rem 0.4rem 0 rgba(0, 0, 0, 0.13);
+    padding: $chat-reaction-padding;
+    background: $card-background-color;
+    border: 0.1rem solid transparent;
+    margin: 0 0.5rem;
+    position: relative;
+
+    &:hover {
+      background-color: rgba(1, 1, 1, 0.1);
+    }
+
+    &--reacted {
+      background-color: lighten($warning-color, 25);
+
+      &:hover {
+        background-color: lighten($warning-color, 25);
+      }
+    }
+
+    &--disabled {
+      cursor: default;
+      background-color: darken($card-background-color, 5);
+      color: $hint-font-color;
+
+      &:hover {
+        background-color: darken($card-background-color, 5);
+      }
+    }
+
+    &--animate {
+      .chat-reactions__count {
+        @include anon-keyframes {
+          0% {
+            transform: scale(1);
+          }
+
+          50% {
+            transform: scale(2);
+          }
+
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-size: $h6-size;
+    padding-right: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  &__badge {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  @include mobile {
+    padding: 1rem;
+  }
+}

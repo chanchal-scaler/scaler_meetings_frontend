@@ -1,0 +1,62 @@
+$status-tag-states: (
+  attention: (
+    color: #e23f5b,
+    background: #fcebee
+  ),
+  default: (
+    color: $default-font-color,
+    background: $border-color
+  ),
+  success: (
+    color: #2eb676,
+    background: #eaf7f1
+  ),
+  warning: (
+    color: #b99839,
+    background: #fcefc9
+  ),
+  info: (
+    color: #fc9100,
+    background: #fff3e3
+  ),
+  hint: (
+    color: #61738e,
+    background: #eaeff4
+  )
+);
+
+.status-tag-2 {
+  @include flex-row;
+
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  font-weight: $bold-font-weight;
+  font-size: $h5-size;
+
+  &__icon {
+    &--left {
+      margin-right: 0.5rem;
+    }
+
+    &--right {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &--small {
+    font-size: $h6-size;
+  }
+
+  &--xs {
+    font-size: $h6-size;
+    padding: 0 0.8rem;
+  }
+
+  @each $state, $data in $status-tag-states {
+    &--#{$state} {
+      color: map-get($data, 'color');
+      background-color: map-get($data, 'background');
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.image-modal {
+  padding: 0;
+
+  &.sr-modal {
+    border: none;
+    max-width: 60rem;
+    background-color: transparent;
+  }
+
+  .sr-modal__body {
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}

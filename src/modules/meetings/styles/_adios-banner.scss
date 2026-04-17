@@ -1,0 +1,19 @@
+$adios-banner-max-width: 45rem;
+
+.adios-banner {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: $adios-banner-max-width;
+  border-radius: 0.4rem;
+
+  &__btn {
+    text-decoration: underline;
+    font-weight: $bold-font-weight;
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+  }
+}

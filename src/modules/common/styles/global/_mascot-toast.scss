@@ -1,0 +1,58 @@
+$mascot-toast-font-color: #324766;
+$mascot-toast-success-strip-bg-color: #ecf7f1;
+$mascot-toast-error-strip-bg-color: #f9ecee;
+
+.toast--with-mascot {
+  background-color: $white-color !important;
+  width: 38rem;
+  padding: 0 !important;
+
+  @include box-shadow;
+}
+
+.mascot-toast-container {
+  @include flex-row;
+  @include align-c;
+
+  padding: 2rem 1rem;
+  position: relative;
+  border-radius: 0.4rem;
+
+  &__content {
+    @include flex-col;
+
+    margin: 0 2rem;
+    color: $mascot-toast-font-color;
+    font-size: $h5-size;
+    font-weight: $default-font-weight;
+  }
+
+  &__title {
+    color: $mascot-toast-font-color;
+    font-size: $h4-size;
+    font-weight: $bold-font-weight;
+    margin-right: 0.5rem;
+  }
+
+  &--success:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $mascot-toast-success-strip-bg-color;
+    width: 100%;
+    height: 1rem;
+  }
+
+  &--error:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $mascot-toast-error-strip-bg-color;
+    width: 100%;
+    height: 1rem;
+  }
+}

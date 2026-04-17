@@ -1,0 +1,314 @@
+$m-bookmark-question-color: #98ba79;
+$m-bookmark-user-color: $warning-color;
+$m-bookmark-admin-color: #779ad0;
+$m-bookmark-highlight-color: #fff4d9;
+$m-bookmark-dot-size: 0.7rem;
+$m-bookmark-hint-color: $hint-font-color;
+$m-bookmark-failed-color: $primary-color;
+$m-bookmark-alert-color: #e95d75;
+
+@mixin bookmark-type-styles($color) {
+  .m-bookmark-item {
+    &__timer {
+      background-color: $color;
+    }
+
+    &__label {
+      i {
+        color: $color;
+      }
+    }
+  }
+}
+
+@mixin bookmark-type-player-input-styles($color) {
+  .vp-bookmark-input {
+    &__header {
+      background-color: rgba($color, 0.4);
+    }
+
+    &__chip {
+      background-color: $color;
+    }
+  }
+}
+
+.m-bookmark-item {
+  padding: 0.5rem 1rem;
+  transition: 180ms;
+
+  &__main {
+    border-radius: $border-radius;
+    border: 0.1rem solid $border-color;
+    overflow: hidden;
+    background-color: $card-background-color;
+    transition: 360ms;
+  }
+
+  &__header {
+    @include flex-row;
+
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include flex-row;
+
+    align-items: center;
+    flex: 1 0 0;
+  }
+
+  &__timer {
+    font-size: $h6-size;
+    padding: 0.5rem 1rem;
+    font-weight: $bold-font-weight;
+    color: $light-font-color;
+  }
+
+  &__alert {
+    background-color: $m-bookmark-alert-color;
+    padding: 0.5rem 2.5rem;
+  }
+
+  &__label {
+    @include flex-row;
+
+    align-items: center;
+    margin-left: 0.5rem;
+
+    i {
+      margin-right: 0.2rem;
+    }
+  }
+
+  &__footer {
+    @include flex-row;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 1rem;
+  }
+
+  &__footer-inner {
+    width: 100%;
+  }
+
+  &__content {
+    @include flex-row;
+
+    width: 100%;
+    align-items: center;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 0 1rem 1rem;
+    background-color: transparent !important;
+    color: $default-font-color !important;
+    border: none !important;
+    outline: none !important;
+    resize: none;
+    word-break: break-word;
+  }
+
+  &__actions {
+    @include flex-row;
+
+    align-items: center;
+  }
+
+  &__delete {
+    visibility: hidden;
+
+    @include mobile {
+      visibility: visible;
+    }
+  }
+
+  &__submit {
+    display: none;
+
+    @include mobile {
+      display: block;
+      visibility: hidden;
+
+      &--visible {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__dot {
+    border-radius: $m-bookmark-dot-size / 2;
+    width: $m-bookmark-dot-size;
+    height: $m-bookmark-dot-size;
+    background-color: $m-bookmark-hint-color;
+    margin-right: 0.5rem;
+  }
+
+  &__status {
+    font-size: $h6-size;
+  }
+
+  &__hint {
+    @include flex-row;
+
+    min-height: $h6-size * 1.4;
+    align-items: center;
+    margin-right: 1rem;
+    color: $m-bookmark-hint-color;
+
+    &--failed {
+      color: $m-bookmark-failed-color;
+      cursor: pointer;
+
+      .m-bookmark-item {
+        &__dot {
+          background-color: $m-bookmark-failed-color;
+        }
+      }
+    }
+
+    &--desktop {
+      @include tablet {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &--admin {
+    @include bookmark-type-styles($m-bookmark-admin-color);
+  }
+
+  &--question {
+    @include bookmark-type-styles($m-bookmark-question-color);
+  }
+
+  &--user {
+    @include bookmark-type-styles($m-bookmark-user-color);
+  }
+
+  &--shadow {
+    .m-bookmark-item {
+      &__main {
+        @include box-shadow($x: 0, $y: 0.1rem);
+
+        border-color: transparent;
+      }
+    }
+  }
+
+  &--editable {
+    &:hover {
+      background-color: $m-bookmark-highlight-color;
+
+      .m-bookmark-item {
+        &__delete {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &--highlighted {
+    .m-bookmark-item__main {
+      background-color: $m-bookmark-highlight-color;
+    }
+  }
+
+  &--editing {
+    background-color: transparent !important;
+
+    .m-bookmark-item__main {
+      background-color: $m-bookmark-highlight-color;
+    }
+  }
+
+  &__footer-transition {
+    animation: 0.4s normal;
+    -webkit-animation: 0.4s normal;
+
+    @include anon-keyframes {
+      0% {
+        height: 0;
+        display: none;
+        opacity: 0;
+      }
+
+      100% { height: 4rem; }
+    }
+  }
+}
+
+.m-bookmarks {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex: 1 0 0;
+
+  &__section {
+    padding: 0.5rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid $border-color;
+    }
+  }
+
+  &__list {
+    padding: 0.5rem 0;
+  }
+
+  @include tablet {
+    overflow: initial;
+  }
+}
+
+.m-bookmark-add {
+  @include flex-row;
+
+  align-items: flex-start;
+  margin: 1rem;
+  padding: 1rem;
+
+  &__placeholder {
+    flex: 1 0 0;
+    font-size: $h5-size;
+    color: $hint-font-color;
+  }
+}
+
+.m-bookmark-marker {
+  &--question {
+    background-color: $m-bookmark-question-color;
+  }
+
+  &--admin {
+    background-color: $m-bookmark-admin-color;
+  }
+
+  &--user {
+    background-color: $m-bookmark-user-color;
+  }
+}
+
+.m-bookmark-player-input {
+  &--question {
+    @include bookmark-type-player-input-styles($m-bookmark-question-color);
+  }
+
+  &--admin {
+    @include bookmark-type-player-input-styles($m-bookmark-admin-color);
+  }
+
+  &--user {
+    @include bookmark-type-player-input-styles($m-bookmark-user-color);
+  }
+}
+
+.m-bookmarks-container {
+  @include tablet {
+    overflow: auto;
+  }
+}

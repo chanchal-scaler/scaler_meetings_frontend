@@ -1,0 +1,77 @@
+$toast-corner-spacing: 2rem;
+
+.toast {
+  position: fixed;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  z-index: $toast-z;
+
+  &__message {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  &__icon {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &--top-center {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--top-right {
+    top: $toast-corner-spacing;
+    right: $toast-corner-spacing;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &--bottom-right {
+    bottom: $toast-corner-spacing;
+    right: $toast-corner-spacing;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &--top-left {
+    top: $toast-corner-spacing;
+    left: $toast-corner-spacing;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &--bottom-center {
+    bottom: $toast-corner-spacing;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--bottom-left {
+    bottom: $toast-corner-spacing;
+    left: $toast-corner-spacing;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &--info {
+    background-color: $info-color;
+    color: $light-font-color;
+  }
+
+  &--error {
+    background-color: $danger-color;
+    color: $light-font-color;
+  }
+
+  &--success {
+    background-color: $success-color-active;
+    color: $light-font-color;
+  }
+
+  &--warning {
+    background-color: $warning-color;
+    color: $light-font-color;
+  }
+}
+
+// to add animation keyframe later
