@@ -5,8 +5,11 @@ WORKDIR /app
 ARG NPM_TOKEN
 ENV NPM_TOKEN=${NPM_TOKEN}
 
-COPY package.json yarn.lock .npmrc ./
+COPY package.json yarn.lock ./
+RUN test -n "$NPM_TOKEN" || (echo "NPM_TOKEN build arg is required for private packages" && exit 1)
+RUN printf "@vectord:registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=%s\nalways-auth=true\n" "$NPM_TOKEN" > .npmrc
 RUN yarn install --frozen-lockfile --non-interactive
+RUN rm -f .npmrc
 
 COPY . .
 RUN yarn build
