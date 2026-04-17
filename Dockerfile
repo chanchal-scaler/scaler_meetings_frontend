@@ -2,8 +2,11 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+ARG NPM_TOKEN
+ENV NPM_TOKEN=${NPM_TOKEN}
+
+COPY package.json yarn.lock .npmrc ./
+RUN yarn install --frozen-lockfile --non-interactive
 
 COPY . .
 RUN yarn build
