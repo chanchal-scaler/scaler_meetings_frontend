@@ -1,3 +1,4 @@
+import { Observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import { isFunction } from '@common/utils/type';
@@ -10,7 +11,11 @@ function RenderIfLayoutMatch({
   layoutModes = [LayoutModes.standalone, LayoutModes.widgetLarge],
 }) {
   if (layoutModes.includes(layoutStore.mode)) {
-    return isFunction(children) ? children() : children;
+    return isFunction(children) ? (
+      <Observer>
+        {() => children()}
+      </Observer>
+    ) : children;
   } else {
     return null;
   }

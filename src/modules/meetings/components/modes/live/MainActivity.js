@@ -97,16 +97,16 @@ function MainActivity({ meetingStore: store, genericNudgeStore }) {
 
   function quizUi() {
     return (
-      <>
-        {manager.quiz && (
-          <LiveQuiz key={manager.quiz.id} />
-        )}
-        {manager.poll && !manager.poll.isMinimized && (
-          <LivePoll />
-        )}
-        <QuizHQ />
-        <Observer>
-          {() => (
+      <Observer>
+        {() => (
+          <>
+            {manager.quiz && (
+              <LiveQuiz key={manager.quiz.id} />
+            )}
+            {manager.poll && !manager.poll.isMinimized && (
+              <LivePoll />
+            )}
+            <QuizHQ />
             <Leaderboard
               isOpen={manager.isLeaderboardOpen}
               leaderboard={manager.leaderboard}
@@ -114,9 +114,9 @@ function MainActivity({ meetingStore: store, genericNudgeStore }) {
               onClose={() => manager.setLeaderboardOpen(false)}
               numProblems={manager.numProblems}
             />
-          )}
-        </Observer>
-      </>
+          </>
+        )}
+      </Observer>
     );
   }
 

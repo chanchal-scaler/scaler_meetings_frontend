@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
-import { observer } from 'mobx-react';
+import { Observer, observer } from 'mobx-react';
 
 import { HintLayout, LoadingLayout } from '@common/ui/layouts';
 
@@ -11,7 +11,11 @@ function LoadPlaylistContent({ content, children, className }) {
   }, [content]);
 
   if (content.contentData) {
-    return children();
+    return (
+      <Observer>
+        {() => children()}
+      </Observer>
+    );
   } else if (content.loadError) {
     return (
       <HintLayout

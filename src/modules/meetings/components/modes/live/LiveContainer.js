@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import compose from 'lodash/fp/compose';
@@ -32,7 +33,9 @@ function LiveContainer({
         className={classNames('meeting', { [className]: className })}
         {...remainingProps}
       >
-        {children()}
+        <Observer>
+          {() => children()}
+        </Observer>
       </div>
       {renderSingletons && (
         <>
