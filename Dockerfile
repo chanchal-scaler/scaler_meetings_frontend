@@ -6,12 +6,15 @@ WORKDIR /app
 # Set NPM_TOKEN in Railway and pass it as a Docker build arg so ENV is set during install.
 ARG NPM_TOKEN
 ENV NPM_TOKEN=${NPM_TOKEN}
+ARG VITE_PUBLIC_BASE_PATH=/
+ENV VITE_PUBLIC_BASE_PATH=${VITE_PUBLIC_BASE_PATH}
 
 COPY package.json yarn.lock .npmrc ./
 RUN test -n "$NPM_TOKEN" || (echo "NPM_TOKEN build arg is required (same as local for private @vectord)" && exit 1)
 RUN node -v && yarn -v && yarn install --frozen-lockfile --non-interactive --verbose
 
 COPY . .
+RUN echo "Building with VITE_PUBLIC_BASE_PATH=${VITE_PUBLIC_BASE_PATH}"
 RUN yarn build
 
 FROM nginx:1.27-alpine AS runner
