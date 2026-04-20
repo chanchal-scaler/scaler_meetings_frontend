@@ -9,7 +9,7 @@ ENV NPM_TOKEN=${NPM_TOKEN}
 
 COPY package.json yarn.lock .npmrc ./
 RUN test -n "$NPM_TOKEN" || (echo "NPM_TOKEN build arg is required (same as local for private @vectord)" && exit 1)
-RUN yarn install --frozen-lockfile --non-interactive
+RUN node -v && yarn -v && yarn install --frozen-lockfile --non-interactive --verbose
 
 COPY . .
 RUN yarn build
