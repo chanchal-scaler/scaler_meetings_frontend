@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Observer } from 'mobx-react';
 import classNames from 'classnames';
 
 import { ErrorBoundary } from '@common/ui/general';
@@ -104,13 +105,17 @@ function MainActivity({ meetingStore: store, genericNudgeStore }) {
           <LivePoll />
         )}
         <QuizHQ />
-        <Leaderboard
-          isOpen={manager.isLeaderboardOpen}
-          leaderboard={manager.leaderboard}
-          myLeaderboardEntry={manager.myLeaderboardEntry}
-          onClose={() => manager.setLeaderboardOpen(false)}
-          numProblems={manager.numProblems}
-        />
+        <Observer>
+          {() => (
+            <Leaderboard
+              isOpen={manager.isLeaderboardOpen}
+              leaderboard={manager.leaderboard}
+              myLeaderboardEntry={manager.myLeaderboardEntry}
+              onClose={() => manager.setLeaderboardOpen(false)}
+              numProblems={manager.numProblems}
+            />
+          )}
+        </Observer>
       </>
     );
   }

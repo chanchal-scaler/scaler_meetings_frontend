@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Observer } from 'mobx-react';
 
 import { canNavigate } from '~meetings/utils/meeting';
 import {
@@ -26,7 +27,9 @@ function WithWidgetStatus({ children, meetingStore: store }) {
   if (status) {
     return (
       <CurrentStatusContext.Provider value={status}>
-        {children({ status })}
+        <Observer>
+          {() => children({ status })}
+        </Observer>
       </CurrentStatusContext.Provider>
     );
   } else {

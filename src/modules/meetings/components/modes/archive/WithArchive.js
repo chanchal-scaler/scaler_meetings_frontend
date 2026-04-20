@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Observer } from 'mobx-react';
 
 import { ActionTypes, hasAttachments } from '~meetings/utils/attachments';
 import { HintLayout, LoadingLayout } from '@common/ui/layouts';
@@ -54,7 +55,9 @@ function WithArchive({
   } else {
     return (
       <>
-        {children({ archive })}
+        <Observer>
+          {() => children({ archive })}
+        </Observer>
         {hasAttachments(archive.type) && archive.isSuperHost && (
           <Modal
             isFlat

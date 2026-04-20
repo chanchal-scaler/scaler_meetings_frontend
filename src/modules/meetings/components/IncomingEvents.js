@@ -1,3 +1,4 @@
+import { Observer } from 'mobx-react';
 import { mobxify } from '~meetings/ui/hoc';
 import useAddIncomingEventListeners from
   '~meetings/hooks/useAddIncomingEventListeners';
@@ -10,7 +11,11 @@ function IncomingEvents({
 
   useAddIncomingEventListeners(meeting);
 
-  return children({ data });
+  return (
+    <Observer>
+      {() => children({ data })}
+    </Observer>
+  );
 }
 
 export default mobxify('meetingStore')(IncomingEvents);

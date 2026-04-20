@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { Observer } from 'mobx-react';
 
 import { DRONA_TRACKING_TYPES } from '~meetings/utils/trackingEvents';
 import { getDeviceType, getRequestSource } from '@common/utils/platform';
@@ -91,7 +92,11 @@ function LoadMeeting({
       />
     );
   } else if (data && data.slug === slug) {
-    return children({ data });
+    return (
+      <Observer>
+        {() => children({ data })}
+      </Observer>
+    );
   } else if (isLoading) {
     return <LoadingLayout isTransparent />;
   } else if (loadError) {
