@@ -1,5 +1,4 @@
 import React from 'react';
-import { Emoji } from 'emoji-mart';
 
 export default function HelpNudgeContent() {
   return (
@@ -8,11 +7,7 @@ export default function HelpNudgeContent() {
         <span className="m-r-5">
           We've got you covered!
         </span>
-        <Emoji
-          native
-          emoji="male_superhero"
-          size={18}
-        />
+        <span aria-hidden="true">🦸‍♂️</span>
       </div>
       <div className="hint h5">
         If you are facing any technical issues,

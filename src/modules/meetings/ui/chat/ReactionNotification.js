@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { Emoji } from 'emoji-mart';
 
 import { mobxify } from '~meetings/ui/hoc';
-import { reactionsEmojiMap } from '~meetings/utils/reactions';
+import { reactionsNativeEmojiMap } from '~meetings/utils/reactions';
 
 const ANIMATION_TIMEOUT = 2250;
 
@@ -21,10 +20,9 @@ function Reactions({ type }) {
   return (
     visible ? (
       <div className="reactions-notification__item">
-        <Emoji
-          emoji={reactionsEmojiMap[type]}
-          size={25}
-        />
+        <span aria-hidden="true">
+          {reactionsNativeEmojiMap[type]}
+        </span>
       </div>
     ) : null
   );

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Emoji } from 'emoji-mart';
 
-import { reactionsEmojiMap, getLabel } from '~meetings/utils/reactions';
+import { reactionsNativeEmojiMap, getLabel } from '~meetings/utils/reactions';
 import { Tooltip } from '@common/ui/general';
 import { toHHmm } from '@common/utils/date';
 
@@ -22,10 +21,9 @@ function ReactionMessage({ message }) {
           key={type}
         >
           <div className="message-reaction__item">
-            <Emoji
-              emoji={reactionsEmojiMap[type]}
-              size={24}
-            />
+            <span aria-hidden="true">
+              {reactionsNativeEmojiMap[type]}
+            </span>
             <div className="h5 no-mgn-b m-l-5">
               {count}
             </div>

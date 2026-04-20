@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Emoji } from 'emoji-mart';
 import classNames from 'classnames';
 
 import {
@@ -10,7 +9,7 @@ import {
 import { mobxify } from '~meetings/ui/hoc';
 import {
   REACTION_LIST,
-  reactionsEmojiMap,
+  reactionsNativeEmojiMap,
   reactionsTextMap,
 } from '~meetings/utils/reactions';
 import { Badge, Icon, Tappable } from '@common/ui/general';
@@ -82,11 +81,9 @@ function Reaction({
       <div className="chat-reactions__text">
         {reactionsTextMap[type]}
       </div>
-      <Emoji
-        className="chat-reactions__emoji"
-        emoji={reactionsEmojiMap[type]}
-        size={18}
-      />
+      <span className="chat-reactions__emoji" aria-hidden="true">
+        {reactionsNativeEmojiMap[type]}
+      </span>
       {totalReactions > 0 && (
         <Badge
           className="chat-reactions__badge"

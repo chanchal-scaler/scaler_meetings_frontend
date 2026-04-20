@@ -13,6 +13,12 @@ export const reactionsEmojiMap = {
   [ReactionTypes.thinkingFace]: ':thinking_face:',
 };
 
+export const reactionsNativeEmojiMap = {
+  [ReactionTypes.plusOne]: '👍',
+  [ReactionTypes.minusOne]: '👎',
+  [ReactionTypes.thinkingFace]: '🤔',
+};
+
 export const reactionsTextMap = {
   [ReactionTypes.plusOne]: 'yes',
   [ReactionTypes.minusOne]: 'no',
