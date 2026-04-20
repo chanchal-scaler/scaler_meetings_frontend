@@ -22,7 +22,7 @@ function fetchRTMSdk() {
 class MessagingV2 extends MessagingInterface {
   _apiCalls = {
     getUser: 0,
-  }
+  };
 
   // eslint-disable-next-line
   async isDeviceSupported() {
@@ -34,10 +34,13 @@ class MessagingV2 extends MessagingInterface {
 
     const AgoraRTM = await fetchRTMSdk();
     const { RTM } = AgoraRTM;
+    const loginUid = this._generateAgoraUid(this.userId);
+    const tokenPrefix = (this.token || '').slice(0, 8);
+    const tokenLength = (this.token || '').length;
 
     this._client = new RTM(
       this._appId,
-      this._generateAgoraUid(this.userId),
+      loginUid,
       {
         cloudProxy: isNetworkRestricted || this._shouldUseProxy,
         logUpload: !isDevelopment(),
@@ -45,7 +48,23 @@ class MessagingV2 extends MessagingInterface {
       },
     );
 
-    await this.client.login({ token: this.token });
+    try {
+      await this.client.login({ token: this.token });
+    } catch (error) {
+      // Debug-only signal for token/account mismatch checks. Token is redacted.
+      // eslint-disable-next-line no-console
+      console.error('[Agora::MessagingV2] RTM login failed', {
+        appId: this._appId,
+        channelName: this.channelName,
+        userId: this.userId,
+        loginUid,
+        tokenPrefix,
+        tokenLength,
+        errorMessage: error?.message,
+        errorCode: error?.code,
+      });
+      throw error;
+    }
 
     this._addEventListeners();
     this.isLoggedIn = true;
@@ -240,7 +259,7 @@ class MessagingV2 extends MessagingInterface {
       reason: reason || null,
       rawState: state || null,
     });
-  }
+  };
 
   _handleMessage = (event) => {
     const { message, publisher, timestamp } = event;
@@ -260,7 +279,7 @@ class MessagingV2 extends MessagingInterface {
       fromId,
     };
     this.emit(type, data);
-  }
+  };
 
   _handlePresence = (event) => {
     const {
@@ -293,7 +312,7 @@ class MessagingV2 extends MessagingInterface {
         this._emitEvent(MESSAGING_EVENTS.userOnline, userId);
       });
     }
-  }
+  };
 
   /* Private */
 
