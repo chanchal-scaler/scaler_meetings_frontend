@@ -1286,7 +1286,7 @@
 
 "@vectord/analytics@0.0.3":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@vectord/analytics/-/analytics-0.0.3.tgz#ef8aa6bf089fcff16301f27c9dabdfe1efd7ac1a"
+  resolved "https://registry.npmjs.org/@vectord/analytics/-/analytics-0.0.3.tgz#ef8aa6bf089fcff16301f27c9dabdfe1efd7ac1a"
   integrity sha512-LxsgNzNfbM1METp830iigdR4viqJRQbQ92q4qp1QOP0wHlhj/LUR8UUqyJD0ctFt1EaZJYtYSWykS01SOIZEYg==
   dependencies:
     jsonschema "^1.4.1"
