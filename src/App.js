@@ -5,7 +5,7 @@ import {
 
 import { setSocketTokenResolver } from '@common/lib/socket';
 import { AppContainer } from '~meetings/components/containers';
-import { BASENAME } from '~meetings/utils/constants';
+import { APP_BASE } from '~meetings/utils/constants';
 import appStores from '@meetings/stores';
 import HistoryListener from '@common/ui/HistoryListener';
 import HomePage from '@meetings/pages/home';
@@ -15,8 +15,8 @@ import RecordingPage from '@meetings/pages/recording';
 import UploadPage from '@meetings/pages/upload';
 
 function App() {
-  const routerBaseName = window.location.pathname.startsWith(BASENAME)
-    ? BASENAME
+  const routerBaseName = window.location.pathname.startsWith(APP_BASE)
+    ? APP_BASE
     : '/';
 
   useEffect(() => {

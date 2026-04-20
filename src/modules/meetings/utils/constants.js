@@ -1,6 +1,8 @@
 import { DRONA_FEATURES } from './trackingEvents';
 
-export const BASENAME = '/meetings-standalone';
+export const BASENAME = '/meetings';
+
+export const APP_BASE = '/meetings-standalone';
 
 export const API_V3_BASE = '/api/v3/meetings';
 
