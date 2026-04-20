@@ -44,6 +44,8 @@ export default defineConfig(({ command }) => {
     plugins: [
       react({ include: /\.[tj]sx$/ }),
       babel({
+        include: [/\/src\/.*\.[jt]sx?$/],
+        exclude: [/node_modules/],
         presets: [reactCompilerPreset()],
         parserOpts: { plugins: ['jsx'] },
       }),
