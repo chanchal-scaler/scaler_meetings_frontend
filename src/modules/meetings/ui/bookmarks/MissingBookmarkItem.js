@@ -29,7 +29,7 @@ function MissingBookmarkItem({
   const bookmarkDetail = { id, title, type: contentType };
   const { missingBookmarkActionRenderer } = useWidgetData() || {};
 
-  const ref = useRef();
+  const ref = useRef(null);
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();

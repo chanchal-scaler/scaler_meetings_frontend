@@ -12,6 +12,7 @@ function MeetingFormModal({ homeStore: store }) {
   const [hostPassword, setHostPassword] = useState('');
 
   const isOpen = Boolean(store.editingSlug) || store.isCreateModalOpen;
+  const editingSlug = store.editingSlug;
 
   let mode = 'create';
   if (store.editingMeeting) {
@@ -26,7 +27,7 @@ function MeetingFormModal({ homeStore: store }) {
   }, []);
 
   useEffect(() => {
-    if (store.editingMeeting) {
+    if (editingSlug && store.editingMeeting) {
       const meeting = store.editingMeeting;
       setName(meeting.name);
       setHostPassword(meeting.host_password);
@@ -40,7 +41,7 @@ function MeetingFormModal({ homeStore: store }) {
     } else {
       handleReset();
     }
-  }, [handleReset, store.editingMeeting]);
+  }, [editingSlug, handleReset, store]);
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();

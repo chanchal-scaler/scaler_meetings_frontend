@@ -47,9 +47,9 @@ function Select({
   gtmEventCategory,
   ...remainingProps
 }) {
-  const anchorRef = useRef();
-  const popoverRef = useRef();
-  const inputRef = useRef();
+  const anchorRef = useRef(null);
+  const popoverRef = useRef(null);
+  const inputRef = useRef(null);
 
   const setInitialValueObject = useCallback(() => {
     if (isArray(initialValueObject)) {

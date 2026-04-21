@@ -19,7 +19,7 @@ function Tooltip({
   titleClassName,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
   const isTouch = useIsTouch();
 

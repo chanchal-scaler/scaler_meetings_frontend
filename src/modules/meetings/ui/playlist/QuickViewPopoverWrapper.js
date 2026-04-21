@@ -11,7 +11,7 @@ function QuickViewPopoverWrapper({
   children, content, parentRef,
   closeOnOutsideClick = true,
 }) {
-  const rootRef = useRef();
+  const rootRef = useRef(null);
 
   const handleClose = () => {
     if (closeOnOutsideClick) {

@@ -26,7 +26,7 @@ function LottieAnimationV2({
   count,
   ...props
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [currentSource, setCurrentSource] = useState(src);
   const [currentSpeed, setCurrentSpeed] = useState(speed);
 

@@ -63,7 +63,7 @@ function Nudge({
   showCloseButton = true,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isVisible, onClose] = useCollapsable({
     key: name,
     interval,

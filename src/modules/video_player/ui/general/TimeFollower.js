@@ -18,7 +18,7 @@ function TimeFollower({
 }) {
   const [isCalculated, setCalculated] = useState(false);
   const [left, setLeft] = useState(0);
-  const ref = useRef();
+  const ref = useRef(null);
   const { containerEl, duration } = useGlobalState();
 
   useEffect(() => {

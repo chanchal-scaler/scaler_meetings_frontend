@@ -35,7 +35,7 @@ function DraggableWindow({
   styles,
   ...remainingProps
 }) {
-  const startRef = useRef();
+  const startRef = useRef(null);
   const movedRef = useRef(false);
   const [left, setLeft] = useState(clampLeft(initialLeft));
   const [top, setTop] = useState(clampTop(initialTop));

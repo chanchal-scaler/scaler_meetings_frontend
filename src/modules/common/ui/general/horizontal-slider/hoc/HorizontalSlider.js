@@ -4,7 +4,7 @@ import useResizeObserver from '../hooks/useResizeObserver';
 
 const HorizontalSlider = (WrappedComponent) => function CustomComponent(props) {
   const [activeColumn, setActiveColumn] = useState(1);
-  const ref = useRef();
+  const ref = useRef(null);
   const {
     totalWidth, visibleWidth, childWidth, margin,
   } = useResizeObserver(ref);

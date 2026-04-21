@@ -22,7 +22,7 @@ export default function BottomSheetModal({
   onClose = () => {},
 }) {
   const [headerVisible, setHeaderVisible] = useState(false);
-  const timeoutRef = useRef();
+  const timeoutRef = useRef(null);
   const transitions = useTransition(isOpen, {
     enter: {
       opacity: 1,

@@ -49,7 +49,7 @@ function Select({
   value,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
 
   const [inputWidth, setInputWidth] = useState('none');
   const [isOpen, setOpen] = useState(false);

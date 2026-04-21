@@ -16,7 +16,7 @@ function ChoiceInput({
   shouldFocus,
   value,
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   useEffect(() => {
     if (shouldFocus && ref.current) {
       ref.current.focus();

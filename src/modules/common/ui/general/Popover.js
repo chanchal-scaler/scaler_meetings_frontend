@@ -70,7 +70,7 @@ function Popover({
   getValidPosition,
   ...remainingProps
 }) {
-  const popoverRef = useRef();
+  const popoverRef = useRef(null);
 
   const [position, setPosition] = useState(initialPosition);
   const [calculated, setCalculated] = useState(initialCalculated);

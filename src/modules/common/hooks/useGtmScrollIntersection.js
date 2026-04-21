@@ -12,7 +12,7 @@ import { useGtmElementIntersectionContext } from '@common/hoc/GtmElementIntersec
  * @returns {object} - a reference should be set on the dom element which the user wants to get observed
  */
 function useGtmScrollIntersection() {
-  const elementRef = useRef();
+  const elementRef = useRef(null);
   const gtmIntersectionContext = useGtmElementIntersectionContext();
 
   useEffect(() => {

@@ -26,7 +26,7 @@ const defaultState = {
 function Snackbar() {
   const [snackbarState, setSnackbarState] = useState(defaultState);
   const [isVisible, setVisible] = useState(false);
-  const timeoutId = useRef();
+  const timeoutId = useRef(null);
 
   useEffect(() => {
     function handleSnackbarClose() {

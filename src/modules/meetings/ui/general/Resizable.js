@@ -13,8 +13,8 @@ function Resizable({
   minSectionHeight = DEFAULT_MIN_SECTION_HEIGHT,
   ...remainingProps
 }) {
-  const startRef = useRef();
-  const ref = useRef();
+  const startRef = useRef(null);
+  const ref = useRef(null);
   const [heights, setHeights] = useState([]);
   const [isResizing, setResizing] = useState(false);
   const children = Children.toArray(_children).filter(o => Boolean(o));

@@ -12,8 +12,8 @@ import Tappable from '@common/ui/general/Tappable';
 
 function DataTableFilter({ column }) {
   /* Refs */
-  const ref = useRef();
-  const popoverRef = useRef();
+  const ref = useRef(null);
+  const popoverRef = useRef(null);
 
   /* State */
   const [isOpen, setOpen] = useState(false);

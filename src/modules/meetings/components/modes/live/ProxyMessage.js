@@ -13,7 +13,7 @@ import CueCardPopoverContent
   from '~meetings/ui/proxy_chat/CueCardPopoverContent';
 
 function ProxyMessage({ meetingStore }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const { meeting } = meetingStore;
 
   const { proxyChatMessage } = meeting;

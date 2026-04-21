@@ -41,7 +41,7 @@ function TourGuide({
 
     return () => {
       uiManager.off(`${name}.start`, handleStart);
-      uiManager.off(`${name}.start`, handleEnd);
+      uiManager.off(`${name}.end`, handleEnd);
     };
   }, [name]);
 

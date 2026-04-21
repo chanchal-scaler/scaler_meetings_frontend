@@ -28,7 +28,7 @@ function Textarea({
   onChange,
   ...remainingProps
 }) {
-  const elementRef = useRef();
+  const elementRef = useRef(null);
   const [internalValue, setInternalValue] = useState(value);
   const [rows, setRows] = useState(1);
 

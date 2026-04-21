@@ -18,7 +18,7 @@ function ActionIndicator({
   action,
   onAnimationEnd,
 }) {
-  const timerRef = useRef();
+  const timerRef = useRef(null);
   const [internalAction, setInternalAction] = useState(action);
   const actionIcon = actionIconsMap[internalAction];
 

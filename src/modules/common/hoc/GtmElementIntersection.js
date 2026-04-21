@@ -5,6 +5,7 @@ import React, {
   useContext,
   useRef,
   useLayoutEffect,
+  useMemo,
 } from 'react';
 
 import { setupIntersectionObserver } from '@tracking/components/handlers/scroll';
@@ -42,6 +43,13 @@ export default function GtmElementIntersectionProvider({
         isVertical,
       );
     }
+
+    return () => {
+      if (intersectionObserver.current?.disconnect) {
+        intersectionObserver.current.disconnect();
+      }
+      intersectionObserver.current = null;
+    };
   }, [scrollableAncestor, isVertical]);
 
   const observeElement = useCallback((elementRef) => {
@@ -62,8 +70,13 @@ export default function GtmElementIntersectionProvider({
     return true;
   }, []);
 
+  const contextValue = useMemo(() => ({
+    observeElement,
+    unobserveElement,
+  }), [observeElement, unobserveElement]);
+
   return (
-    <GtmElementIntersectionContext.Provider value={{ observeElement, unobserveElement }}>
+    <GtmElementIntersectionContext.Provider value={contextValue}>
       {children}
     </GtmElementIntersectionContext.Provider>
   );

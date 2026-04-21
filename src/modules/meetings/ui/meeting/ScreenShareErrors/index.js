@@ -43,4 +43,4 @@ function ScreenShareError({ meetingStore: store }) {
   }
 }
 
-export default React.memo(mobxify('meetingStore')(ScreenShareError));
+export default mobxify('meetingStore')(ScreenShareError);

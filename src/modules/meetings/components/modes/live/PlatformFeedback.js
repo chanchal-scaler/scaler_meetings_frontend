@@ -20,7 +20,7 @@ import PlatformFeedbackForm
   from '~meetings/ui/platform_feedback/PlatformFeedbackForm';
 
 function PlatformFeedback({ meetingStore }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isTooltipOpen, setTooltipOpen] = useState(false);
   const [isVisible, onClose] = useCollapsable({
     key: 'meeting-platform-feedback',

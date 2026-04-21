@@ -32,7 +32,7 @@ function StreamVideo({
 }) {
   const { desktop } = useMediaQuery();
   const id = `stream-${stream.id}`;
-  const ref = useRef();
+  const ref = useRef(null);
   const videoBroadcasting = stream.channel;
   const isPinned = videoBroadcasting.pinnedStreamId === stream.id;
 

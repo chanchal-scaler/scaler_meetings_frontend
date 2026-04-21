@@ -70,8 +70,8 @@ function Video({
   onWaiting,
   ...remainingProps
 }) {
-  const ref = useRef();
-  const hls = useRef();
+  const ref = useRef(null);
+  const hls = useRef(null);
 
   const isFallback = useControlsFallback();
 

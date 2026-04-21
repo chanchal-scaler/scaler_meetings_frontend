@@ -22,8 +22,8 @@ function Slider({
   value,
   ...remainingProps
 }) {
-  const sliderRef = useRef();
-  const startRef = useRef();
+  const sliderRef = useRef(null);
+  const startRef = useRef(null);
   const [_value, setValue] = useState(value);
 
   const valueToPercent = useCallback(

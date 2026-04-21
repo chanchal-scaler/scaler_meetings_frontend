@@ -28,9 +28,9 @@ function useMediaStream({
   const [stream, setStream] = useState(null);
   const [streamError, setStreamError] = useState(null);
 
-  const playerRef = useRef();
+  const playerRef = useRef(null);
   const mountedRef = useRef(true);
-  const timeoutRef = useRef();
+  const timeoutRef = useRef(null);
   const audioRef = useRef(audio);
   const videoRef = useRef(video);
   const streamRef = useRef(null);

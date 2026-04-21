@@ -62,7 +62,7 @@ function FileUploader({
   convertToWebp,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isUploading, setUploading] = useState(false);
 
   const handleClick = useCallback((event) => {

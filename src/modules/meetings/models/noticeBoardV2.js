@@ -71,7 +71,9 @@ class NoticeBoard {
       (template) => template.slug === slug,
     );
     if (templateIndex !== -1) {
-      this.templates[templateIndex] = data;
+      this.templates = this.templates.map((template, index) => (
+        index === templateIndex ? data : template
+      ));
     }
   }
 
@@ -106,16 +108,15 @@ class NoticeBoard {
   }
 
   addPinnedMessage(message) {
-    this.messages.unshift(
-      new NoticeBoardMemo(this.meeting, {
+    const nextMessage = new NoticeBoardMemo(this.meeting, {
         fromId: String(message.user_id),
         createdAt: message.created_at,
         body: message.body,
         toId: String(message.to_id || -1),
         pinId: message.id,
-      }),
-    );
-    this.unreadMessageIds.push(message.id);
+      });
+    this.messages = [nextMessage, ...this.messages];
+    this.unreadMessageIds = [...this.unreadMessageIds, message.id];
     window.dispatchEvent(
       new CustomEvent('NOTICE_BOARD_MESSAGE_ADDED_EVENT'),
     );

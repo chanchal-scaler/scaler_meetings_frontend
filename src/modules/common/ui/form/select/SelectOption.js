@@ -15,7 +15,7 @@ function SelectOption({
   onClick,
   ...remainingProps
 }) {
-  const optionRef = useRef();
+  const optionRef = useRef(null);
 
   const {
     getHandlers,

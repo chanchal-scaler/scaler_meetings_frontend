@@ -21,7 +21,7 @@ function Provider({
   onVideoChange,
   ...remainingProps
 }) {
-  const editBookmarkTimer = useRef();
+  const editBookmarkTimer = useRef(null);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Sync's relavent settings to localStorage

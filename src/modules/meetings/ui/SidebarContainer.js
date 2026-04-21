@@ -14,7 +14,7 @@ function SidebarContainer({
   settingsStore,
   children,
 }) {
-  const startRef = useRef();
+  const startRef = useRef(null);
   const { mobile } = useMediaQuery();
   const [isResizing, setResizing] = useState(false);
 

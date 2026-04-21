@@ -51,7 +51,7 @@ function Controls({
   const unmountedRef = useUnmountedRef();
   const isTouch = useIsTouch();
   const isFallback = useControlsFallback();
-  const timeout = useRef();
+  const timeout = useRef(null);
   const [isVisible, setVisible] = useState(false);
 
   const {

@@ -61,8 +61,8 @@ function BookmarkItem({
   const [highlighted, setHighlighted] = useState(false);
   const [autoSave, setAutoSave] = useState(false);
 
-  const ref = useRef();
-  const inputRef = useRef();
+  const ref = useRef(null);
+  const inputRef = useRef(null);
   const unmountedRef = useUnmountedRef();
 
   const { tablet } = useMediaQuery();

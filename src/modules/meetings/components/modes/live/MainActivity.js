@@ -25,7 +25,7 @@ import NoticeBoardForm from '~meetings/ui/notice_board/NoticeBoardForm';
 import VideoChannel from './VideoChannel';
 
 function MainActivity({ meetingStore: store, genericNudgeStore }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const { mobile } = useMediaQuery();
   const { meeting } = store;
   const { manager, videoBroadcasting } = meeting;

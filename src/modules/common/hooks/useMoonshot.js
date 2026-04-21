@@ -8,7 +8,7 @@ import {
 export function useMoonshotAsset(shareURI, shouldFetch) {
   const [isReady, setReady] = useState(false);
   const [sharableLinks, setLinks] = useState({});
-  const mountRef = useRef();
+  const mountRef = useRef(null);
 
   function blobImage(imageSrc) {
     return new Promise((resolve) => {

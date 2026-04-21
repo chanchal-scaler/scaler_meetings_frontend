@@ -16,7 +16,7 @@ import SeekbarTooltip from './SeekbarTooltip';
 
 function Seekbar({ className }) {
   const seekbarRef = useRef(null);
-  const startRef = useRef();
+  const startRef = useRef(null);
   const [hoveredAt, setHoveredAt] = useState(null);
   const [progress, setProgress] = useState(0);
 

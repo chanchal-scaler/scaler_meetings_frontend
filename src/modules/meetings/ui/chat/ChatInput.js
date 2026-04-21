@@ -19,7 +19,7 @@ import analytics from '@common/utils/analytics';
 import HotKey from '@common/lib/hotKey';
 
 function ChatInput({ meetingStore: store, settingsStore }) {
-  const inputRef = useRef();
+  const inputRef = useRef(null);
   const { mobile } = useMediaQuery();
   const { meeting } = store;
   const { messaging } = meeting;

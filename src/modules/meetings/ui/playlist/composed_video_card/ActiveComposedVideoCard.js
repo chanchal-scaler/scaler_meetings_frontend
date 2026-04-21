@@ -9,7 +9,7 @@ import PlaylistControls from '~meetings/ui/playlist/playlist_controls';
 
 const ActiveComposedVideo = ({ content }) => {
   const ref = useRef(null);
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   useEffect(() => {
     if (content?.hasComposedVideo) {

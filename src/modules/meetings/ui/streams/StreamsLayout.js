@@ -19,7 +19,7 @@ function StreamsLayout({
   layoutStore,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [dimensions, setDimensions] = useState({});
   const { isRecording } = layoutStore;
 

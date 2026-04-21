@@ -8,7 +8,7 @@ import ViewProblemCardButton from './ViewProblemCardButton';
 import { PLAYLIST_CONTENT_TYPES } from '~meetings/utils/playlist';
 
 const UpNextProblemCard = ({ content }) => {
-  const ref = useRef();
+  const ref = useRef(null);
 
   const dynamicClass = content.type === PLAYLIST_CONTENT_TYPES.problem
     ? 'm-quiz-card__bg-img-quiz'

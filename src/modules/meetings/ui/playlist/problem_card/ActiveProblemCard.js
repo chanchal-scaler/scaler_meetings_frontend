@@ -6,7 +6,7 @@ import { PLAYLIST_CONTENT_TYPES } from '~meetings/utils/playlist';
 
 const ActiveProblemCard = ({ content }) => {
   const ref = useRef(null);
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   useEffect(() => {
     if (ref) {

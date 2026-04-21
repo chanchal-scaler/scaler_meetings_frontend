@@ -11,7 +11,7 @@ import ViewCueCardButton from './ViewCueCardButton';
 
 const UpNextCueCard = ({ content }) => {
   const canControlPlaylist = content?.playlist?.meeting?.canControlPlaylist;
-  const ref = useRef();
+  const ref = useRef(null);
   return (
     <>
       <div

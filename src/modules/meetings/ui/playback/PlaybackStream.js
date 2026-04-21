@@ -13,7 +13,7 @@ const ALLOWED_PLAYBACK_DIFF = 12;
 const PLAYBACK_SYNC_INTERVAL = 4000; // In ms
 
 function PlaybackStream({ children, className, meetingStore: store }) {
-  const videoPlayer = useRef();
+  const videoPlayer = useRef(null);
   const { meeting } = store;
   const { playback, videoBroadcasting } = meeting;
 

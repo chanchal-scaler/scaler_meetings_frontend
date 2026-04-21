@@ -24,7 +24,7 @@ const messageRenderersMap = {
 };
 
 function ChatMessage({ index, message }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const {
     isReadingOldMessages,
     lastReadMessageIndex,

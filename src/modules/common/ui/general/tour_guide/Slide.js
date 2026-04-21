@@ -29,7 +29,7 @@ function Slide({
   const { width: windowWidth, height: windowHeight } = useWindowSize();
   const [transform, setTransform] = useState(DEFAULT_TRANSFORM);
   const [animated, setAnimated] = useState(false);
-  const slideRef = useRef();
+  const slideRef = useRef(null);
   const prevTransfromRef = useRef(DEFAULT_TRANSFORM);
   const [highlightEl, setHighlightEl] = useState(null);
 

@@ -26,7 +26,7 @@ function useRollingViews(config, skipRolling = true) {
     isCircular,
   } = config;
 
-  const ref = useRef();
+  const ref = useRef(null);
   const [isComponentVisible] = useComponentOnScreen(ref);
   const [currView, setCurrView] = useState(null);
 

@@ -33,8 +33,8 @@ function Dropdown({
   titleClassName,
   ...remainingProps
 }) {
-  const anchorRef = useRef();
-  const popoverRef = useRef();
+  const anchorRef = useRef(null);
+  const popoverRef = useRef(null);
 
   const [internalIsOpen, setInternalOpen] = useState(Boolean(isOpen));
 

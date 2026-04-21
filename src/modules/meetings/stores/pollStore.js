@@ -300,7 +300,9 @@ class PollStore {
   }
 
   setChoice(value, choiceIndex) {
-    this.choices[choiceIndex] = value;
+    this.choices = this.choices.map((choice, index) => (
+      index === choiceIndex ? value : choice
+    ));
   }
 
   setDescription(description) {

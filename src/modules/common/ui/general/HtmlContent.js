@@ -6,7 +6,7 @@ import ConvertHtmlToReact from './ConvertHtmlToReact';
 function HtmlContent({
   html, className, containerClassName, ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   // Make all links inside this component open in a new tab
   useEffect(() => {
     if (ref.current) {

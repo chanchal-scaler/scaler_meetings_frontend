@@ -54,8 +54,8 @@ function ShareButton({
   onTrack,
   ...remainingProps
 }) {
-  const ref = useRef();
-  const popoverRef = useRef();
+  const ref = useRef(null);
+  const popoverRef = useRef(null);
   const [isPopoverOpen, setPopoverOpen] = useState(false);
 
   // This is hacky way. Find some way to make `useOutsideClick` work with

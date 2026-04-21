@@ -33,7 +33,7 @@ const defaultState = {
 function Toast() {
   const [toastState, setToastState] = useState({ ...defaultState });
   const [isVisible, setVisible] = useState(false);
-  const timeoutId = useRef();
+  const timeoutId = useRef(null);
 
   useEffect(() => {
     function handleToastClose() {

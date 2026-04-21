@@ -10,7 +10,7 @@ import topicIcon from '~meetings/images/topic-icon.svg';
 const ActiveInstructorAlumniCard = ({ content }) => {
   const canControlPlaylist = content?.playlist?.meeting?.canControlPlaylist;
   const ref = useRef(null);
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   useEffect(() => {
     if (ref.current) {

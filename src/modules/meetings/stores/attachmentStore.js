@@ -114,7 +114,7 @@ class AttachmentStore {
     try {
       this._checkAttachmentValidity(file);
       attachment = new Attachment(this, file);
-      this.attachments.push(attachment);
+      this.attachments = [...this.attachments, attachment];
       this.track(this.source);
     } catch (error) {
       toast.show({
@@ -135,7 +135,7 @@ class AttachmentStore {
       );
       const { attachments, meeting } = response;
       this.meetingName = meeting;
-      attachments.forEach(attachment => {
+      const nextAttachments = attachments.map((attachment) => {
         const fileParams = {
           name: attachment.filename,
           size: attachment.filesize,
@@ -149,8 +149,9 @@ class AttachmentStore {
           UploadStatus.SUCCESS,
           attachment.attachment_id,
         );
-        this.attachments.push(newAttachment);
+        return newAttachment;
       });
+      this.attachments = nextAttachments;
     } catch (error) {
       toast.show({
         message: 'Error loading attachments',
@@ -166,6 +167,7 @@ class AttachmentStore {
   reloadAttachments() {
     this.hasLoaded = false;
     this.hasError = false;
+    this.attachments = [];
     this.loadAttachments();
   }
 

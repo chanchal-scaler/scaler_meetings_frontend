@@ -39,7 +39,7 @@ function DataTable({
   ...remainingProps
 }) {
   /* Refs */
-  const elementRef = useRef();
+  const elementRef = useRef(null);
 
   /* State Hooks */
   const [internalList, setInternalList] = useState([...list]);

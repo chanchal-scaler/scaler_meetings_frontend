@@ -8,7 +8,7 @@ import topicIcon from '~meetings/images/topic-icon.svg';
 
 const ActiveCueCard = ({ content }) => {
   const ref = useRef(null);
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   useEffect(() => {
     if (ref) {

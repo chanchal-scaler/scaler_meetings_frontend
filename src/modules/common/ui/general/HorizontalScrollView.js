@@ -50,8 +50,8 @@ function HorizontalScrollView({
   onArrowClick,
   ...remainingProps
 }) {
-  const scrollRef = useRef();
-  const scrollHandlerRef = useRef();
+  const scrollRef = useRef(null);
+  const scrollHandlerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
 

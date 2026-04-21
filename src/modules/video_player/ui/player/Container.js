@@ -33,7 +33,7 @@ function Container({
   onFullscreenChange,
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const {
     currentSrc,
     currentTime,

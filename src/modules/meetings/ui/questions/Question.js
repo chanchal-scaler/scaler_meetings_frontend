@@ -32,7 +32,7 @@ function Question({
   ...remainingProps
 }) {
   const [areActionsOpen, setActionsOpen] = useState(false);
-  const ref = useRef();
+  const ref = useRef(null);
   const { meeting } = question;
 
   useEffect(() => {

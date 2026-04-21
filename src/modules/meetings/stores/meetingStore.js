@@ -109,6 +109,12 @@ class MeetingStore {
     try {
       const json = yield meetingsApi.getItem(slug);
       this._data = json.meeting;
+      if (this.meeting && this.meeting.slug === slug) {
+        this.meeting._data = json.meeting;
+      }
+      if (this.archive && this.archive.slug === slug) {
+        this.archive._data = json.meeting;
+      }
     } catch (error) {
       this.loadError = error;
       logEvent(

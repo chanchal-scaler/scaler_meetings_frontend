@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { apiRequest } from '@common/api/utils';
 
 function CompanySelect({ label = 'Company Name ( at least 3 characters )', onChange = () => {}, ...remainingProps }) {
-  const timeout = useRef();
+  const timeout = useRef(null);
   const filterCompanies = useCallback(async inputValue => {
     if (inputValue.length >= 3) {
       const json = await apiRequest(

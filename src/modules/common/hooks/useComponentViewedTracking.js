@@ -20,7 +20,7 @@ function useComponentViewedTracking({
   analytics, eventName, source, payload, options, callback, unique = true,
   track = true,
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
 
   const handleTracking = useCallback(() => {
     const key = camelCase(eventName);

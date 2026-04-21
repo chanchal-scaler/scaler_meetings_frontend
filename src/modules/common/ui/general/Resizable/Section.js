@@ -23,8 +23,8 @@ function ResizableSection({
   dividerComponent,
   size,
 }) {
-  const ref = useRef();
-  const startRef = useRef();
+  const ref = useRef(null);
+  const startRef = useRef(null);
 
   const handleDragStart = useCallback(() => {
     startRef.current = {

@@ -25,7 +25,7 @@ function useReverseInfiniteScroll({
   initialScrollBottom = 0,
   onAllItemsRendered,
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const lockRef = useRef(false);
   const [forceRender, setForceRender] = useState(false);
   const [internalList, setInternalList] = useState(list);

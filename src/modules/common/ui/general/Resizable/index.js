@@ -26,7 +26,7 @@ function Resizable({
   sections = [],
   ...remainingProps
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [internalSizes, setInternalSizes] = useState({});
 
   function isNullOrUndefined(item) {

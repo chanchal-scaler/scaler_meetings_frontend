@@ -70,7 +70,9 @@ class HomeStore {
 
     try {
       const json = yield meetingsApi.create(data);
-      this.meetings.unshift(json.meeting);
+      if (json?.meeting) {
+        this.meetings = [json.meeting, ...this.meetings];
+      }
       this.setCreateModalOpen(false);
       this.isSubmitting = false;
     } catch (error) {
@@ -94,7 +96,11 @@ class HomeStore {
     try {
       const json = yield meetingsApi.update(this.editingSlug, data);
       const index = this.meetings.findIndex(o => o.slug === this.editingSlug);
-      this.meetings[index] = json.meeting;
+      if (index >= 0 && json?.meeting) {
+        this.meetings = this.meetings.map((meeting, meetingIndex) => (
+          meetingIndex === index ? json.meeting : meeting
+        ));
+      }
       this.setEditingSlug(null);
       this.isSubmitting = false;
     } catch (error) {

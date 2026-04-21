@@ -10,7 +10,7 @@ import { toCountdown } from '~video_player/utils/date';
 import { Icon, Popover, Tappable } from '@common/ui/general';
 
 function ArchiveQuizPill({ quiz, meetingStore: store }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const { archive } = store;
   const { popoverActiveQuiz } = archive;
   const isPopoverOpen = !archive.quiz && !archive.isLeaderboardOpen && (

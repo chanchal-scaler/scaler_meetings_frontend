@@ -27,7 +27,7 @@ function Carousel({
   children, className, indicatorClassName, timeInterval = 10000,
   handleDotClick, disableTransition = false,
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [carousel, setCarousel] = useState({ time: 0, frame: 0 });
   const [isDragging, setIsDragging] = useState(false);
 

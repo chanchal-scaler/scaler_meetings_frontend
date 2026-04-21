@@ -14,8 +14,8 @@ function HorizontalResizeable({
   minWidth,
   ...remainingProps
 }) {
-  const startRef = useRef();
-  const ref = useRef();
+  const startRef = useRef(null);
+  const ref = useRef(null);
   const [widths, setWidths] = useState([]);
   const [isResizing, setResizing] = useState(false);
   const children = Children.toArray(_children).filter(o => Boolean(o));

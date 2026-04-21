@@ -13,7 +13,7 @@ import TimeFollower from '~video_player/ui/general/TimeFollower';
 import analytics from '@common/utils/analytics';
 
 function AddBookmark({ onAdd, inputClassName }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isSubmitting, setSubmitting] = useState(false);
   const [title, setTitle] = useState('');
 

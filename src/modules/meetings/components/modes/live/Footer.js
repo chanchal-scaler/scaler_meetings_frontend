@@ -12,7 +12,7 @@ import { useMediaQuery } from '@common/hooks';
 
 function Footer({ meetingStore: store, variant = 'loose' }) {
   const { tablet } = useMediaQuery();
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   const { meeting } = store;
   const { videoBroadcasting } = meeting;
