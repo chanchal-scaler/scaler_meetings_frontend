@@ -72,6 +72,7 @@ class HomeStore {
       const json = yield meetingsApi.create(data);
       this.meetings.unshift(json.meeting);
       this.setCreateModalOpen(false);
+      yield this.load();
       this.isSubmitting = false;
     } catch (error) {
       this.submitError = error;
