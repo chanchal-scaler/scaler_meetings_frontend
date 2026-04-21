@@ -50,10 +50,6 @@ class UserContextStore {
       this.currentUserSlug = userData?.current_user?.slug || null;
       this.isLoaded = true;
     } catch (error) {
-      if (error.status === 401) {
-        window.location = `${window.location.protocol}//${window.location.host}/users/sign_in/`;
-        return;
-      }
       this.loadError = error;
       logEvent(
         'error',
