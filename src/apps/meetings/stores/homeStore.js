@@ -39,11 +39,9 @@ class HomeStore {
     });
   }
 
-  load = flow(function* (force = false) {
-    if (this.isLoading) return;
-
+  load = flow(function* () {
     // Return if meetings are already loaded
-    if (!force && this.meetings.length > 0) return;
+    if (this.meetings.length > 0) return;
 
     this.isLoading = true;
     this.loadError = null;
@@ -71,8 +69,8 @@ class HomeStore {
     this.submitError = null;
 
     try {
-      yield meetingsApi.create(data);
-      yield this.load(true);
+      const json = yield meetingsApi.create(data);
+      this.meetings.unshift(json.meeting);
       this.setCreateModalOpen(false);
       this.isSubmitting = false;
     } catch (error) {
